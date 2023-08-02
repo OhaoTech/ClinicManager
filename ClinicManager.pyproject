@@ -1,6 +1,10 @@
 {
     "files": [
         "mainwindow.py",
-        "form.ui"
+        "form.ui",
+        "searchWindow.ui",
+        "SearchWindow.py",
+        "AddNewPatientWindow.py",
+        "addNewPatientWindow.ui"
     ]
 }
