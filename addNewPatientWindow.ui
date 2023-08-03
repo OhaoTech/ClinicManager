@@ -15,7 +15,7 @@
   </property>
   <property name="windowIcon">
    <iconset theme="camera-web">
-    <normaloff>.</normaloff>.</iconset>
+    <normaloff>../../../../../.designer/backup</normaloff>../../../../../.designer/backup</iconset>
   </property>
   <widget class="QScrollArea" name="scrollArea">
    <property name="geometry">
@@ -283,7 +283,7 @@
        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:18pt; font-weight:700;&quot;&gt;Medical History&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
      </widget>
-     <widget class="QLabel" name="alergic_history_label">
+     <widget class="QLabel" name="allergic_history_label">
       <property name="geometry">
        <rect>
         <x>10</x>
@@ -450,7 +450,7 @@
        </rect>
       </property>
       <property name="text">
-       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Examinination:&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Examination:&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
      </widget>
      <widget class="QLabel" name="diagnosis_label">
@@ -539,7 +539,7 @@
     <string>OK</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="cancel_pushButton">
+  <widget class="QPushButton" name="print_pushButton">
    <property name="geometry">
     <rect>
      <x>20</x>
@@ -552,7 +552,7 @@
     <string>Print</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="print_pushButton">
+  <widget class="QPushButton" name="cancel_pushButton">
    <property name="geometry">
     <rect>
      <x>570</x>
