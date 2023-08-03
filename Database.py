@@ -25,6 +25,7 @@ class Database:
                         patient_id INTEGER,
                         visit_date TEXT,
                         chief_complaint TEXT,
+                        present_illness TEXT,
                         FOREIGN KEY (patient_id) REFERENCES patients(id))''')
 
         self.cursor.execute('''CREATE TABLE IF NOT EXISTS examinations (
@@ -36,7 +37,8 @@ class Database:
         self.cursor.execute('''CREATE TABLE IF NOT EXISTS prescriptions (
                         id INTEGER PRIMARY KEY,
                         visit_id INTEGER,
-                        prescription_details TEXT,
+                        diagnosis TEXT,
+                        remedy TEXT,
                         FOREIGN KEY (visit_id) REFERENCES visits(id))''')
 
 
@@ -63,8 +65,8 @@ class Database:
         self.conn.commit()
 
     # Create visit record
-    def insert_visit(self, patient_id, visit_date, chief_complaint):
-        self.cursor.execute("INSERT INTO visits (patient_id, visit_date, chief_complaint) VALUES (?, ?, ?)", (patient_id, visit_date, chief_complaint))
+    def insert_visit(self, patient_id, visit_date, chief_complaint, present_illness):
+        self.cursor.execute("INSERT INTO visits (patient_id, visit_date, chief_complaint, present_illness) VALUES (?, ?, ?, ?)", (patient_id, visit_date, chief_complaint, present_illness))
         self.conn.commit()
 
     # Read visit records for a patient
@@ -83,8 +85,8 @@ class Database:
         return self.cursor.fetchall()
 
     # Create prescription record
-    def insert__prescription(self, visit_id, prescription_details):
-        self.cursor.execute("INSERT INTO prescriptions (visit_id, prescription_details) VALUES (?, ?)", (visit_id, prescription_details))
+    def insert_prescription(self, visit_id, diagnosis, remedy):
+        self.cursor.execute("INSERT INTO prescriptions (visit_id, diagnosis, remedy) VALUES (?, ?, ?)", (visit_id, diagnosis, remedy))
         self.conn.commit()
 
     # Read prescription records for a visit
