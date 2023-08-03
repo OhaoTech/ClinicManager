@@ -177,12 +177,12 @@ class Ui_AddNewPatientWindow(object):
         self.ok_pushButton = QPushButton(AddNewPatientWindow)
         self.ok_pushButton.setObjectName(u"ok_pushButton")
         self.ok_pushButton.setGeometry(QRect(680, 890, 103, 36))
-        self.cancel_pushButton = QPushButton(AddNewPatientWindow)
-        self.cancel_pushButton.setObjectName(u"cancel_pushButton")
-        self.cancel_pushButton.setGeometry(QRect(20, 880, 111, 41))
         self.print_pushButton = QPushButton(AddNewPatientWindow)
         self.print_pushButton.setObjectName(u"print_pushButton")
-        self.print_pushButton.setGeometry(QRect(570, 890, 103, 36))
+        self.print_pushButton.setGeometry(QRect(20, 880, 111, 41))
+        self.cancel_pushButton = QPushButton(AddNewPatientWindow)
+        self.cancel_pushButton.setObjectName(u"cancel_pushButton")
+        self.cancel_pushButton.setGeometry(QRect(570, 890, 103, 36))
 
         self.retranslateUi(AddNewPatientWindow)
 
@@ -216,7 +216,7 @@ class Ui_AddNewPatientWindow(object):
         self.diagnosis_label.setText(QCoreApplication.translate("AddNewPatientWindow", u"<html><head/><body><p align=\"center\">Diagnosis:</p></body></html>", None))
         self.remedy_label.setText(QCoreApplication.translate("AddNewPatientWindow", u"<html><head/><body><p align=\"center\">Remedy:</p></body></html>", None))
         self.ok_pushButton.setText(QCoreApplication.translate("AddNewPatientWindow", u"OK", None))
-        self.cancel_pushButton.setText(QCoreApplication.translate("AddNewPatientWindow", u"Print", None))
-        self.print_pushButton.setText(QCoreApplication.translate("AddNewPatientWindow", u"Cancel", None))
+        self.print_pushButton.setText(QCoreApplication.translate("AddNewPatientWindow", u"Print", None))
+        self.cancel_pushButton.setText(QCoreApplication.translate("AddNewPatientWindow", u"Cancel", None))
     # retranslateUi
 

@@ -14,7 +14,8 @@
    <string>SearchWindow</string>
   </property>
   <property name="windowIcon">
-   <iconset theme="phone"/>
+   <iconset theme="phone">
+    <normaloff>.</normaloff>.</iconset>
   </property>
   <widget class="QPushButton" name="pushButton">
    <property name="geometry">
@@ -37,6 +38,9 @@
      <width>131</width>
      <height>41</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(192, 191, 188);</string>
    </property>
   </widget>
   <widget class="QLabel" name="label">
@@ -124,6 +128,9 @@
      <width>251</width>
      <height>41</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(192, 191, 188);</string>
    </property>
   </widget>
   <widget class="QTableView" name="tableView">

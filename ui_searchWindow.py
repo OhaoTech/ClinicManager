@@ -24,7 +24,13 @@ class Ui_SearchWindow(object):
         if not SearchWindow.objectName():
             SearchWindow.setObjectName(u"SearchWindow")
         SearchWindow.resize(724, 558)
-        icon = QIcon(QIcon.fromTheme(u"phone"))
+        icon = QIcon()
+        iconThemeName = u"phone"
+        if QIcon.hasThemeIcon(iconThemeName):
+            icon = QIcon.fromTheme(iconThemeName)
+        else:
+            icon.addFile(u".", QSize(), QIcon.Normal, QIcon.Off)
+
         SearchWindow.setWindowIcon(icon)
         self.pushButton = QPushButton(SearchWindow)
         self.pushButton.setObjectName(u"pushButton")
@@ -32,6 +38,7 @@ class Ui_SearchWindow(object):
         self.plainTextEdit = QPlainTextEdit(SearchWindow)
         self.plainTextEdit.setObjectName(u"plainTextEdit")
         self.plainTextEdit.setGeometry(QRect(90, 60, 131, 41))
+        self.plainTextEdit.setStyleSheet(u"background-color: rgb(192, 191, 188);")
         self.label = QLabel(SearchWindow)
         self.label.setObjectName(u"label")
         self.label.setGeometry(QRect(40, 20, 141, 31))
@@ -53,6 +60,7 @@ class Ui_SearchWindow(object):
         self.plainTextEdit_2 = QPlainTextEdit(SearchWindow)
         self.plainTextEdit_2.setObjectName(u"plainTextEdit_2")
         self.plainTextEdit_2.setGeometry(QRect(90, 110, 251, 41))
+        self.plainTextEdit_2.setStyleSheet(u"background-color: rgb(192, 191, 188);")
         self.tableView = QTableView(SearchWindow)
         self.tableView.setObjectName(u"tableView")
         self.tableView.setGeometry(QRect(40, 160, 651, 391))
