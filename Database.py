@@ -43,10 +43,58 @@ class Database:
         self.conn.commit()
         return self.cursor.lastrowid #patient id
 
+    def get_patients_schema(self):
+        self.cursor.execute("PRAGMA table_info(patients)")
+        return self.cursor.fetchall()
+
     # Read patient records
     def get_all_patients(self):
         self.cursor.execute("SELECT * FROM patients")
         return self.cursor.fetchall()
+    
+    def get_patient_by_condition(self, name, tel, gender):
+        query = "SELECT * FROM patients WHERE"
+        conditions = []
+
+        if name:
+            conditions.append("full_name = ?")
+        if tel:
+            conditions.append("telephone = ?")
+        if gender:
+            conditions.append("gender = ?")
+
+        if conditions:
+            for i in range(len(conditions)):
+                if i == 0:
+                    query += " " + conditions[i]
+                else:
+                    query += " AND " + conditions[i]
+
+        #print conditions
+        #todo: bug here on conditional search
+
+        if conditions:
+            if name and tel and gender:
+                self.cursor.execute(query, (name, tel, gender))
+            elif name and tel:
+                self.cursor.execute(query, (name, tel))
+            elif name and gender:
+                self.cursor.execute(query, (name, gender))
+            elif tel and gender:
+                self.cursor.execute(query, (tel, gender))
+            elif name:
+                self.cursor.execute(query, (name))
+            elif tel:
+                self.cursor.execute(query, (tel))
+            elif gender:
+                self.cursor.execute(query, (gender))
+        else:
+            # If no search criteria provided, fetch all patients
+            self.cursor.execute("SELECT * FROM patients")
+
+        patients = self.cursor.fetchall()
+        
+        return patients
 
     # Update patient record
     def update_patient(self, patient_id, full_name, gender, birthdate, telephone, home_address, remark, allergic_history, past_medical_history):
