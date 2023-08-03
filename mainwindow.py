@@ -30,14 +30,14 @@ class MainWindow(QMainWindow):
         self.ui.actionExit.triggered.connect(self.quitProgram)
 
         # Database
-        database = Database("clinic.db")
+        self.database = Database("clinic.db")
 
     def showSearchWindow(self):
-        search_window = SearchWindow(self)
+        search_window = SearchWindow(self, self.database)
         search_window.show()
 
     def showAddNewPatientWindow(self):
-        add_new_patient_window = AddNewPatientWindow(self)
+        add_new_patient_window = AddNewPatientWindow(self, self.database)
         add_new_patient_window.show()
 
     def quitProgram(self):
