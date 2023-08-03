@@ -15,7 +15,7 @@
   </property>
   <property name="windowIcon">
    <iconset theme="camera-web">
-    <normaloff>../../../../../.designer/backup</normaloff>../../../../../.designer/backup</iconset>
+    <normaloff>.</normaloff>.</iconset>
   </property>
   <widget class="QScrollArea" name="scrollArea">
    <property name="geometry">
@@ -293,10 +293,10 @@
        </rect>
       </property>
       <property name="text">
-       <string>Alergic History: </string>
+       <string>Allergic History: </string>
       </property>
      </widget>
-     <widget class="QTextEdit" name="alergic_history_textEdit">
+     <widget class="QTextEdit" name="allergic_history_textEdit">
       <property name="geometry">
        <rect>
         <x>120</x>
