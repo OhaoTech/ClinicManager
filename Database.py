@@ -14,29 +14,23 @@ class Database:
                             gender TEXT NOT NULL,
                             birthdate TEXT NOT NULL,
                             telephone TEXT NOT NULL CHECK(telephone GLOB '[0-9]*'),
-                            home_address TEXT NOT NULL,
+                            home_address TEXT,
                             remark TEXT,
                             allergic_history TEXT,
-                            past_medical_history TEXT
-                            )''')
+                            past_medical_history TEXT)''')
 
         self.cursor.execute('''CREATE TABLE IF NOT EXISTS visits (
                         id INTEGER PRIMARY KEY,
-                        patient_id INTEGER,
-                        visit_date TEXT,
+                        patient_id INTEGER NOT NULL,
+                        visit_date TEXT NOT NULL,
                         chief_complaint TEXT,
                         present_illness TEXT,
                         FOREIGN KEY (patient_id) REFERENCES patients(id))''')
 
-        self.cursor.execute('''CREATE TABLE IF NOT EXISTS examinations (
-                        id INTEGER PRIMARY KEY,
-                        visit_id INTEGER,
+        self.cursor.execute('''CREATE TABLE IF NOT EXISTS logs (
+                        id INTEGER PRIMARY KEY ,
+                        visit_id INTEGER NOT NULL,
                         examination_details TEXT,
-                        FOREIGN KEY (visit_id) REFERENCES visits(id))''')
-
-        self.cursor.execute('''CREATE TABLE IF NOT EXISTS prescriptions (
-                        id INTEGER PRIMARY KEY,
-                        visit_id INTEGER,
                         diagnosis TEXT,
                         remedy TEXT,
                         FOREIGN KEY (visit_id) REFERENCES visits(id))''')
@@ -47,6 +41,7 @@ class Database:
         self.cursor.execute("INSERT INTO patients (full_name, gender, birthdate, telephone, home_address, remark, allergic_history, past_medical_history) VALUES (?, ?, ?, ?, ?, ?, ?, ?)",
                    (full_name, gender, birthdate, telephone, home_address, remark, allergic_history, past_medical_history))
         self.conn.commit()
+        return self.cursor.lastrowid #patient id
 
     # Read patient records
     def get_all_patients(self):
@@ -68,33 +63,43 @@ class Database:
     def insert_visit(self, patient_id, visit_date, chief_complaint, present_illness):
         self.cursor.execute("INSERT INTO visits (patient_id, visit_date, chief_complaint, present_illness) VALUES (?, ?, ?, ?)", (patient_id, visit_date, chief_complaint, present_illness))
         self.conn.commit()
+        return self.cursor.lastrowid #visit id
 
     # Read visit records for a patient
     def get_visits_by_patient(self, patient_id):
         self.cursor.execute("SELECT * FROM visits WHERE patient_id=?", (patient_id,))
         return self.cursor.fetchall()
-
-    # Create examination record
-    def insert_examination(self, visit_id, examination_details):
-        self.cursor.execute("INSERT INTO examinations (visit_id, examination_details) VALUES (?, ?)", (visit_id, examination_details))
+    
+    def delete_visit_by_patient(self, patient_id):
+        self.cursor.execute("DELETE FROM visits WHERE patient_id=?", (patient_id,))
         self.conn.commit()
 
-    # Read examination records for a visit
-    def get_examinations_by_visit(self, visit_id):
-        self.cursor.execute("SELECT * FROM examinations WHERE visit_id=?", (visit_id,))
-        return self.cursor.fetchall()
-
-    # Create prescription record
-    def insert_prescription(self, visit_id, diagnosis, remedy):
-        self.cursor.execute("INSERT INTO prescriptions (visit_id, diagnosis, remedy) VALUES (?, ?, ?)", (visit_id, diagnosis, remedy))
+    def delete_visit_by_date(self, visit_date):
+        self.cursor.execute("DELETE FROM visits WHERE visit_date=?", (visit_date,))
+        self.conn.commit()
+        
+    
+    # Create log record
+    def insert_log(self, visit_id, examination_details, diagnosis, remedy):
+        self.cursor.execute("INSERT INTO logs (visit_id, examination_details, diagnosis, remedy) VALUES (?, ?, ?, ?)",
+                       (visit_id, examination_details, diagnosis, remedy))
         self.conn.commit()
 
-    # Read prescription records for a visit
-    def get_prescriptions_by_visit(self, visit_id):
-        self.cursor.execute("SELECT * FROM prescriptions WHERE visit_id=?", (visit_id,))
+    # Read log records for a visit
+    def get_logs_by_visit(self, visit_id):
+        self.cursor.execute("SELECT * FROM logs WHERE visit_id=?", (visit_id,))
         return self.cursor.fetchall()
 
+    # Update log record
+    def update_log(self, log_id, examination_details, diagnosis, remedy):
+        self.cursor.execute("UPDATE logs SET examination_details=?, diagnosis=?, remedy=? WHERE id=?",
+                       (examination_details, diagnosis, remedy, log_id))
+        self.conn.commit()
 
+    # Delete log record
+    def delete_log(self, log_id):
+        self.cursor.execute("DELETE FROM logs WHERE id=?", (log_id,))
+        self.conn.commit()
 
     def __del__(self):
         self.cursor.close()
