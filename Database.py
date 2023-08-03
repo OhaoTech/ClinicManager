@@ -10,11 +10,11 @@ class Database:
     def create_table(self):
         self.cursor.execute('''CREATE TABLE IF NOT EXISTS patients (
                             id INTEGER PRIMARY KEY,
-                            full_name TEXT,
-                            gender TEXT,
-                            birthdate TEXT,
-                            telephone TEXT,
-                            home_address TEXT,
+                            full_name TEXT NOT NULL,
+                            gender TEXT NOT NULL,
+                            birthdate TEXT NOT NULL,
+                            telephone TEXT NOT NULL CHECK(telephone GLOB '[0-9]*'),
+                            home_address TEXT NOT NULL,
                             remark TEXT,
                             allergic_history TEXT,
                             past_medical_history TEXT
