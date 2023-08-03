@@ -30,7 +30,7 @@ class Ui_AddNewPatientWindow(object):
         if QIcon.hasThemeIcon(iconThemeName):
             icon = QIcon.fromTheme(iconThemeName)
         else:
-            icon.addFile(u"../../../../../.designer/backup", QSize(), QIcon.Normal, QIcon.Off)
+            icon.addFile(u".", QSize(), QIcon.Normal, QIcon.Off)
 
         AddNewPatientWindow.setWindowIcon(icon)
         self.scrollArea = QScrollArea(AddNewPatientWindow)
@@ -106,10 +106,10 @@ class Ui_AddNewPatientWindow(object):
         self.allergic_history_label = QLabel(self.groupBox_2)
         self.allergic_history_label.setObjectName(u"allergic_history_label")
         self.allergic_history_label.setGeometry(QRect(10, 60, 111, 21))
-        self.alergic_history_textEdit = QTextEdit(self.groupBox_2)
-        self.alergic_history_textEdit.setObjectName(u"alergic_history_textEdit")
-        self.alergic_history_textEdit.setGeometry(QRect(120, 60, 651, 61))
-        self.alergic_history_textEdit.setStyleSheet(u"background-color: rgb(192, 191, 188);")
+        self.allergic_history_textEdit = QTextEdit(self.groupBox_2)
+        self.allergic_history_textEdit.setObjectName(u"allergic_history_textEdit")
+        self.allergic_history_textEdit.setGeometry(QRect(120, 60, 651, 61))
+        self.allergic_history_textEdit.setStyleSheet(u"background-color: rgb(192, 191, 188);")
         self.past_medical_history_label = QLabel(self.groupBox_2)
         self.past_medical_history_label.setObjectName(u"past_medical_history_label")
         self.past_medical_history_label.setGeometry(QRect(0, 140, 121, 51))
@@ -206,7 +206,7 @@ class Ui_AddNewPatientWindow(object):
         self.label.setText(QCoreApplication.translate("AddNewPatientWindow", u"<html><head/><body><p><span style=\" font-size:18pt; font-weight:700;\">Patient Info</span></p></body></html>", None))
         self.groupBox_2.setTitle("")
         self.medical_history_label.setText(QCoreApplication.translate("AddNewPatientWindow", u"<html><head/><body><p><span style=\" font-size:18pt; font-weight:700;\">Medical History</span></p></body></html>", None))
-        self.allergic_history_label.setText(QCoreApplication.translate("AddNewPatientWindow", u"Alergic History: ", None))
+        self.allergic_history_label.setText(QCoreApplication.translate("AddNewPatientWindow", u"Allergic History: ", None))
         self.past_medical_history_label.setText(QCoreApplication.translate("AddNewPatientWindow", u"<html><head/><body><p align=\"center\">Past Medical </p><p align=\"center\">History:</p></body></html>", None))
         self.groupBox_3.setTitle("")
         self.outpatient_records_label.setText(QCoreApplication.translate("AddNewPatientWindow", u"<html><head/><body><p><span style=\" font-size:18pt; font-weight:700;\">Outpatient Records</span></p></body></html>", None))
