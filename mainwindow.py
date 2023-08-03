@@ -6,6 +6,8 @@ from PySide6.QtWidgets import QApplication, QMainWindow
 
 from SearchWindow import SearchWindow
 from AddNewPatientWindow import AddNewPatientWindow
+
+from Database import Database
 # Important:
 # You need to run the following command to generate the ui_form.py file
 #     pyside6-uic form.ui -o ui_form.py, or
@@ -26,6 +28,9 @@ class MainWindow(QMainWindow):
 
         # Menubar Actions
         self.ui.actionExit.triggered.connect(self.quitProgram)
+
+        # Database
+        database = Database("clinic.db")
 
     def showSearchWindow(self):
         search_window = SearchWindow(self)

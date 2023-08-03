@@ -9,12 +9,21 @@ class AddNewPatientWindow(QtWidgets.QMainWindow):
         super().__init__(parent)
         self.ui = Ui_AddNewPatientWindow()
         self.ui.setupUi(self)
+        
+        self.ui.cancel_pushButton.clicked.connect(self.closeWindow)
+        
+    def closeWindow(self):
+        self.close()
+        
+        
+        
+    
+        
 
 
 
 
-    def initStyle(self):
-        pass
+
 
 
 
