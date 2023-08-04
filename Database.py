@@ -59,7 +59,7 @@ class Database:
         if name != "":
             conditions.append("full_name like '" + name + "%'")
         if tel != "":
-            conditions.append("telephone = " + tel + "'")
+            conditions.append("telephone = '" + tel + "'")
         if gender != "":
             conditions.append("gender = '" + gender + "'")
 
@@ -70,10 +70,6 @@ class Database:
                 else:
                     query += " AND " + conditions[i]
 
-        #print conditions
-        #todo: bug here on conditional search
-
-        print(query)
         if conditions:
             self.cursor.execute(query)
         else:
