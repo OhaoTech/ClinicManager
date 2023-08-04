@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>806</width>
-    <height>929</height>
+    <height>928</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -146,38 +146,15 @@
     </item>
    </widget>
   </widget>
-  <widget class="QScrollArea" name="scrollArea">
+  <widget class="QTableWidget" name="patient_tableWidget">
    <property name="geometry">
     <rect>
      <x>10</x>
-     <y>110</y>
+     <y>180</y>
      <width>781</width>
-     <height>771</height>
+     <height>741</height>
     </rect>
    </property>
-   <property name="widgetResizable">
-    <bool>true</bool>
-   </property>
-   <widget class="QWidget" name="scrollAreaWidgetContents">
-    <property name="geometry">
-     <rect>
-      <x>0</x>
-      <y>0</y>
-      <width>777</width>
-      <height>767</height>
-     </rect>
-    </property>
-    <widget class="QTableWidget" name="patient_tableWidget">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>10</y>
-       <width>771</width>
-       <height>741</height>
-      </rect>
-     </property>
-    </widget>
-   </widget>
   </widget>
  </widget>
  <resources/>

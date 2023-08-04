@@ -1,13 +1,15 @@
 # This Python file uses the following encoding: utf-8
 from PySide6 import QtCore
-from PySide6.QtCore import Qt
+from PySide6.QtCore import Qt, QRect
 from PySide6 import QtWidgets
-from PySide6.QtWidgets import QTableWidgetItem
+from PySide6.QtGui import QResizeEvent
+from PySide6.QtWidgets import QTableWidgetItem, QTableWidget
 
 from ui_searchWindow import Ui_SearchWindow
 from Database import Database
+import numpy as np
 class SearchWindow(QtWidgets.QMainWindow):
-    def __init__(self, parent, database = Database | None):
+    def __init__(self, parent, database: Database):
         super().__init__(parent)
         self.ui = Ui_SearchWindow()
         self.ui.setupUi(self)
@@ -15,17 +17,38 @@ class SearchWindow(QtWidgets.QMainWindow):
 
         self.ui.search_pushButton.clicked.connect(self.search_patients)
         self.table = self.ui.patient_tableWidget
-        
-        # table settings
-        self.table.setColumnCount(9)#todo: only patients info table
-            
+
         # set header labels
         labels = self.database.get_patients_schema()
+        self.table.setColumnCount(np.shape(labels)[0])
         for i in range(len(labels)):
             self.table.setHorizontalHeaderItem(i, QTableWidgetItem(labels[i][1]))
+
+        layout = QtWidgets.QVBoxLayout()
+        layout.addWidget(self.ui.personal_info_label)
+        layout.addWidget(self.ui.gender_label)
+        layout.addWidget(self.ui.gender_comboBox)
+        layout.addWidget(self.ui.tel_label)
+        layout.addWidget(self.ui.tel_plainTextEdit)
+        layout.addWidget(self.ui.search_pushButton)
+        layout.addWidget(self.table)
+        
+        self.setLayout(layout)
         
 
+        
 
+    def resizeEvent(self, event: QResizeEvent) -> None:
+        super().resizeEvent(event)
+        #resize the table widget as the cursor dragging the window
+        XY = self.table.geometry().topLeft()
+        
+        width = self.geometry().width() - 30
+        height = self.geometry().height() - 20
+        self.table.setGeometry(QRect(XY.x(), XY.y(), width, height))
+
+        
+        
 
     def search_patients(self):
         name = self.ui.name_plainTextEdit.toPlainText()
@@ -55,7 +78,7 @@ class SearchWindow(QtWidgets.QMainWindow):
         
 
         vertical_header = self.table.verticalHeader()
-        vertical_header.setSectionResizeMode(QtWidgets.QHeaderView.Interactive | QtWidgets.QHeaderView.ResizeToContents)
+        vertical_header.setSectionResizeMode(QtWidgets.QHeaderView.Interactive)
         vertical_header.setSectionsMovable(True)
         vertical_header.setDragEnabled(True)
         
