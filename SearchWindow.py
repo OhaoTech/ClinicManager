@@ -6,6 +6,7 @@ from PySide6.QtGui import QResizeEvent
 from PySide6.QtWidgets import QTableWidgetItem, QTableWidget
 
 from ui_searchWindow import Ui_SearchWindow
+from PatientInfoWindow import PatientInfoWindow
 from Database import Database
 import numpy as np
 class SearchWindow(QtWidgets.QMainWindow):
@@ -23,7 +24,29 @@ class SearchWindow(QtWidgets.QMainWindow):
         self.table.setColumnCount(np.shape(labels)[0])
         for i in range(len(labels)):
             self.table.setHorizontalHeaderItem(i, QTableWidgetItem(labels[i][1]))
+        # Allow manual resizing of the header sections
+        horizontal_header = self.table.horizontalHeader()
+        horizontal_header.setSectionResizeMode(QtWidgets.QHeaderView.Interactive)
+        horizontal_header.setSectionsMovable(True)
+        horizontal_header.setDragEnabled(True)
+        
+        vertical_header = self.table.verticalHeader()
+        vertical_header.setSectionResizeMode(QtWidgets.QHeaderView.Interactive)
+        vertical_header.setSectionsMovable(True)
+        vertical_header.setDragEnabled(True)
+        
+        
+        self.table.setEditTriggers(QtWidgets.QAbstractItemView.NoEditTriggers)
+        self.table.setSelectionBehavior(QtWidgets.QAbstractItemView.SelectRows)
+        self.table.setSelectionMode(QtWidgets.QAbstractItemView.SingleSelection)
+        self.table.setShowGrid(False)
+        self.table.setFocusPolicy(QtCore.Qt.NoFocus)
+        self.table.setAlternatingRowColors(True)
+        self.table.setSortingEnabled(True)
+        self.table.horizontalHeader().setSortIndicatorShown(True)
 
+
+        self.table.itemDoubleClicked.connect(self.on_item_doule_clicked)
         layout = QtWidgets.QVBoxLayout()
         layout.addWidget(self.ui.personal_info_label)
         layout.addWidget(self.ui.gender_label)
@@ -71,31 +94,16 @@ class SearchWindow(QtWidgets.QMainWindow):
         self.table.resizeColumnsToContents()
         self.table.resizeRowsToContents()
         
-        
-        # Allow manual resizing of the header sections
-        horizontal_header = self.table.horizontalHeader()
-        horizontal_header.setSectionResizeMode(QtWidgets.QHeaderView.Interactive)
-        horizontal_header.setSectionsMovable(True)
-        horizontal_header.setDragEnabled(True)
-        
+    
 
-        vertical_header = self.table.verticalHeader()
-        vertical_header.setSectionResizeMode(QtWidgets.QHeaderView.Interactive)
-        vertical_header.setSectionsMovable(True)
-        vertical_header.setDragEnabled(True)
+    def on_item_doule_clicked(self, item):
+        row = item.row()
+        patient_id_item = self.table.item(row, 0)
+        patient_id = int(patient_id_item.text())
+        self.showPatientInfoWindow(patient_id)
         
-        
-        self.table.setEditTriggers(QtWidgets.QAbstractItemView.NoEditTriggers)
-        self.table.setSelectionBehavior(QtWidgets.QAbstractItemView.SelectRows)
-        self.table.setSelectionMode(QtWidgets.QAbstractItemView.SingleSelection)
-        self.table.setShowGrid(False)
-        self.table.setFocusPolicy(QtCore.Qt.NoFocus)
-        self.table.setAlternatingRowColors(True)
-        self.table.setSortingEnabled(True)
-        self.table.horizontalHeader().setSortIndicatorShown(True)
-        
-
-        
-     
+    def showPatientInfoWindow(self, patient_id):
+        patient_info_window = PatientInfoWindow(self, self.database, patient_id)
+        patient_info_window.show()
             
             
