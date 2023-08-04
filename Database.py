@@ -46,6 +46,10 @@ class Database:
     def get_patients_schema(self):
         self.cursor.execute("PRAGMA table_info(patients)")
         return self.cursor.fetchall()
+    
+    def get_one_patient_by_id(self, patient_id):
+        self.cursor.execute("SELECT * FROM patients WHERE id=?", (patient_id,))
+        return self.cursor.fetchone()    
 
     # Read patient records
     def get_all_patients(self):
@@ -132,6 +136,20 @@ class Database:
     def delete_log(self, log_id):
         self.cursor.execute("DELETE FROM logs WHERE id=?", (log_id,))
         self.conn.commit()
+        
+    def get_all_patient_info_by_id(self, patient_id):
+        # Query to fetch patient information by patient_id
+        query = '''SELECT patients.full_name, patients.gender, patients.birthdate, patients.telephone,
+                           visits.visit_date, visits.chief_complaint, visits.present_illness,
+                           logs.examination_details, logs.diagnosis, logs.remedy
+                    FROM patients
+                    LEFT JOIN visits ON patients.id = visits.patient_id
+                    LEFT JOIN logs ON visits.id = logs.visit_id
+                    WHERE patients.id = ?'''
+
+        self.cursor.execute(query, (patient_id,))
+        patient_info = self.cursor.fetchone()
+        return patient_info
 
     def __del__(self):
         self.cursor.close()
