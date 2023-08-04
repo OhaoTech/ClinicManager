@@ -56,12 +56,12 @@ class Database:
         query = "SELECT * FROM patients WHERE"
         conditions = []
 
-        if name:
-            conditions.append("full_name = ?")
-        if tel:
-            conditions.append("telephone = ?")
-        if gender:
-            conditions.append("gender = ?")
+        if name != "":
+            conditions.append("full_name like '" + name + "%'")
+        if tel != "":
+            conditions.append("telephone = " + tel + "'")
+        if gender != "":
+            conditions.append("gender = '" + gender + "'")
 
         if conditions:
             for i in range(len(conditions)):
@@ -73,21 +73,9 @@ class Database:
         #print conditions
         #todo: bug here on conditional search
 
+        print(query)
         if conditions:
-            if name and tel and gender:
-                self.cursor.execute(query, (name, tel, gender))
-            elif name and tel:
-                self.cursor.execute(query, (name, tel))
-            elif name and gender:
-                self.cursor.execute(query, (name, gender))
-            elif tel and gender:
-                self.cursor.execute(query, (tel, gender))
-            elif name:
-                self.cursor.execute(query, name)
-            elif tel:
-                self.cursor.execute(query, tel)
-            elif gender:
-                self.cursor.execute(query, (gender))
+            self.cursor.execute(query)
         else:
             # If no search criteria provided, fetch all patients
             self.cursor.execute("SELECT * FROM patients")
