@@ -16,14 +16,14 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
 from PySide6.QtWidgets import (QApplication, QComboBox, QGroupBox, QHeaderView,
-    QLabel, QPlainTextEdit, QPushButton, QScrollArea,
-    QSizePolicy, QTableWidget, QTableWidgetItem, QWidget)
+    QLabel, QPlainTextEdit, QPushButton, QSizePolicy,
+    QTableWidget, QTableWidgetItem, QWidget)
 
 class Ui_SearchWindow(object):
     def setupUi(self, SearchWindow):
         if not SearchWindow.objectName():
             SearchWindow.setObjectName(u"SearchWindow")
-        SearchWindow.resize(806, 929)
+        SearchWindow.resize(806, 928)
         icon = QIcon()
         iconThemeName = u"phone"
         if QIcon.hasThemeIcon(iconThemeName):
@@ -64,17 +64,9 @@ class Ui_SearchWindow(object):
         self.gender_comboBox.addItem("")
         self.gender_comboBox.setObjectName(u"gender_comboBox")
         self.gender_comboBox.setGeometry(QRect(270, 40, 111, 36))
-        self.scrollArea = QScrollArea(SearchWindow)
-        self.scrollArea.setObjectName(u"scrollArea")
-        self.scrollArea.setGeometry(QRect(10, 110, 781, 771))
-        self.scrollArea.setWidgetResizable(True)
-        self.scrollAreaWidgetContents = QWidget()
-        self.scrollAreaWidgetContents.setObjectName(u"scrollAreaWidgetContents")
-        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 777, 767))
-        self.patient_tableWidget = QTableWidget(self.scrollAreaWidgetContents)
+        self.patient_tableWidget = QTableWidget(SearchWindow)
         self.patient_tableWidget.setObjectName(u"patient_tableWidget")
-        self.patient_tableWidget.setGeometry(QRect(10, 10, 771, 741))
-        self.scrollArea.setWidget(self.scrollAreaWidgetContents)
+        self.patient_tableWidget.setGeometry(QRect(10, 180, 781, 741))
 
         self.retranslateUi(SearchWindow)
 
