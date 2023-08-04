@@ -83,9 +83,9 @@ class Database:
             elif tel and gender:
                 self.cursor.execute(query, (tel, gender))
             elif name:
-                self.cursor.execute(query, (name))
+                self.cursor.execute(query, name)
             elif tel:
-                self.cursor.execute(query, (tel))
+                self.cursor.execute(query, tel)
             elif gender:
                 self.cursor.execute(query, (gender))
         else:

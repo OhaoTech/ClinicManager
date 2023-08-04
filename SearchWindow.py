@@ -44,8 +44,10 @@ class SearchWindow(QtWidgets.QMainWindow):
         XY = self.table.geometry().topLeft()
         
         width = self.geometry().width() - 30
-        height = self.geometry().height() - 20
+        height = self.geometry().height() - 80
         self.table.setGeometry(QRect(XY.x(), XY.y(), width, height))
+        self.table.resizeColumnsToContents()
+        self.table.resizeRowsToContents()
 
         
         
