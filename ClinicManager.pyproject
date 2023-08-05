@@ -6,6 +6,8 @@
         "SearchWindow.py",
         "AddNewPatientWindow.py",
         "addNewPatientWindow.ui",
-        "Database.py"
+        "Database.py",
+        "PatientInfoWindow.py",
+        "PatientInfoWindow.ui"
     ]
 }
