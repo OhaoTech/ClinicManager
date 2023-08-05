@@ -1,8 +1,9 @@
 # This Python file uses the following encoding: utf-8
 from PySide6.QtCore import QDateTime
 from PySide6 import QtWidgets
+from PySide6.QtCore import Qt
 from PySide6.QtWidgets import QWidget, QLabel, QTextEdit, QMessageBox
-from PySide6.QtGui import QPalette, QColor
+from PySide6.QtGui import QPalette, QColor, QKeySequence, QShortcut
 
 
 from ui_addNewPatientWindow import Ui_AddNewPatientWindow
@@ -37,6 +38,9 @@ class AddNewPatientWindow(QtWidgets.QMainWindow):
         
         #current date time  
         self.ui.add_dateTimeEdit.setDateTime(QDateTime.currentDateTime())
+        
+        shortcut = QShortcut(QKeySequence(Qt.CTRL | Qt.Key_W), self)
+        shortcut.activated.connect(self.close)
         
     def initStyle(self):
         self.ui.remark_textEdit.setPlaceholderText("None")
@@ -103,7 +107,7 @@ class AddNewPatientWindow(QtWidgets.QMainWindow):
         #patient table
         name = self.ui.name_textEdit.toPlainText()
         gender = self.ui.gender_comboBox.currentText()
-        birthdate = self.ui.birth_dateEdit.date().toString()
+        birthdate = self.ui.birth_dateEdit.date().toString('yyyy-MM-dd')
         tel = self.ui.tel_textEdit.toPlainText()
         address = self.ui.address_textEdit.toPlainText()
         remark = self.ui.remark_textEdit.toPlainText()
