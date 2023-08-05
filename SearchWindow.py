@@ -2,7 +2,7 @@
 from PySide6 import QtCore
 from PySide6.QtCore import Qt, QRect
 from PySide6 import QtWidgets
-from PySide6.QtGui import QResizeEvent
+from PySide6.QtGui import QResizeEvent, QShortcut, QKeySequence
 from PySide6.QtWidgets import QTableWidgetItem, QTableWidget
 
 from ui_searchWindow import Ui_SearchWindow
@@ -57,6 +57,11 @@ class SearchWindow(QtWidgets.QMainWindow):
         layout.addWidget(self.table)
         
         self.setLayout(layout)
+    
+        shortcut = QShortcut(QKeySequence(Qt.CTRL | Qt.Key_W), self)
+        shortcut.activated.connect(self.close)
+        
+        self.search_patients()
         
 
         
