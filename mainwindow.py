@@ -3,6 +3,8 @@ import sys
 
 from PyQt5 import QtWidgets
 from PySide6.QtWidgets import QApplication, QMainWindow
+from PySide6.QtGui import QShortcut, QKeySequence
+from PySide6.QtCore import Qt 
 
 from SearchWindow import SearchWindow
 from AddNewPatientWindow import AddNewPatientWindow
@@ -15,6 +17,7 @@ from Database import Database
 from ui_form import Ui_MainWindow
 from ui_searchWindow import Ui_SearchWindow
 from ui_addNewPatientWindow import Ui_AddNewPatientWindow
+
 
 class MainWindow(QMainWindow):
     def __init__(self, parent=None):
@@ -31,6 +34,9 @@ class MainWindow(QMainWindow):
 
         # Database
         self.database = Database("clinic.db")
+        
+        shortcut = QShortcut(QKeySequence(Qt.CTRL | Qt.Key_W), self)
+        shortcut.activated.connect(self.quitProgram)
 
     def showSearchWindow(self):
         search_window = SearchWindow(self, self.database)
