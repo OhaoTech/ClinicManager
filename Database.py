@@ -86,9 +86,14 @@ class Database:
 
     # Update patient record
     def update_patient(self, patient_id, full_name, gender, birthdate, telephone, home_address, remark, allergic_history, past_medical_history):
-        self.cursor.execute("UPDATE patients SET full_name=?, gender=?, birthdate=?, telephone=?, home_address=?, remark=?, allergic_history=?, past_medical_history=?, WHERE id=?",
-                   (full_name, gender, birthdate, telephone, home_address, remark, allergic_history, past_medical_history, patient_id))
-        self.conn.commit()
+        try:
+            self.cursor.execute("UPDATE patients SET full_name=?, gender=?, birthdate=?, telephone=?, home_address=?, remark=?, allergic_history=?, past_medical_history=? WHERE id=?",
+                       (full_name, gender, birthdate, telephone, home_address, remark, allergic_history, past_medical_history, patient_id))
+            self.conn.commit()
+        except sqlite3.Error as e:
+            print("Error updating patient:", e)
+            self.conn.rollback()  # Rollback the changes in case of an error
+            raise 
 
     # Delete patient record
     def delete_patient(self, patient_id):
