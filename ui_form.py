@@ -25,6 +25,8 @@ class Ui_MainWindow(object):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
         MainWindow.resize(614, 903)
+        icon = QIcon(QIcon.fromTheme(u"start-here"))
+        MainWindow.setWindowIcon(icon)
         self.actionImport = QAction(MainWindow)
         self.actionImport.setObjectName(u"actionImport")
         self.actionExport = QAction(MainWindow)
@@ -68,7 +70,7 @@ class Ui_MainWindow(object):
     # setupUi
 
     def retranslateUi(self, MainWindow):
-        MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"MainWindow", None))
+        MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"Clinic Manager", None))
         self.actionImport.setText(QCoreApplication.translate("MainWindow", u"Import...", None))
         self.actionExport.setText(QCoreApplication.translate("MainWindow", u"Export...", None))
         self.actionExit.setText(QCoreApplication.translate("MainWindow", u"Exit", None))

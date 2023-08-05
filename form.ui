@@ -11,7 +11,10 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>Clinic Manager</string>
+  </property>
+  <property name="windowIcon">
+   <iconset theme="start-here"/>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QLabel" name="logo_label">
