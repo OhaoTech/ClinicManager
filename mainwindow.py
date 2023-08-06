@@ -30,8 +30,6 @@ class MainWindow(QMainWindow):
         self.ui.searchButton.clicked.connect(self.showSearchWindow)
         self.ui.addNewPatientButton.clicked.connect(self.showAddNewPatientWindow)
         self.ui.exportAllPatientsButton.clicked.connect(self.export_all_patients)
-        # Menubar Actions
-        self.ui.actionExit.triggered.connect(self.quitProgram)
 
         # Database
         self.database = Database("clinic.db")

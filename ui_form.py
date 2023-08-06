@@ -16,9 +16,8 @@ from PySide6.QtGui import (QAction, QBrush, QColor, QConicalGradient,
     QIcon, QImage, QKeySequence, QLinearGradient,
     QPainter, QPalette, QPixmap, QRadialGradient,
     QTransform)
-from PySide6.QtWidgets import (QApplication, QLabel, QMainWindow, QMenu,
-    QMenuBar, QPushButton, QSizePolicy, QStatusBar,
-    QWidget)
+from PySide6.QtWidgets import (QApplication, QLabel, QMainWindow, QPushButton,
+    QSizePolicy, QWidget)
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -59,20 +58,6 @@ class Ui_MainWindow(object):
         self.exportAllPatientsButton.setGeometry(QRect(60, 530, 471, 201))
         self.exportAllPatientsButton.setFont(font)
         MainWindow.setCentralWidget(self.centralwidget)
-        self.menubar = QMenuBar(MainWindow)
-        self.menubar.setObjectName(u"menubar")
-        self.menubar.setGeometry(QRect(0, 0, 614, 25))
-        self.menuFiles = QMenu(self.menubar)
-        self.menuFiles.setObjectName(u"menuFiles")
-        MainWindow.setMenuBar(self.menubar)
-        self.statusbar = QStatusBar(MainWindow)
-        self.statusbar.setObjectName(u"statusbar")
-        MainWindow.setStatusBar(self.statusbar)
-
-        self.menubar.addAction(self.menuFiles.menuAction())
-        self.menuFiles.addAction(self.actionImport)
-        self.menuFiles.addAction(self.actionExport)
-        self.menuFiles.addAction(self.actionExit)
 
         self.retranslateUi(MainWindow)
 
@@ -88,6 +73,5 @@ class Ui_MainWindow(object):
         self.searchButton.setText(QCoreApplication.translate("MainWindow", u"Search", None))
         self.addNewPatientButton.setText(QCoreApplication.translate("MainWindow", u"Add New Patient", None))
         self.exportAllPatientsButton.setText(QCoreApplication.translate("MainWindow", u"Export All Patients", None))
-        self.menuFiles.setTitle(QCoreApplication.translate("MainWindow", u"Files", None))
     # retranslateUi
 
