@@ -3,3 +3,7 @@ __pycache__
 .*
 *.db
 *.autosave
+*.xlsx
+build
+dist
+*.spec
