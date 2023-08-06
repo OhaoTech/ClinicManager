@@ -37,6 +37,7 @@ class PatientInfoWindow(QtWidgets.QMainWindow):
 		self.timer = QTimer(self)
 		self.timer.timeout.connect(self.update_date_time)
 		self.timer.start(1000)
+		self.ui.realtime_dateTimeEdit.setDisabled(True)
    
 		#push buttons
 		self.ui.new_pushButton.clicked.connect(self.new_medical_record)
@@ -162,7 +163,7 @@ class PatientInfoWindow(QtWidgets.QMainWindow):
 		date_items = []
 		for data in visits_data:
 			item = QTreeWidgetItem()
-			item.setText(0, str(data[1]))# patient_id
+			item.setText(0, str(data[0]))# visit_id
 			item.setText(1, data[2])# visit date
 			item.setText(2, data[3])# chief complaint
 			item.setText(3, data[4])# past medical history
