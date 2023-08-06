@@ -98,13 +98,14 @@ class PatientInfoWindow(QtWidgets.QMainWindow):
 		visit_id = self.database.insert_visit(self.patient_id, current_real_time, chief_complaint, present_illness)
   
 		self.database.insert_log(visit_id, examination, diagnosis, remedy)
+		self.show_visits() 
   
 
 
 
 
 	def show_confirmation_dialog(self) -> bool:
-		formatted_date_time = self.ui.add_dateTimeEdit.dateTime().toString("yyyy-MM-dd HH:mm:ss")
+		formatted_date_time = self.ui.realtime_dateTimeEdit.dateTime().toString("yyyy-MM-dd HH:mm:ss")
 		confirm_dialog = QMessageBox(self)
 		confirm_dialog.setIcon(QMessageBox.Warning)
 		confirm_dialog.setWindowTitle('Confirmation')
