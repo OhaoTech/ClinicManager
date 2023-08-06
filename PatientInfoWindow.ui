@@ -518,7 +518,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
      <rect>
       <x>360</x>
       <y>650</y>
-      <width>131</width>
+      <width>151</width>
       <height>36</height>
      </rect>
     </property>

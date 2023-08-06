@@ -156,7 +156,7 @@ class Ui_PatientInfoWIndow(object):
         self.edit_record_checkBox.setGeometry(QRect(820, 250, 111, 24))
         self.delete_all_records_pushButton = QPushButton(self.down_groupBox)
         self.delete_all_records_pushButton.setObjectName(u"delete_all_records_pushButton")
-        self.delete_all_records_pushButton.setGeometry(QRect(360, 650, 131, 36))
+        self.delete_all_records_pushButton.setGeometry(QRect(360, 650, 151, 36))
         self.export_button = QPushButton(self.down_groupBox)
         self.export_button.setObjectName(u"export_button")
         self.export_button.setGeometry(QRect(250, 650, 103, 36))

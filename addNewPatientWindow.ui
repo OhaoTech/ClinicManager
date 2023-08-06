@@ -23,7 +23,7 @@
      <x>-10</x>
      <y>0</y>
      <width>901</width>
-     <height>861</height>
+     <height>871</height>
     </rect>
    </property>
    <property name="widgetResizable">
@@ -35,7 +35,7 @@
       <x>0</x>
       <y>0</y>
       <width>897</width>
-      <height>857</height>
+      <height>867</height>
      </rect>
     </property>
     <widget class="QGroupBox" name="groupBox">
@@ -567,7 +567,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
         <x>130</x>
         <y>320</y>
         <width>651</width>
-        <height>81</height>
+        <height>61</height>
        </rect>
       </property>
       <property name="styleSheet">

@@ -23,7 +23,7 @@ class Ui_SearchWindow(object):
     def setupUi(self, SearchWindow):
         if not SearchWindow.objectName():
             SearchWindow.setObjectName(u"SearchWindow")
-        SearchWindow.resize(806, 928)
+        SearchWindow.resize(1023, 928)
         icon = QIcon()
         iconThemeName = u"phone"
         if QIcon.hasThemeIcon(iconThemeName):
@@ -34,10 +34,10 @@ class Ui_SearchWindow(object):
         SearchWindow.setWindowIcon(icon)
         self.groupBox = QGroupBox(SearchWindow)
         self.groupBox.setObjectName(u"groupBox")
-        self.groupBox.setGeometry(QRect(10, 10, 761, 161))
+        self.groupBox.setGeometry(QRect(10, 10, 971, 161))
         self.search_pushButton = QPushButton(self.groupBox)
         self.search_pushButton.setObjectName(u"search_pushButton")
-        self.search_pushButton.setGeometry(QRect(590, 110, 91, 36))
+        self.search_pushButton.setGeometry(QRect(700, 40, 91, 36))
         self.tel_plainTextEdit = QPlainTextEdit(self.groupBox)
         self.tel_plainTextEdit.setObjectName(u"tel_plainTextEdit")
         self.tel_plainTextEdit.setGeometry(QRect(430, 40, 251, 41))
@@ -66,10 +66,10 @@ class Ui_SearchWindow(object):
         self.gender_comboBox.setGeometry(QRect(270, 40, 111, 36))
         self.delete_selected_pushButton = QPushButton(self.groupBox)
         self.delete_selected_pushButton.setObjectName(u"delete_selected_pushButton")
-        self.delete_selected_pushButton.setGeometry(QRect(442, 110, 131, 36))
+        self.delete_selected_pushButton.setGeometry(QRect(810, 40, 131, 36))
         self.patient_tableWidget = QTableWidget(SearchWindow)
         self.patient_tableWidget.setObjectName(u"patient_tableWidget")
-        self.patient_tableWidget.setGeometry(QRect(10, 180, 781, 741))
+        self.patient_tableWidget.setGeometry(QRect(10, 180, 991, 731))
 
         self.retranslateUi(SearchWindow)
 
