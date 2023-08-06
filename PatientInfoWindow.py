@@ -42,7 +42,7 @@ class PatientInfoWindow(QtWidgets.QMainWindow):
 		#close window
 		shortcut = QShortcut(QKeySequence(Qt.CTRL | Qt.Key_W), self)
 		shortcut.activated.connect(self.close)
-		self.show_visits()
+		self.show_visits() 
 		#todo: tree widget related operation 
 
 	def toggle_edit_mode(self):
@@ -122,8 +122,10 @@ class PatientInfoWindow(QtWidgets.QMainWindow):
 		pass
 
 	def show_visits(self):
-		date1 = QDate(2023, 8, 2)
-		date2 = QDate(2023, 8, 3)
-		item1 = QTreeWidgetItem(["Date 1"])
-		item1.setText(0, date1.toString("yyyy-MM-dd"))
-		self.ui.treeWidget.addTopLevelItems([item1])
+		visits_data = self.database.get_visits_by_patient(self.patient_id)
+		date_items = []
+		for data in visits_data:
+			item = QTreeWidgetItem()
+			item.setText(0, data[2])
+			date_items.append(item)
+		self.tree_widget.addTopLevelItems(date_items)
