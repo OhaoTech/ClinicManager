@@ -1,6 +1,6 @@
 # This Python file uses the following encoding: utf-8
 from PySide6 import QtCore
-from PySide6.QtCore import Qt, QRect, QDate, QTimer, QDateTime
+from PySide6.QtCore import Qt, QRect, QDate, QTimer, QDateTime, Signal, QObject
 from PySide6 import QtWidgets
 from PySide6.QtGui import QResizeEvent
 from PySide6.QtGui import QShortcut, QKeySequence
@@ -10,11 +10,12 @@ from ui_PatientInfoWindow import Ui_PatientInfoWIndow
 from Database import Database
 import numpy as np
 class PatientInfoWindow(QtWidgets.QMainWindow):
+    
 	def __init__(self, parent, database: Database, patient_id: int):
 		super().__init__(parent)
 		self.ui = Ui_PatientInfoWIndow()
 		self.ui.setupUi(self)
-		
+		self.parent = parent
 		self.database = database
 		self.patient_id = patient_id
   
@@ -78,6 +79,7 @@ class PatientInfoWindow(QtWidgets.QMainWindow):
 			allergic_history = self.ui.allergic_history_textEdit.toPlainText()
 			past_medical_history = self.ui.past_medical_history_textEdit.toPlainText()
 			self.database.update_patient(self.patient_id, name, gender, birthdate, tel, address,remark, allergic_history, past_medical_history)
+			
 	
 	def toggle_edit_record(self):
 		enabled = self.ui.edit_record_checkBox.isChecked()

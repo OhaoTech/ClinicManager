@@ -1,9 +1,9 @@
 # This Python file uses the following encoding: utf-8
 from PySide6 import QtCore
-from PySide6.QtCore import Qt, QRect
+from PySide6.QtCore import Qt, QRect, QObject
 from PySide6 import QtWidgets
-from PySide6.QtGui import QResizeEvent, QShortcut, QKeySequence
-from PySide6.QtWidgets import QTableWidgetItem, QTableWidget
+from PySide6.QtGui import QResizeEvent, QShortcut, QKeySequence, QMouseEvent
+from PySide6.QtWidgets import QTableWidgetItem, QTableWidget, QMessageBox
 
 from ui_searchWindow import Ui_SearchWindow
 from PatientInfoWindow import PatientInfoWindow
@@ -16,7 +16,6 @@ class SearchWindow(QtWidgets.QMainWindow):
         self.ui.setupUi(self)
         self.database = database
 
-        self.ui.search_pushButton.clicked.connect(self.search_patients)
         self.table = self.ui.patient_tableWidget
 
         # set header labels
@@ -46,6 +45,8 @@ class SearchWindow(QtWidgets.QMainWindow):
         self.table.horizontalHeader().setSortIndicatorShown(True)
 
 
+        self.ui.search_pushButton.clicked.connect(self.search_patients)
+        self.ui.delete_selected_pushButton.clicked.connect(self.delete_selected_patient)
         self.table.itemDoubleClicked.connect(self.on_item_doule_clicked)
         layout = QtWidgets.QVBoxLayout()
         layout.addWidget(self.ui.personal_info_label)
@@ -54,6 +55,7 @@ class SearchWindow(QtWidgets.QMainWindow):
         layout.addWidget(self.ui.tel_label)
         layout.addWidget(self.ui.tel_plainTextEdit)
         layout.addWidget(self.ui.search_pushButton)
+        layout.addWidget(self.ui.groupBox)
         layout.addWidget(self.table)
         
         self.setLayout(layout)
@@ -62,23 +64,23 @@ class SearchWindow(QtWidgets.QMainWindow):
         shortcut.activated.connect(self.close)
         
         self.search_patients()
-        
-
-        
 
     def resizeEvent(self, event: QResizeEvent) -> None:
         super().resizeEvent(event)
         #resize the table widget as the cursor dragging the window
         XY = self.table.geometry().topLeft()
         
-        width = self.geometry().width() - 30
-        height = self.geometry().height() - 80
+        
+        width = self.geometry().width()
+        height = self.geometry().height() 
         self.table.setGeometry(QRect(XY.x(), XY.y(), width, height))
         self.table.resizeColumnsToContents()
         self.table.resizeRowsToContents()
+        self.ui.groupBox.setGeometry(0, 0, width , height)
 
-        
-        
+    def mousePressEvent(self, event: QMouseEvent):
+        self.search_patients()        
+
 
     def search_patients(self):
         name = self.ui.name_plainTextEdit.toPlainText()
@@ -99,7 +101,28 @@ class SearchWindow(QtWidgets.QMainWindow):
         self.table.resizeColumnsToContents()
         self.table.resizeRowsToContents()
         
-    
+    def delete_selected_patient(self):
+        if not self.show_confirmation_dialog():
+            return
+        selected_row = self.table.currentRow()
+        patient_id_item = self.table.item(selected_row, 0)
+        patient_id = int(patient_id_item.text())
+        self.database.delete_patient(patient_id)
+        self.search_patients()
+        
+    def show_confirmation_dialog(self) -> bool:
+        confirm_dialog = QMessageBox(self)
+        confirm_dialog.setIcon(QMessageBox.Warning)
+        confirm_dialog.setWindowTitle('Confirmation')
+        confirm_dialog.setText(f'Are you sure you want to delete this patient?')
+        confirm_dialog.setStandardButtons(QMessageBox.Yes | QMessageBox.Cancel)
+        confirm_dialog.setDefaultButton(QMessageBox.Cancel)
+
+        response = confirm_dialog.exec_()
+        if response == QMessageBox.Yes:
+            return True            
+        else:
+            return False
 
     def on_item_doule_clicked(self, item):
         row = item.row()
@@ -110,5 +133,4 @@ class SearchWindow(QtWidgets.QMainWindow):
     def showPatientInfoWindow(self, patient_id):
         patient_info_window = PatientInfoWindow(self, self.database, patient_id)
         patient_info_window.show()
-            
             

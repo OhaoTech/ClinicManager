@@ -32,10 +32,10 @@
    <widget class="QPushButton" name="search_pushButton">
     <property name="geometry">
      <rect>
-      <x>650</x>
-      <y>40</y>
+      <x>590</x>
+      <y>110</y>
       <width>91</width>
-      <height>51</height>
+      <height>36</height>
      </rect>
     </property>
     <property name="text">
@@ -47,7 +47,7 @@
      <rect>
       <x>430</x>
       <y>40</y>
-      <width>201</width>
+      <width>251</width>
       <height>41</height>
      </rect>
     </property>
@@ -74,7 +74,7 @@
       <x>60</x>
       <y>40</y>
       <width>131</width>
-      <height>41</height>
+      <height>31</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -144,6 +144,19 @@
       <string>Female</string>
      </property>
     </item>
+   </widget>
+   <widget class="QPushButton" name="delete_selected_pushButton">
+    <property name="geometry">
+     <rect>
+      <x>442</x>
+      <y>110</y>
+      <width>131</width>
+      <height>36</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Delete Selected</string>
+    </property>
    </widget>
   </widget>
   <widget class="QTableWidget" name="patient_tableWidget">
