@@ -124,6 +124,10 @@ class Database:
         self.cursor.execute("DELETE FROM visits WHERE visit_date=?", (visit_date,))
         self.conn.commit()
         
+    def delete_visit_by_visit_id(self, visit_id):
+        self.cursor.execute("DELETE FROM visits WHERE id=?", (visit_id,))
+        self.conn.commit()
+        
     
     # Create log record
     def insert_log(self, visit_id, examination_details, diagnosis, remedy):
@@ -150,6 +154,10 @@ class Database:
     # Delete log record
     def delete_log(self, log_id):
         self.cursor.execute("DELETE FROM logs WHERE id=?", (log_id,))
+        self.conn.commit()
+        
+    def delete_log_by_visit_id(self, visit_id):
+        self.cursor.execute("DELETE FROM logs WHERE visit_id = ?", (visit_id,))
         self.conn.commit()
         
     def get_all_patient_info_by_id(self, patient_id):

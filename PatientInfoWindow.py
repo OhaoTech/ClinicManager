@@ -46,7 +46,7 @@ class PatientInfoWindow(QtWidgets.QMainWindow):
 		#push buttons
 		self.ui.new_pushButton.clicked.connect(self.new_medical_record)
 		self.ui.add_record_pushButton.clicked.connect(self.add_medical_record)
-		self.ui.delete_pushButton.clicked.connect(self.delete_medical_record)
+		self.ui.delete_record_pushButton.clicked.connect(self.delete_medical_record)
 		#close window
 		shortcut = QShortcut(QKeySequence(Qt.CTRL | Qt.Key_W), self)
 		shortcut.activated.connect(self.close)
@@ -152,7 +152,11 @@ class PatientInfoWindow(QtWidgets.QMainWindow):
 			return False
 
 	def delete_medical_record(self):
-		pass
+		if not self.show_confirmation_dialog():
+			return
+		self.database.delete_log_by_visit_id(self.visit_id)
+		self.database.delete_visit_by_visit_id(self.visit_id)
+		self.show_visits()
 
 
 	def on_item_doule_clicked(self, index: QtCore.QModelIndex):
@@ -165,11 +169,11 @@ class PatientInfoWindow(QtWidgets.QMainWindow):
 		self.ui.history_of_the_present_illness_textEdit.setText(present_illness)
   
 		log_data = self.database.get_logs_by_visit(self.visit_id)
+	
 		self.ui.examinination_textEdit.setText(log_data[0][2])
 		self.ui.diagnosis_textEdit.setText(log_data[0][3])
 		self.ui.remedy_textEdit.setText(log_data[0][4])
-  
-		
+
 
 	def show_visits(self):
 		self.tree_widget.clear()

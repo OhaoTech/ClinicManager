@@ -279,17 +279,17 @@
      <string>Clear </string>
     </property>
    </widget>
-   <widget class="QPushButton" name="delete_pushButton">
+   <widget class="QPushButton" name="delete_record_pushButton">
     <property name="geometry">
      <rect>
-      <x>589</x>
+      <x>581</x>
       <y>650</y>
-      <width>103</width>
+      <width>111</width>
       <height>36</height>
      </rect>
     </property>
     <property name="text">
-     <string>Delete</string>
+     <string>Delete Record</string>
     </property>
    </widget>
    <widget class="QPushButton" name="add_record_pushButton">
