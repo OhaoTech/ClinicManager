@@ -1,8 +1,7 @@
 # This Python file uses the following encoding: utf-8
 import sys
 
-from PyQt5 import QtWidgets
-from PySide6.QtWidgets import QApplication, QMainWindow, QComboBox
+from PySide6.QtWidgets import QApplication, QMainWindow
 from PySide6.QtGui import QShortcut, QKeySequence
 from PySide6.QtCore import Qt 
 

@@ -2,8 +2,8 @@
 from PySide6.QtCore import QDateTime
 from PySide6 import QtWidgets
 from PySide6.QtCore import Qt, QTimer
-from PySide6.QtWidgets import QWidget, QLabel, QTextEdit, QMessageBox
-from PySide6.QtGui import QPalette, QColor, QKeySequence, QShortcut
+from PySide6.QtWidgets import  QLabel, QTextEdit, QMessageBox
+from PySide6.QtGui import  QKeySequence, QShortcut
 
 
 from ui_addNewPatientWindow import Ui_AddNewPatientWindow

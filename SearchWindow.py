@@ -1,9 +1,9 @@
 # This Python file uses the following encoding: utf-8
 from PySide6 import QtCore
-from PySide6.QtCore import Qt, QRect, QObject
+from PySide6.QtCore import Qt, QRect
 from PySide6 import QtWidgets
 from PySide6.QtGui import QResizeEvent, QShortcut, QKeySequence, QMouseEvent
-from PySide6.QtWidgets import QTableWidgetItem, QTableWidget, QMessageBox
+from PySide6.QtWidgets import QTableWidgetItem, QMessageBox
 
 from ui_searchWindow import Ui_SearchWindow
 from PatientInfoWindow import PatientInfoWindow
