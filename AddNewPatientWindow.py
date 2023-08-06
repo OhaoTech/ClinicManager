@@ -1,7 +1,7 @@
 # This Python file uses the following encoding: utf-8
 from PySide6.QtCore import QDateTime
 from PySide6 import QtWidgets
-from PySide6.QtCore import Qt
+from PySide6.QtCore import Qt, QTimer
 from PySide6.QtWidgets import QWidget, QLabel, QTextEdit, QMessageBox
 from PySide6.QtGui import QPalette, QColor, QKeySequence, QShortcut
 
@@ -36,8 +36,9 @@ class AddNewPatientWindow(QtWidgets.QMainWindow):
         self.ui.tel_textEdit.focusOutEvent = self.tel_txtEdit_focus_out_event
         self.ui.gender_comboBox.focusOutEvent = self.gender_comboBox_focus_out_event
         
-        #current date time  
-        self.ui.add_dateTimeEdit.setDateTime(QDateTime.currentDateTime())
+        self.timer = QTimer(self)
+        self.timer.timeout.connect(self.update_date_time)
+        self.timer.start(1000)
         
         shortcut = QShortcut(QKeySequence(Qt.CTRL | Qt.Key_W), self)
         shortcut.activated.connect(self.close)
@@ -82,6 +83,9 @@ class AddNewPatientWindow(QtWidgets.QMainWindow):
     def gender_comboBox_focus_out_event(self, event):
         self.error_label.setText("")
         QTextEdit.focusOutEvent(self.ui.name_textEdit, event)
+        
+    def update_date_time(self):
+        self.ui.add_dateTimeEdit.setDateTime(QDateTime.currentDateTime())
         
 
 
