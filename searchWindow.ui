@@ -52,7 +52,7 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(192, 191, 188);</string>
+     <string notr="true"/>
     </property>
    </widget>
    <widget class="QLabel" name="personal_info_label">
@@ -78,7 +78,7 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(192, 191, 188);</string>
+     <string notr="true"/>
     </property>
    </widget>
    <widget class="QLabel" name="name_label">

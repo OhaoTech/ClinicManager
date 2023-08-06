@@ -2,7 +2,7 @@
 import sys
 
 from PyQt5 import QtWidgets
-from PySide6.QtWidgets import QApplication, QMainWindow
+from PySide6.QtWidgets import QApplication, QMainWindow, QComboBox
 from PySide6.QtGui import QShortcut, QKeySequence
 from PySide6.QtCore import Qt 
 
@@ -19,6 +19,7 @@ from ui_searchWindow import Ui_SearchWindow
 from ui_addNewPatientWindow import Ui_AddNewPatientWindow
 
 from Exportdatasheet import Exportdatasheet
+import qdarktheme
 
 class MainWindow(QMainWindow):
     def __init__(self, parent=None):
@@ -36,6 +37,10 @@ class MainWindow(QMainWindow):
         self.exportdatasheet = Exportdatasheet(self.database)
         shortcut = QShortcut(QKeySequence(Qt.CTRL | Qt.Key_W), self)
         shortcut.activated.connect(self.quitProgram)
+        
+        #theme
+        self.ui.theme_comboBox.currentTextChanged.connect(qdarktheme.setup_theme)
+        
 
     def showSearchWindow(self):
         search_window = SearchWindow(self, self.database)
@@ -57,6 +62,7 @@ class MainWindow(QMainWindow):
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
+    qdarktheme.setup_theme("auto")
     widget = MainWindow()
     widget.show()
     sys.exit(app.exec())

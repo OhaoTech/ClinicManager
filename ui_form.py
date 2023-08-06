@@ -16,8 +16,8 @@ from PySide6.QtGui import (QAction, QBrush, QColor, QConicalGradient,
     QIcon, QImage, QKeySequence, QLinearGradient,
     QPainter, QPalette, QPixmap, QRadialGradient,
     QTransform)
-from PySide6.QtWidgets import (QApplication, QLabel, QMainWindow, QPushButton,
-    QSizePolicy, QWidget)
+from PySide6.QtWidgets import (QApplication, QComboBox, QLabel, QMainWindow,
+    QPushButton, QSizePolicy, QWidget)
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -57,6 +57,15 @@ class Ui_MainWindow(object):
         self.exportAllPatientsButton.setObjectName(u"exportAllPatientsButton")
         self.exportAllPatientsButton.setGeometry(QRect(60, 530, 471, 201))
         self.exportAllPatientsButton.setFont(font)
+        self.theme_label = QLabel(self.centralwidget)
+        self.theme_label.setObjectName(u"theme_label")
+        self.theme_label.setGeometry(QRect(450, 870, 66, 18))
+        self.theme_comboBox = QComboBox(self.centralwidget)
+        self.theme_comboBox.addItem("")
+        self.theme_comboBox.addItem("")
+        self.theme_comboBox.addItem("")
+        self.theme_comboBox.setObjectName(u"theme_comboBox")
+        self.theme_comboBox.setGeometry(QRect(500, 860, 101, 36))
         MainWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(MainWindow)
@@ -73,5 +82,10 @@ class Ui_MainWindow(object):
         self.searchButton.setText(QCoreApplication.translate("MainWindow", u"Search", None))
         self.addNewPatientButton.setText(QCoreApplication.translate("MainWindow", u"Add New Patient", None))
         self.exportAllPatientsButton.setText(QCoreApplication.translate("MainWindow", u"Export All Patients", None))
+        self.theme_label.setText(QCoreApplication.translate("MainWindow", u"Theme", None))
+        self.theme_comboBox.setItemText(0, QCoreApplication.translate("MainWindow", u"auto", None))
+        self.theme_comboBox.setItemText(1, QCoreApplication.translate("MainWindow", u"light", None))
+        self.theme_comboBox.setItemText(2, QCoreApplication.translate("MainWindow", u"dark", None))
+
     # retranslateUi
 

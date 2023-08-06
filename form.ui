@@ -85,6 +85,44 @@
      <string>Export All Patients</string>
     </property>
    </widget>
+   <widget class="QLabel" name="theme_label">
+    <property name="geometry">
+     <rect>
+      <x>450</x>
+      <y>870</y>
+      <width>66</width>
+      <height>18</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Theme</string>
+    </property>
+   </widget>
+   <widget class="QComboBox" name="theme_comboBox">
+    <property name="geometry">
+     <rect>
+      <x>500</x>
+      <y>860</y>
+      <width>101</width>
+      <height>36</height>
+     </rect>
+    </property>
+    <item>
+     <property name="text">
+      <string>auto</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>light</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>dark</string>
+     </property>
+    </item>
+   </widget>
   </widget>
   <action name="actionImport">
    <property name="text">
