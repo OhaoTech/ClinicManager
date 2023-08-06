@@ -4,7 +4,7 @@ from PySide6.QtCore import Qt, QRect, QDate
 from PySide6 import QtWidgets
 from PySide6.QtGui import QResizeEvent
 from PySide6.QtGui import QShortcut, QKeySequence
-from PySide6.QtWidgets import QTableWidgetItem, QTableWidget
+from PySide6.QtWidgets import QTableWidgetItem, QTableWidget,QTreeWidgetItem, QTreeWidget
 
 from ui_PatientInfoWindow import Ui_PatientInfoWIndow
 from Database import Database
@@ -36,7 +36,7 @@ class PatientInfoWindow(QtWidgets.QMainWindow):
 		#close window
 		shortcut = QShortcut(QKeySequence(Qt.CTRL | Qt.Key_W), self)
 		shortcut.activated.connect(self.close)
-  
+		self.show_visits()
 		#todo: tree widget related operation 
 
 	def toggle_edit_mode(self):
@@ -78,3 +78,10 @@ class PatientInfoWindow(QtWidgets.QMainWindow):
 
 	def delete_medical_record(self):
 		pass
+
+	def show_visits(self):
+		date1 = QDate(2023, 8, 2)
+		date2 = QDate(2023, 8, 3)
+		item1 = QTreeWidgetItem(["Date 1"])
+		item1.setText(0, date1.toString("yyyy-MM-dd"))
+		self.ui.treeWidget.addTopLevelItems([item1])
