@@ -29,11 +29,15 @@ class PatientInfoWindow(QtWidgets.QMainWindow):
 		self.visit_table = database.get_visits_by_patient(patient_id)
   
 		self.ui.edit_mode_checkBox.stateChanged.connect(self.toggle_edit_info)
+		self.ui.edit_record_checkBox.stateChanged.connect(self.toggle_edit_record)
 		self.tree_widget = self.ui.treeWidget
 		self.init_patient_info()
 		for widget in self.info_widgets:
 			widget.setEnabled(False)
+		for widget in self.records_widgets:
+			widget.setEnabled(False)
    
+		#realtime DateTimeEdit timer
 		self.timer = QTimer(self)
 		self.timer.timeout.connect(self.update_date_time)
 		self.timer.start(1000)
@@ -53,7 +57,6 @@ class PatientInfoWindow(QtWidgets.QMainWindow):
 		self.tree_widget.setColumnHidden(0, True)
 		self.tree_widget.setColumnHidden(2, True)
 		self.tree_widget.setColumnHidden(3, True)
-		
 		self.tree_widget.doubleClicked.connect(self.on_item_doule_clicked)
 		self.show_visits() 
 
@@ -79,7 +82,17 @@ class PatientInfoWindow(QtWidgets.QMainWindow):
 		enabled = self.ui.edit_record_checkBox.isChecked()
 		for widget in self.records_widgets:
 			widget.setEnabled(enabled)
-
+   
+		if not enabled:
+			chief_complaint = self.ui.chief_complaint_textEdit.toPlainText()
+			present_illness = self.ui.history_of_the_present_illness_textEdit.toPlainText()
+			examination = self.ui.examinination_textEdit.toPlainText()
+			diagnosis = self.ui.diagnosis_textEdit.toPlainText()
+			remedy = self.ui.remedy_textEdit.toPlainText()
+			self.database.update_visits_by_visit_id(self.visit_id, chief_complaint, present_illness)
+			self.database.update_log_by_visit(self.visit_id, examination, diagnosis, remedy)
+			self.show_visits()
+   
 	def update_date_time(self):
 		self.ui.realtime_dateTimeEdit.setDateTime(QDateTime.currentDateTime())
       
@@ -144,17 +157,18 @@ class PatientInfoWindow(QtWidgets.QMainWindow):
 
 	def on_item_doule_clicked(self, index: QtCore.QModelIndex):
 		item = self.tree_widget.itemFromIndex(index)
-		visit_id = item.text(0)
+		self.visit_id = item.text(0)
 		chief_complaint = item.text(2)
 		present_illness = item.text(3)
   
 		self.ui.chief_complaint_textEdit.setText(chief_complaint)
 		self.ui.history_of_the_present_illness_textEdit.setText(present_illness)
   
-		log_data = self.database.get_logs_by_visit(visit_id)
+		log_data = self.database.get_logs_by_visit(self.visit_id)
 		self.ui.examinination_textEdit.setText(log_data[0][2])
 		self.ui.diagnosis_textEdit.setText(log_data[0][3])
 		self.ui.remedy_textEdit.setText(log_data[0][4])
+  
 		
 
 	def show_visits(self):

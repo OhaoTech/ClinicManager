@@ -111,6 +111,11 @@ class Database:
         self.cursor.execute("SELECT * FROM visits WHERE patient_id=?", (patient_id,))
         return self.cursor.fetchall()
     
+    def update_visits_by_visit_id(self, visit_id, chief_complaint, present_illness):
+        self.cursor.execute("UPDATE visits SET chief_complaint=?, present_illness=? WHERE id=?",
+                       (chief_complaint, present_illness, visit_id))
+        self.conn.commit()
+    
     def delete_visit_by_patient(self, patient_id):
         self.cursor.execute("DELETE FROM visits WHERE patient_id=?", (patient_id,))
         self.conn.commit()
@@ -135,6 +140,11 @@ class Database:
     def update_log(self, log_id, examination_details, diagnosis, remedy):
         self.cursor.execute("UPDATE logs SET examination_details=?, diagnosis=?, remedy=? WHERE id=?",
                        (examination_details, diagnosis, remedy, log_id))
+        self.conn.commit()
+        
+    def update_log_by_visit(self, visit_id, examination_details, diagnosis, remedy):
+        self.cursor.execute("UPDATE logs SET examination_details=?, diagnosis=?, remedy=? WHERE visit_id=?",
+                       (examination_details, diagnosis, remedy, visit_id))
         self.conn.commit()
 
     # Delete log record
