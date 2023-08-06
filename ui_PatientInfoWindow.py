@@ -16,9 +16,10 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
 from PySide6.QtWidgets import (QApplication, QCheckBox, QComboBox, QDateEdit,
-    QFrame, QGroupBox, QHeaderView, QLabel,
-    QLineEdit, QPushButton, QSizePolicy, QTextBrowser,
-    QTextEdit, QTreeWidget, QTreeWidgetItem, QWidget)
+    QDateTimeEdit, QFrame, QGroupBox, QHeaderView,
+    QLabel, QLineEdit, QPushButton, QSizePolicy,
+    QTextBrowser, QTextEdit, QTreeWidget, QTreeWidgetItem,
+    QWidget)
 
 class Ui_PatientInfoWIndow(object):
     def setupUi(self, PatientInfoWIndow):
@@ -96,9 +97,9 @@ class Ui_PatientInfoWIndow(object):
         self.delete_pushButton = QPushButton(self.down_groupBox)
         self.delete_pushButton.setObjectName(u"delete_pushButton")
         self.delete_pushButton.setGeometry(QRect(500, 650, 103, 36))
-        self.save_pushButton = QPushButton(self.down_groupBox)
-        self.save_pushButton.setObjectName(u"save_pushButton")
-        self.save_pushButton.setGeometry(QRect(740, 650, 103, 36))
+        self.add_record_pushButton = QPushButton(self.down_groupBox)
+        self.add_record_pushButton.setObjectName(u"add_record_pushButton")
+        self.add_record_pushButton.setGeometry(QRect(740, 650, 103, 36))
         self.chief_complaint_label = QLabel(self.down_groupBox)
         self.chief_complaint_label.setObjectName(u"chief_complaint_label")
         self.chief_complaint_label.setGeometry(QRect(150, 280, 111, 21))
@@ -137,13 +138,20 @@ class Ui_PatientInfoWIndow(object):
         self.remedy_label.setGeometry(QRect(150, 550, 111, 21))
         self.textBrowser = QTextBrowser(self.down_groupBox)
         self.textBrowser.setObjectName(u"textBrowser")
-        self.textBrowser.setGeometry(QRect(340, 190, 371, 61))
+        self.textBrowser.setGeometry(QRect(160, 200, 251, 61))
         self.textBrowser.setStyleSheet(u"font: 700 11pt \"Liberation Serif\";")
         self.line = QFrame(self.down_groupBox)
         self.line.setObjectName(u"line")
         self.line.setGeometry(QRect(150, 170, 711, 16))
         self.line.setFrameShape(QFrame.HLine)
         self.line.setFrameShadow(QFrame.Sunken)
+        self.realtime_dateTimeEdit = QDateTimeEdit(self.down_groupBox)
+        self.realtime_dateTimeEdit.setObjectName(u"realtime_dateTimeEdit")
+        self.realtime_dateTimeEdit.setGeometry(QRect(605, 230, 241, 42))
+        self.realtime_dateTimeEdit.setLocale(QLocale(QLocale.Chinese, QLocale.China))
+        self.realtime_label = QLabel(self.down_groupBox)
+        self.realtime_label.setObjectName(u"realtime_label")
+        self.realtime_label.setGeometry(QRect(530, 240, 66, 18))
 
         self.retranslateUi(PatientInfoWIndow)
 
@@ -170,7 +178,7 @@ class Ui_PatientInfoWIndow(object):
         self.past_medical_history_label.setText(QCoreApplication.translate("PatientInfoWIndow", u"<html><head/><body><p align=\"center\">Past Medical </p><p align=\"center\">History:</p></body></html>", None))
         self.new_pushButton.setText(QCoreApplication.translate("PatientInfoWIndow", u"New", None))
         self.delete_pushButton.setText(QCoreApplication.translate("PatientInfoWIndow", u"Delete", None))
-        self.save_pushButton.setText(QCoreApplication.translate("PatientInfoWIndow", u"Save", None))
+        self.add_record_pushButton.setText(QCoreApplication.translate("PatientInfoWIndow", u"Add Record", None))
         self.chief_complaint_label.setText(QCoreApplication.translate("PatientInfoWIndow", u"Chief Complaint:", None))
         self.diagnosis_label.setText(QCoreApplication.translate("PatientInfoWIndow", u"<html><head/><body><p align=\"center\">Diagnosis:</p></body></html>", None))
         self.history_of_the_present_illness_label.setText(QCoreApplication.translate("PatientInfoWIndow", u"<html><head/><body><p align=\"center\">History of the</p><p align=\"center\"> Present </p><p align=\"center\">Illness:</p></body></html>", None))
@@ -184,5 +192,7 @@ class Ui_PatientInfoWIndow(object):
 "li.checked::marker { content: \"\\2612\"; }\n"
 "</style></head><body style=\" font-family:'Liberation Serif'; font-size:11pt; font-weight:700; font-style:normal;\">\n"
 "<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'Cantarell'; font-size:22pt;\">Medical Records</span></p></body></html>", None))
+        self.realtime_dateTimeEdit.setDisplayFormat(QCoreApplication.translate("PatientInfoWIndow", u"yyyy-MM-dd HH:mm:ss", None))
+        self.realtime_label.setText(QCoreApplication.translate("PatientInfoWIndow", u"Realtime:", None))
     # retranslateUi
 

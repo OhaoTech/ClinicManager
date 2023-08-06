@@ -292,7 +292,7 @@
      <string>Delete</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="save_pushButton">
+   <widget class="QPushButton" name="add_record_pushButton">
     <property name="geometry">
      <rect>
       <x>740</x>
@@ -302,7 +302,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>Save</string>
+     <string>Add Record</string>
     </property>
    </widget>
    <widget class="QLabel" name="chief_complaint_label">
@@ -439,9 +439,9 @@
    <widget class="QTextBrowser" name="textBrowser">
     <property name="geometry">
      <rect>
-      <x>340</x>
-      <y>190</y>
-      <width>371</width>
+      <x>160</x>
+      <y>200</y>
+      <width>251</width>
       <height>61</height>
      </rect>
     </property>
@@ -470,6 +470,35 @@ li.checked::marker { content: &quot;\2612&quot;; }
     </property>
     <property name="orientation">
      <enum>Qt::Horizontal</enum>
+    </property>
+   </widget>
+   <widget class="QDateTimeEdit" name="realtime_dateTimeEdit">
+    <property name="geometry">
+     <rect>
+      <x>605</x>
+      <y>230</y>
+      <width>241</width>
+      <height>42</height>
+     </rect>
+    </property>
+    <property name="locale">
+     <locale language="Chinese" country="China"/>
+    </property>
+    <property name="displayFormat">
+     <string>yyyy-MM-dd HH:mm:ss</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="realtime_label">
+    <property name="geometry">
+     <rect>
+      <x>530</x>
+      <y>240</y>
+      <width>66</width>
+      <height>18</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Realtime:</string>
     </property>
    </widget>
   </widget>
