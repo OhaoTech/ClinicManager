@@ -1,13 +1,16 @@
 from Database import Database
-from tkinter import Tk, filedialog
+from PySide6.QtWidgets import QFileDialog, QMessageBox
 import pandas as pd
 class Exportdatasheet():
     def __init__(self, database: Database):
         self.database = database
     def choose_file_directory(self,df:pd.DataFrame):
-        Tk().withdraw()
-        output_path = filedialog.asksaveasfilename(defaultextension=".xlsx", filetypes=[("Excel Files", "*.xlsx")])
-        df.to_excel(output_path, index=False)
+        options = QFileDialog.Options()
+        options |= QFileDialog.DontUseNativeDialog
+        filename_without_extension, _ = QFileDialog.getSaveFileName(None, "Save File", "", "Excel Files (*.xlsx)", options=options)
+        if filename_without_extension:
+            df.to_excel(filename_without_extension+".xlsx", index=False)
+            QMessageBox.information(None, "Good!", filename_without_extension + ".xlsx exported successful!")
     def export_all_patients_info(self):
         data = self.database.get_all_patients()
         columns = [col[0] for col in self.database.cursor.description]
