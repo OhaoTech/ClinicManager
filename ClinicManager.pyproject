@@ -8,6 +8,7 @@
         "addNewPatientWindow.ui",
         "Database.py",
         "PatientInfoWindow.py",
-        "PatientInfoWindow.ui"
+        "PatientInfoWindow.ui",
+        "Exportdatasheet.py"
     ]
 }

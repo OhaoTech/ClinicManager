@@ -18,6 +18,7 @@ from ui_form import Ui_MainWindow
 from ui_searchWindow import Ui_SearchWindow
 from ui_addNewPatientWindow import Ui_AddNewPatientWindow
 
+from Exportdatasheet import Exportdatasheet
 
 class MainWindow(QMainWindow):
     def __init__(self, parent=None):
@@ -28,13 +29,13 @@ class MainWindow(QMainWindow):
         # Button
         self.ui.searchButton.clicked.connect(self.showSearchWindow)
         self.ui.addNewPatientButton.clicked.connect(self.showAddNewPatientWindow)
-
+        self.ui.exportAllPatientsButton.clicked.connect(self.export_all_patients)
         # Menubar Actions
         self.ui.actionExit.triggered.connect(self.quitProgram)
 
         # Database
         self.database = Database("clinic.db")
-        
+        self.exportdatasheet = Exportdatasheet(self.database)
         shortcut = QShortcut(QKeySequence(Qt.CTRL | Qt.Key_W), self)
         shortcut.activated.connect(self.quitProgram)
 
@@ -49,6 +50,8 @@ class MainWindow(QMainWindow):
     def quitProgram(self):
         QApplication.quit()
 
+    def export_all_patients(self):
+        self.exportdatasheet.export_all_patients_info()
 
 
 

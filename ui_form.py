@@ -25,7 +25,13 @@ class Ui_MainWindow(object):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
         MainWindow.resize(614, 903)
-        icon = QIcon(QIcon.fromTheme(u"start-here"))
+        icon = QIcon()
+        iconThemeName = u"start-here"
+        if QIcon.hasThemeIcon(iconThemeName):
+            icon = QIcon.fromTheme(iconThemeName)
+        else:
+            icon.addFile(u".", QSize(), QIcon.Normal, QIcon.Off)
+
         MainWindow.setWindowIcon(icon)
         self.actionImport = QAction(MainWindow)
         self.actionImport.setObjectName(u"actionImport")
@@ -48,10 +54,14 @@ class Ui_MainWindow(object):
         self.addNewPatientButton.setObjectName(u"addNewPatientButton")
         self.addNewPatientButton.setGeometry(QRect(60, 320, 471, 201))
         self.addNewPatientButton.setFont(font)
+        self.exportAllPatientsButton = QPushButton(self.centralwidget)
+        self.exportAllPatientsButton.setObjectName(u"exportAllPatientsButton")
+        self.exportAllPatientsButton.setGeometry(QRect(60, 530, 471, 201))
+        self.exportAllPatientsButton.setFont(font)
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QMenuBar(MainWindow)
         self.menubar.setObjectName(u"menubar")
-        self.menubar.setGeometry(QRect(0, 0, 614, 28))
+        self.menubar.setGeometry(QRect(0, 0, 614, 25))
         self.menuFiles = QMenu(self.menubar)
         self.menuFiles.setObjectName(u"menuFiles")
         MainWindow.setMenuBar(self.menubar)
@@ -77,6 +87,7 @@ class Ui_MainWindow(object):
         self.logo_label.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><span style=\" font-size:22pt;\">Clinic Manager</span></p></body></html>", None))
         self.searchButton.setText(QCoreApplication.translate("MainWindow", u"Search", None))
         self.addNewPatientButton.setText(QCoreApplication.translate("MainWindow", u"Add New Patient", None))
+        self.exportAllPatientsButton.setText(QCoreApplication.translate("MainWindow", u"Export All Patients", None))
         self.menuFiles.setTitle(QCoreApplication.translate("MainWindow", u"Files", None))
     # retranslateUi
 
