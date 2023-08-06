@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>860</width>
-    <height>825</height>
+    <width>967</width>
+    <height>833</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -18,7 +18,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>858</width>
+     <width>951</width>
      <height>111</height>
     </rect>
    </property>
@@ -110,7 +110,7 @@
    <widget class="QLineEdit" name="remark_lineEdit">
     <property name="geometry">
      <rect>
-      <x>540</x>
+      <x>610</x>
       <y>60</y>
       <width>201</width>
       <height>36</height>
@@ -120,7 +120,7 @@
    <widget class="QLabel" name="remark_label">
     <property name="geometry">
      <rect>
-      <x>480</x>
+      <x>550</x>
       <y>70</y>
       <width>66</width>
       <height>18</height>
@@ -135,7 +135,7 @@
      <rect>
       <x>120</x>
       <y>60</y>
-      <width>351</width>
+      <width>411</width>
       <height>36</height>
      </rect>
     </property>
@@ -156,14 +156,14 @@
    <widget class="QCheckBox" name="edit_mode_checkBox">
     <property name="geometry">
      <rect>
-      <x>750</x>
+      <x>820</x>
       <y>70</y>
       <width>97</width>
       <height>24</height>
      </rect>
     </property>
     <property name="text">
-     <string>Edit Mode</string>
+     <string>Edit Info</string>
     </property>
    </widget>
    <widget class="QDateEdit" name="birthdate_dateEdit">
@@ -198,7 +198,7 @@
     <rect>
      <x>0</x>
      <y>111</y>
-     <width>858</width>
+     <width>961</width>
      <height>711</height>
     </rect>
    </property>
@@ -210,7 +210,7 @@
      <rect>
       <x>0</x>
       <y>10</y>
-      <width>151</width>
+      <width>241</width>
       <height>701</height>
      </rect>
     </property>
@@ -223,7 +223,7 @@
    <widget class="QLabel" name="allergic_history_label">
     <property name="geometry">
      <rect>
-      <x>151</x>
+      <x>240</x>
       <y>10</y>
       <width>111</width>
       <height>21</height>
@@ -236,7 +236,7 @@
    <widget class="QTextEdit" name="allergic_history_textEdit">
     <property name="geometry">
      <rect>
-      <x>260</x>
+      <x>349</x>
       <y>10</y>
       <width>591</width>
       <height>61</height>
@@ -246,7 +246,7 @@
    <widget class="QLabel" name="past_medical_history_label">
     <property name="geometry">
      <rect>
-      <x>151</x>
+      <x>240</x>
       <y>90</y>
       <width>111</width>
       <height>51</height>
@@ -259,7 +259,7 @@
    <widget class="QTextEdit" name="past_medical_history_textEdit">
     <property name="geometry">
      <rect>
-      <x>260</x>
+      <x>349</x>
       <y>90</y>
       <width>591</width>
       <height>61</height>
@@ -269,20 +269,20 @@
    <widget class="QPushButton" name="new_pushButton">
     <property name="geometry">
      <rect>
-      <x>620</x>
+      <x>709</x>
       <y>650</y>
       <width>103</width>
       <height>36</height>
      </rect>
     </property>
     <property name="text">
-     <string>New</string>
+     <string>Clear </string>
     </property>
    </widget>
    <widget class="QPushButton" name="delete_pushButton">
     <property name="geometry">
      <rect>
-      <x>500</x>
+      <x>589</x>
       <y>650</y>
       <width>103</width>
       <height>36</height>
@@ -295,7 +295,7 @@
    <widget class="QPushButton" name="add_record_pushButton">
     <property name="geometry">
      <rect>
-      <x>740</x>
+      <x>829</x>
       <y>650</y>
       <width>103</width>
       <height>36</height>
@@ -308,7 +308,7 @@
    <widget class="QLabel" name="chief_complaint_label">
     <property name="geometry">
      <rect>
-      <x>150</x>
+      <x>239</x>
       <y>280</y>
       <width>111</width>
       <height>21</height>
@@ -321,34 +321,33 @@
    <widget class="QTextEdit" name="diagnosis_textEdit">
     <property name="geometry">
      <rect>
-      <x>270</x>
+      <x>359</x>
       <y>500</y>
       <width>581</width>
       <height>41</height>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(192, 191, 188);</string>
+     <string notr="true"/>
     </property>
    </widget>
    <widget class="QTextEdit" name="history_of_the_present_illness_textEdit">
     <property name="geometry">
      <rect>
-      <x>270</x>
+      <x>359</x>
       <y>340</y>
       <width>581</width>
       <height>91</height>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(192, 191, 188);
-</string>
+     <string notr="true"/>
     </property>
    </widget>
    <widget class="QLabel" name="diagnosis_label">
     <property name="geometry">
      <rect>
-      <x>150</x>
+      <x>239</x>
       <y>500</y>
       <width>111</width>
       <height>21</height>
@@ -361,7 +360,7 @@
    <widget class="QLabel" name="history_of_the_present_illness_label">
     <property name="geometry">
      <rect>
-      <x>150</x>
+      <x>239</x>
       <y>340</y>
       <width>111</width>
       <height>81</height>
@@ -374,46 +373,46 @@
    <widget class="QTextEdit" name="examinination_textEdit">
     <property name="geometry">
      <rect>
-      <x>270</x>
+      <x>359</x>
       <y>440</y>
       <width>581</width>
       <height>51</height>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(192, 191, 188);</string>
+     <string notr="true"/>
     </property>
    </widget>
    <widget class="QTextEdit" name="chief_complaint_textEdit">
     <property name="geometry">
      <rect>
-      <x>270</x>
+      <x>359</x>
       <y>280</y>
       <width>581</width>
       <height>51</height>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(192, 191, 188);</string>
+     <string notr="true"/>
     </property>
    </widget>
    <widget class="QTextEdit" name="remedy_textEdit">
     <property name="geometry">
      <rect>
-      <x>270</x>
+      <x>359</x>
       <y>550</y>
       <width>581</width>
       <height>81</height>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(192, 191, 188);</string>
+     <string notr="true"/>
     </property>
    </widget>
    <widget class="QLabel" name="examinination_label">
     <property name="geometry">
      <rect>
-      <x>150</x>
+      <x>239</x>
       <y>440</y>
       <width>111</width>
       <height>21</height>
@@ -426,7 +425,7 @@
    <widget class="QLabel" name="remedy_label">
     <property name="geometry">
      <rect>
-      <x>150</x>
+      <x>239</x>
       <y>550</y>
       <width>111</width>
       <height>21</height>
@@ -439,7 +438,7 @@
    <widget class="QTextBrowser" name="textBrowser">
     <property name="geometry">
      <rect>
-      <x>160</x>
+      <x>249</x>
       <y>200</y>
       <width>251</width>
       <height>61</height>
@@ -462,7 +461,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
    <widget class="Line" name="line">
     <property name="geometry">
      <rect>
-      <x>150</x>
+      <x>239</x>
       <y>170</y>
       <width>711</width>
       <height>16</height>
@@ -475,7 +474,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
    <widget class="QDateTimeEdit" name="realtime_dateTimeEdit">
     <property name="geometry">
      <rect>
-      <x>605</x>
+      <x>574</x>
       <y>230</y>
       <width>241</width>
       <height>42</height>
@@ -491,7 +490,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
    <widget class="QLabel" name="realtime_label">
     <property name="geometry">
      <rect>
-      <x>530</x>
+      <x>500</x>
       <y>240</y>
       <width>66</width>
       <height>18</height>
@@ -499,6 +498,19 @@ li.checked::marker { content: &quot;\2612&quot;; }
     </property>
     <property name="text">
      <string>Realtime:</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="edit_record_checkBox">
+    <property name="geometry">
+     <rect>
+      <x>820</x>
+      <y>250</y>
+      <width>111</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Edit Record</string>
     </property>
    </widget>
   </widget>

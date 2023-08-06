@@ -18,17 +18,20 @@ class PatientInfoWindow(QtWidgets.QMainWindow):
 		self.database = database
 		self.patient_id = patient_id
   
-		self.lineEdit_widgets=[self.ui.name_lineEdit, self.ui.gender_comboBox, self.ui.birthdate_dateEdit,
+		self.info_widgets=[self.ui.name_lineEdit, self.ui.gender_comboBox, self.ui.birthdate_dateEdit,
                          self.ui.tel_lineEdit, self.ui.address_lineEdit, self.ui.remark_lineEdit,
                          self.ui.allergic_history_textEdit, self.ui.past_medical_history_textEdit]
+  
+		self.records_widgets=[self.ui.chief_complaint_textEdit, self.ui.history_of_the_present_illness_textEdit,
+                        self.ui.examinination_textEdit, self.ui.diagnosis_textEdit, self.ui.remedy_textEdit]
 		#patient basic info
 		self.patient_table = database.get_one_patient_by_id(patient_id)
 		self.visit_table = database.get_visits_by_patient(patient_id)
   
-		self.ui.edit_mode_checkBox.stateChanged.connect(self.toggle_edit_mode)
+		self.ui.edit_mode_checkBox.stateChanged.connect(self.toggle_edit_info)
 		self.tree_widget = self.ui.treeWidget
 		self.init_patient_info()
-		for widget in self.lineEdit_widgets:
+		for widget in self.info_widgets:
 			widget.setEnabled(False)
    
 		self.timer = QTimer(self)
@@ -42,12 +45,22 @@ class PatientInfoWindow(QtWidgets.QMainWindow):
 		#close window
 		shortcut = QShortcut(QKeySequence(Qt.CTRL | Qt.Key_W), self)
 		shortcut.activated.connect(self.close)
-		self.show_visits() 
-		#todo: tree widget related operation 
 
-	def toggle_edit_mode(self):
+		#tree widget configurations
+		self.tree_widget.setVerticalScrollBarPolicy(Qt.ScrollBarAlwaysOn)		
+		self.tree_widget.setColumnCount(4)
+		self.tree_widget.setColumnHidden(0, True)
+		self.tree_widget.setColumnHidden(2, True)
+		self.tree_widget.setColumnHidden(3, True)
+		
+		self.tree_widget.doubleClicked.connect(self.on_item_doule_clicked)
+		self.show_visits() 
+
+
+
+	def toggle_edit_info(self):
 		enabled = self.ui.edit_mode_checkBox.isChecked()
-		for widget in self.lineEdit_widgets:
+		for widget in self.info_widgets:
 			widget.setEnabled(enabled)
 
 		if not enabled:#update the patient info
@@ -61,6 +74,11 @@ class PatientInfoWindow(QtWidgets.QMainWindow):
 			past_medical_history = self.ui.past_medical_history_textEdit.toPlainText()
 			self.database.update_patient(self.patient_id, name, gender, birthdate, tel, address,remark, allergic_history, past_medical_history)
 	
+	def toggle_edit_record(self):
+		enabled = self.ui.edit_record_checkBox.isChecked()
+		for widget in self.records_widgets:
+			widget.setEnabled(enabled)
+
 	def update_date_time(self):
 		self.ui.realtime_dateTimeEdit.setDateTime(QDateTime.currentDateTime())
       
@@ -122,11 +140,35 @@ class PatientInfoWindow(QtWidgets.QMainWindow):
 	def delete_medical_record(self):
 		pass
 
+
+	def on_item_doule_clicked(self, index: QtCore.QModelIndex):
+		item = self.tree_widget.itemFromIndex(index)
+		visit_id = item.text(0)
+		chief_complaint = item.text(2)
+		present_illness = item.text(3)
+  
+		self.ui.chief_complaint_textEdit.setText(chief_complaint)
+		self.ui.history_of_the_present_illness_textEdit.setText(present_illness)
+  
+		log_data = self.database.get_logs_by_visit(visit_id)
+		self.ui.examinination_textEdit.setText(log_data[0][2])
+		self.ui.diagnosis_textEdit.setText(log_data[0][3])
+		self.ui.remedy_textEdit.setText(log_data[0][4])
+		
+
 	def show_visits(self):
+		self.tree_widget.clear()
 		visits_data = self.database.get_visits_by_patient(self.patient_id)
 		date_items = []
 		for data in visits_data:
 			item = QTreeWidgetItem()
-			item.setText(0, data[2])
+			item.setText(0, str(data[1]))# patient_id
+			item.setText(1, data[2])# visit date
+			item.setText(2, data[3])# chief complaint
+			item.setText(3, data[4])# past medical history
+
 			date_items.append(item)
 		self.tree_widget.addTopLevelItems(date_items)
+
+  
+  
