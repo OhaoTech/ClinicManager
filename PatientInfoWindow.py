@@ -8,59 +8,61 @@ from PySide6.QtWidgets import QTreeWidgetItem, QTreeWidget, QMessageBox
 
 from ui_PatientInfoWindow import Ui_PatientInfoWIndow
 from Database import Database
+from Exportdatasheet import Exportdatasheet
+
 import numpy as np
 class PatientInfoWindow(QtWidgets.QMainWindow):
     
 	def __init__(self, parent, database: Database, patient_id: int):
-		super().__init__(parent)
-		self.ui = Ui_PatientInfoWIndow()
-		self.ui.setupUi(self)
-		self.parent = parent
-		self.database = database
-		self.patient_id = patient_id
-  
-		self.info_widgets=[self.ui.name_lineEdit, self.ui.gender_comboBox, self.ui.birthdate_dateEdit,
+                super().__init__(parent)
+                self.ui = Ui_PatientInfoWIndow()
+                self.ui.setupUi(self)
+                self.parent = parent
+                self.database = database
+                self.patient_id = patient_id
+                self.exportdatasheet = Exportdatasheet(self.database)
+                self.info_widgets=[self.ui.name_lineEdit, self.ui.gender_comboBox, self.ui.birthdate_dateEdit,
                          self.ui.tel_lineEdit, self.ui.address_lineEdit, self.ui.remark_lineEdit,
                          self.ui.allergic_history_textEdit, self.ui.past_medical_history_textEdit]
-  
-		self.records_widgets=[self.ui.chief_complaint_textEdit, self.ui.history_of_the_present_illness_textEdit,
+                self.records_widgets=[self.ui.chief_complaint_textEdit, self.ui.history_of_the_present_illness_textEdit,
                         self.ui.examinination_textEdit, self.ui.diagnosis_textEdit, self.ui.remedy_textEdit]
 		#patient basic info
-		self.patient_table = database.get_one_patient_by_id(patient_id)
-		self.visit_table = database.get_visits_by_patient(patient_id)
+                self.patient_table = database.get_one_patient_by_id(patient_id)
+                self.visit_table = database.get_visits_by_patient(patient_id)
   
-		self.ui.edit_mode_checkBox.stateChanged.connect(self.toggle_edit_info)
-		self.ui.edit_record_checkBox.stateChanged.connect(self.toggle_edit_record)
-		self.tree_widget = self.ui.treeWidget
-		self.init_patient_info()
-		for widget in self.info_widgets:
-			widget.setEnabled(False)
-		for widget in self.records_widgets:
-			widget.setEnabled(False)
-   
-		#realtime DateTimeEdit timer
-		self.timer = QTimer(self)
-		self.timer.timeout.connect(self.update_date_time)
-		self.timer.start(1000)
-		self.ui.realtime_dateTimeEdit.setDisabled(True)
-   
-		#push buttons
-		self.ui.new_pushButton.clicked.connect(self.new_medical_record)
-		self.ui.add_record_pushButton.clicked.connect(self.add_medical_record)
-		self.ui.delete_record_pushButton.clicked.connect(self.delete_medical_record)
-		self.ui.delete_all_records_pushButton.clicked.connect(self.delete_all_medical_record)
-		#close window
-		shortcut = QShortcut(QKeySequence(Qt.CTRL | Qt.Key_W), self)
-		shortcut.activated.connect(self.close)
+                self.ui.edit_mode_checkBox.stateChanged.connect(self.toggle_edit_info)
+                self.ui.edit_record_checkBox.stateChanged.connect(self.toggle_edit_record)
+                self.tree_widget = self.ui.treeWidget
+                self.init_patient_info()
+                for widget in self.info_widgets:
+                        widget.setEnabled(False)
+                for widget in self.records_widgets:
+                        widget.setEnabled(False)
+		
+                #realtime DateTimeEdit timer
+                self.timer = QTimer(self)
+                self.timer.timeout.connect(self.update_date_time)
+                self.timer.start(1000)
+                self.ui.realtime_dateTimeEdit.setDisabled(True)
+		
+                #push buttons
+                self.ui.new_pushButton.clicked.connect(self.new_medical_record)
+                self.ui.add_record_pushButton.clicked.connect(self.add_medical_record)
+                self.ui.delete_record_pushButton.clicked.connect(self.delete_medical_record)
+                self.ui.export_button.clicked.connect(self.export_one_patient)
+                self.ui.delete_all_records_pushButton.clicked.connect(self.delete_all_medical_record)
+				#close window
+                shortcut = QShortcut(QKeySequence(Qt.CTRL | Qt.Key_W), self)
+                shortcut.activated.connect(self.close)
 
-		#tree widget configurations
-		self.tree_widget.setVerticalScrollBarPolicy(Qt.ScrollBarAlwaysOn)		
-		self.tree_widget.setColumnCount(4)
-		self.tree_widget.setColumnHidden(0, True)
-		self.tree_widget.setColumnHidden(2, True)
-		self.tree_widget.setColumnHidden(3, True)
-		self.tree_widget.doubleClicked.connect(self.on_item_doule_clicked)
-		self.show_visits() 
+				#tree widget configurations
+                self.tree_widget.setVerticalScrollBarPolicy(Qt.ScrollBarAlwaysOn)
+                self.tree_widget.setColumnCount(4)
+                self.tree_widget.setColumnHidden(0, True)
+                self.tree_widget.setColumnHidden(2, True)
+                self.tree_widget.setColumnHidden(3, True)
+                self.tree_widget.doubleClicked.connect(self.on_item_doule_clicked)
+                self.show_visits()
 
 
 
@@ -197,6 +199,5 @@ class PatientInfoWindow(QtWidgets.QMainWindow):
 
 			date_items.append(item)
 		self.tree_widget.addTopLevelItems(date_items)
-
-  
-  
+	def export_one_patient(self):
+                self.exportdatasheet.export_one_patient_log_visit(self.patient_id)

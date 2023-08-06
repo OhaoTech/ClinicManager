@@ -16,3 +16,8 @@ class Exportdatasheet():
         columns = [col[0] for col in self.database.cursor.description]
         df = pd.DataFrame(data,columns=columns)
         self.choose_file_directory(df)
+    def export_one_patient_log_visit(self,patient_id:int):
+        data = self.database.get_patient_visits_and_logs(patient_id)
+        columns = [col[0] for col in self.database.cursor.description]
+        df = pd.DataFrame(data,columns=columns)
+        self.choose_file_directory(df)
