@@ -211,12 +211,12 @@
       <x>0</x>
       <y>10</y>
       <width>241</width>
-      <height>701</height>
+      <height>671</height>
      </rect>
     </property>
     <column>
      <property name="text">
-      <string notr="true">1</string>
+      <string notr="true">Visit Date Time</string>
      </property>
     </column>
    </widget>
@@ -511,6 +511,19 @@ li.checked::marker { content: &quot;\2612&quot;; }
     </property>
     <property name="text">
      <string>Edit Record</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="delete_all_records_pushButton">
+    <property name="geometry">
+     <rect>
+      <x>250</x>
+      <y>650</y>
+      <width>131</width>
+      <height>36</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Delete All Records</string>
     </property>
    </widget>
   </widget>

@@ -47,6 +47,7 @@ class PatientInfoWindow(QtWidgets.QMainWindow):
 		self.ui.new_pushButton.clicked.connect(self.new_medical_record)
 		self.ui.add_record_pushButton.clicked.connect(self.add_medical_record)
 		self.ui.delete_record_pushButton.clicked.connect(self.delete_medical_record)
+		self.ui.delete_all_records_pushButton.clicked.connect(self.delete_all_medical_record)
 		#close window
 		shortcut = QShortcut(QKeySequence(Qt.CTRL | Qt.Key_W), self)
 		shortcut.activated.connect(self.close)
@@ -156,6 +157,12 @@ class PatientInfoWindow(QtWidgets.QMainWindow):
 			return
 		self.database.delete_log_by_visit_id(self.visit_id)
 		self.database.delete_visit_by_visit_id(self.visit_id)
+		self.show_visits()
+  
+	def delete_all_medical_record(self):
+		if not self.show_confirmation_dialog():
+			return
+		self.database.delete_visit_by_patient(self.patient_id)
 		self.show_visits()
 
 

@@ -75,10 +75,10 @@ class Ui_PatientInfoWIndow(object):
         self.down_groupBox.setGeometry(QRect(0, 111, 961, 711))
         self.treeWidget = QTreeWidget(self.down_groupBox)
         __qtreewidgetitem = QTreeWidgetItem()
-        __qtreewidgetitem.setText(0, u"1");
+        __qtreewidgetitem.setText(0, u"Visit Date Time");
         self.treeWidget.setHeaderItem(__qtreewidgetitem)
         self.treeWidget.setObjectName(u"treeWidget")
-        self.treeWidget.setGeometry(QRect(0, 10, 241, 701))
+        self.treeWidget.setGeometry(QRect(0, 10, 241, 671))
         self.allergic_history_label = QLabel(self.down_groupBox)
         self.allergic_history_label.setObjectName(u"allergic_history_label")
         self.allergic_history_label.setGeometry(QRect(240, 10, 111, 21))
@@ -154,6 +154,9 @@ class Ui_PatientInfoWIndow(object):
         self.edit_record_checkBox = QCheckBox(self.down_groupBox)
         self.edit_record_checkBox.setObjectName(u"edit_record_checkBox")
         self.edit_record_checkBox.setGeometry(QRect(820, 250, 111, 24))
+        self.delete_all_records_pushButton = QPushButton(self.down_groupBox)
+        self.delete_all_records_pushButton.setObjectName(u"delete_all_records_pushButton")
+        self.delete_all_records_pushButton.setGeometry(QRect(250, 650, 131, 36))
 
         self.retranslateUi(PatientInfoWIndow)
 
@@ -197,5 +200,6 @@ class Ui_PatientInfoWIndow(object):
         self.realtime_dateTimeEdit.setDisplayFormat(QCoreApplication.translate("PatientInfoWIndow", u"yyyy-MM-dd HH:mm:ss", None))
         self.realtime_label.setText(QCoreApplication.translate("PatientInfoWIndow", u"Realtime:", None))
         self.edit_record_checkBox.setText(QCoreApplication.translate("PatientInfoWIndow", u"Edit Record", None))
+        self.delete_all_records_pushButton.setText(QCoreApplication.translate("PatientInfoWIndow", u"Delete All Records", None))
     # retranslateUi
 
