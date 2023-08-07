@@ -3,4 +3,6 @@ PySide6
 numpy
 pandas
 pyqtdarktheme
+reportlab
+
 
