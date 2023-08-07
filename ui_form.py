@@ -16,8 +16,8 @@ from PySide6.QtGui import (QAction, QBrush, QColor, QConicalGradient,
     QIcon, QImage, QKeySequence, QLinearGradient,
     QPainter, QPalette, QPixmap, QRadialGradient,
     QTransform)
-from PySide6.QtWidgets import (QApplication, QComboBox, QLabel, QMainWindow,
-    QPushButton, QSizePolicy, QWidget)
+from PySide6.QtWidgets import (QApplication, QLabel, QMainWindow, QPushButton,
+    QRadioButton, QSizePolicy, QWidget)
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -42,7 +42,7 @@ class Ui_MainWindow(object):
         self.centralwidget.setObjectName(u"centralwidget")
         self.logo_label = QLabel(self.centralwidget)
         self.logo_label.setObjectName(u"logo_label")
-        self.logo_label.setGeometry(QRect(180, 30, 261, 71))
+        self.logo_label.setGeometry(QRect(170, 30, 261, 71))
         self.searchButton = QPushButton(self.centralwidget)
         self.searchButton.setObjectName(u"searchButton")
         self.searchButton.setGeometry(QRect(60, 110, 471, 201))
@@ -60,12 +60,12 @@ class Ui_MainWindow(object):
         self.theme_label = QLabel(self.centralwidget)
         self.theme_label.setObjectName(u"theme_label")
         self.theme_label.setGeometry(QRect(450, 870, 66, 18))
-        self.theme_comboBox = QComboBox(self.centralwidget)
-        self.theme_comboBox.addItem("")
-        self.theme_comboBox.addItem("")
-        self.theme_comboBox.addItem("")
-        self.theme_comboBox.setObjectName(u"theme_comboBox")
-        self.theme_comboBox.setGeometry(QRect(500, 860, 101, 36))
+        self.en_radioButton = QRadioButton(self.centralwidget)
+        self.en_radioButton.setObjectName(u"en_radioButton")
+        self.en_radioButton.setGeometry(QRect(10, 870, 114, 24))
+        self.cn_radioButton = QRadioButton(self.centralwidget)
+        self.cn_radioButton.setObjectName(u"cn_radioButton")
+        self.cn_radioButton.setGeometry(QRect(10, 840, 114, 24))
         MainWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(MainWindow)
@@ -78,14 +78,12 @@ class Ui_MainWindow(object):
         self.actionImport.setText(QCoreApplication.translate("MainWindow", u"Import...", None))
         self.actionExport.setText(QCoreApplication.translate("MainWindow", u"Export...", None))
         self.actionExit.setText(QCoreApplication.translate("MainWindow", u"Exit", None))
-        self.logo_label.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><span style=\" font-size:22pt;\">Clinic Manager</span></p></body></html>", None))
+        self.logo_label.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"center\"><span style=\" font-size:22pt;\">Clinic Manager</span></p></body></html>", None))
         self.searchButton.setText(QCoreApplication.translate("MainWindow", u"Search", None))
         self.addNewPatientButton.setText(QCoreApplication.translate("MainWindow", u"Add New Patient", None))
         self.exportAllPatientsButton.setText(QCoreApplication.translate("MainWindow", u"Export All Patients", None))
         self.theme_label.setText(QCoreApplication.translate("MainWindow", u"Theme", None))
-        self.theme_comboBox.setItemText(0, QCoreApplication.translate("MainWindow", u"auto", None))
-        self.theme_comboBox.setItemText(1, QCoreApplication.translate("MainWindow", u"light", None))
-        self.theme_comboBox.setItemText(2, QCoreApplication.translate("MainWindow", u"dark", None))
-
+        self.en_radioButton.setText(QCoreApplication.translate("MainWindow", u"English", None))
+        self.cn_radioButton.setText(QCoreApplication.translate("MainWindow", u"\u4e2d\u6587", None))
     # retranslateUi
 

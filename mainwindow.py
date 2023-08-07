@@ -1,7 +1,7 @@
 # This Python file uses the following encoding: utf-8
 import sys
 
-from PySide6.QtWidgets import QApplication, QMainWindow
+from PySide6.QtWidgets import QApplication, QMainWindow, QComboBox
 from PySide6.QtGui import QShortcut, QKeySequence
 from PySide6.QtCore import Qt, QCoreApplication, QTranslator
 
@@ -36,8 +36,16 @@ class MainWindow(QMainWindow):
         shortcut.activated.connect(self.quitProgram)
         
         #theme
-        self.ui.theme_comboBox.currentTextChanged.connect(qdarktheme.setup_theme)
+        self.theme_comboBox = QComboBox(self)
+        self.theme_comboBox.addItems([QCoreApplication.translate("MainWindow", u"Auto", None), QCoreApplication.translate("MainWindow", u"Light", None), QCoreApplication.translate("MainWindow", u"Dark", None)])
+        self.theme_comboBox.setGeometry(500, 860, 101, 36)
+        self.theme_comboBox.currentIndexChanged.connect(self.themeSelect)
         
+        # language
+        self.translator = QTranslator()
+        self.ui.cn_radioButton.click()
+        self.ui.cn_radioButton.clicked.connect(self.languageSelect)
+        self.ui.en_radioButton.clicked.connect(self.languageSelect)
 
     def showSearchWindow(self):
         search_window = SearchWindow(self, self.database, self.exportdatasheet)
@@ -52,17 +60,46 @@ class MainWindow(QMainWindow):
 
     def export_all_patients(self):
         self.exportdatasheet.export_all_patients_info()
+        
+    def themeSelect(self):
+        if self.theme_comboBox.currentText() == QCoreApplication.translate("MainWindow", u"Auto", None):
+            theme = "auto"
+        elif self.theme_comboBox.currentText() == QCoreApplication.translate("MainWindow", u"Light", None):
+            theme = "light"
+        elif self.theme_comboBox.currentText() == QCoreApplication.translate("MainWindow", u"Dark", None):
+            theme = "dark"
+        qdarktheme.setup_theme(theme)
+        
+        
+    def themeRetranslate(self):
+        self.theme_comboBox.setItemText(0, QCoreApplication.translate("MainWindow", u"Auto", None))
+        self.theme_comboBox.setItemText(1, QCoreApplication.translate("MainWindow", u"Light", None))
+        self.theme_comboBox.setItemText(2, QCoreApplication.translate("MainWindow", u"Dark", None))
 
+    def languageSelect(self):
+        if self.ui.cn_radioButton.isChecked():
+            QCoreApplication.installTranslator(self.translator)
+        elif self.ui.en_radioButton.isChecked():
+            QCoreApplication.removeTranslator(self.translator)
 
-
-
-
+    def languageSelect(self):
+        if self.ui.cn_radioButton.isChecked():
+            self.translator.load("language.qm")
+            QCoreApplication.installTranslator(self.translator)
+            self.ui.retranslateUi(self)
+            self.themeRetranslate()
+            self.update()
+        elif self.ui.en_radioButton.isChecked():
+            QCoreApplication.removeTranslator(self.translator)
+            self.ui.retranslateUi(self)
+            self.themeRetranslate()
+            self.update()
+            
 if __name__ == "__main__":
     app = QApplication(sys.argv)
-    translator = QTranslator()
-    if translator.load("language.qm"):
-        QCoreApplication.installTranslator(translator)
     qdarktheme.setup_theme("auto")
+
     widget = MainWindow()
+    widget.languageSelect()
     widget.show()
     sys.exit(app.exec())

@@ -315,7 +315,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>Chief Complaint:</string>
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Chief Complaint:&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
    </widget>
    <widget class="QTextEdit" name="diagnosis_textEdit">

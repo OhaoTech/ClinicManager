@@ -1,5 +1,6 @@
 from Database import Database
 from PySide6.QtWidgets import QFileDialog, QMessageBox
+from PySide6.QtCore import QCoreApplication
 import pandas as pd
 class Exportdatasheet():
     def __init__(self, database: Database):
@@ -7,10 +8,10 @@ class Exportdatasheet():
     def choose_file_directory(self,df:pd.DataFrame):
         options = QFileDialog.Options()
         options |= QFileDialog.DontUseNativeDialog
-        filename_without_extension, _ = QFileDialog.getSaveFileName(None, "Save File", "", "Excel Files (*.xlsx)", options=options)
+        filename_without_extension, _ = QFileDialog.getSaveFileName(None, QCoreApplication.translate("Exportdatasheet", u"Save File", None), "","Excel" + QCoreApplication.translate("Exportdatasheet", u"Files", None) + "(*.xlsx)", options=options)
         if filename_without_extension:
             df.to_excel(filename_without_extension+".xlsx", index=False)
-            QMessageBox.information(None, "Good!", filename_without_extension + ".xlsx exported successful!")
+            QMessageBox.information(None, QCoreApplication.translate("Exportdatasheet", u"Good!", None), filename_without_extension + ".xlsx"+QCoreApplication.translate("Exportdatasheet", u"exported successful!", None))
     def export_all_patients_info(self):
         data = self.database.get_all_patients()
         columns = [col[0] for col in self.database.cursor.description]

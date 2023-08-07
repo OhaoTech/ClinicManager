@@ -1,6 +1,6 @@
 # This Python file uses the following encoding: utf-8
 from PySide6 import QtCore
-from PySide6.QtCore import Qt, QRect
+from PySide6.QtCore import Qt, QRect, QCoreApplication
 from PySide6 import QtWidgets
 from PySide6.QtGui import QResizeEvent, QShortcut, QKeySequence, QMouseEvent
 from PySide6.QtWidgets import QTableWidgetItem, QMessageBox
@@ -22,10 +22,21 @@ class SearchWindow(QtWidgets.QMainWindow):
         self.table = self.ui.patient_tableWidget
 
         # set header labels
-        labels = self.database.get_patients_schema()
+        labels = [
+            QCoreApplication.translate("SearchWindow", "ID"),
+            QCoreApplication.translate("SearchWindow", "Full Name"),
+            QCoreApplication.translate("SearchWindow", "Gender"),
+            QCoreApplication.translate("SearchWindow", "Birthdate"),
+            QCoreApplication.translate("SearchWindow", "Telephone"),
+            QCoreApplication.translate("SearchWindow", "Home Address"),
+            QCoreApplication.translate("SearchWindow", "Remark"),
+            QCoreApplication.translate("SearchWindow", "Allergic History"),
+            QCoreApplication.translate("SearchWindow", "Past Medical History")
+        ]
+        # labels = self.database.get_patients_schema()
         self.table.setColumnCount(np.shape(labels)[0])
         for i in range(len(labels)):
-            self.table.setHorizontalHeaderItem(i, QTableWidgetItem(labels[i][1]))
+            self.table.setHorizontalHeaderItem(i , QTableWidgetItem(labels[i]))
         # Allow manual resizing of the header sections
         horizontal_header = self.table.horizontalHeader()
         horizontal_header.setSectionResizeMode(QtWidgets.QHeaderView.Interactive)
@@ -90,8 +101,12 @@ class SearchWindow(QtWidgets.QMainWindow):
         name = self.ui.name_plainTextEdit.toPlainText()
         tel = self.ui.tel_plainTextEdit.toPlainText()
         gender = self.ui.gender_comboBox.currentText()
-        if gender == "(Select)":
+        if gender == QCoreApplication.translate("SearchWindow", u"(Select)", None):
             gender = ""
+        elif gender == QCoreApplication.translate("SearchWindow", u"Male", None):
+            gender = "Male"
+        elif gender == QCoreApplication.translate("SearchWindow", u"Female", None):
+            gender = "Female"
         patients_list = self.database.get_patient_by_condition(name, tel, gender)
         # Clear the table before populating with new data
         self.table.clearContents()
@@ -117,8 +132,8 @@ class SearchWindow(QtWidgets.QMainWindow):
     def show_confirmation_dialog(self) -> bool:
         confirm_dialog = QMessageBox(self)
         confirm_dialog.setIcon(QMessageBox.Warning)
-        confirm_dialog.setWindowTitle('Confirmation')
-        confirm_dialog.setText(f'Are you sure you want to delete this patient?')
+        confirm_dialog.setWindowTitle(QCoreApplication.translate("SearchWindow", u"Confirmation", None))
+        confirm_dialog.setText(QCoreApplication.translate("SearchWindow", u"Are you sure you want to delete this patient?", None))
         confirm_dialog.setStandardButtons(QMessageBox.Yes | QMessageBox.Cancel)
         confirm_dialog.setDefaultButton(QMessageBox.Cancel)
 

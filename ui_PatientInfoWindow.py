@@ -187,7 +187,7 @@ class Ui_PatientInfoWIndow(object):
         self.new_pushButton.setText(QCoreApplication.translate("PatientInfoWIndow", u"Clear ", None))
         self.delete_record_pushButton.setText(QCoreApplication.translate("PatientInfoWIndow", u"Delete Record", None))
         self.add_record_pushButton.setText(QCoreApplication.translate("PatientInfoWIndow", u"Add Record", None))
-        self.chief_complaint_label.setText(QCoreApplication.translate("PatientInfoWIndow", u"Chief Complaint:", None))
+        self.chief_complaint_label.setText(QCoreApplication.translate("PatientInfoWIndow", u"<html><head/><body><p align=\"center\">Chief Complaint:</p></body></html>", None))
         self.diagnosis_label.setText(QCoreApplication.translate("PatientInfoWIndow", u"<html><head/><body><p align=\"center\">Diagnosis:</p></body></html>", None))
         self.history_of_the_present_illness_label.setText(QCoreApplication.translate("PatientInfoWIndow", u"<html><head/><body><p align=\"center\">History of the</p><p align=\"center\"> Present </p><p align=\"center\">Illness:</p></body></html>", None))
         self.examinination_label.setText(QCoreApplication.translate("PatientInfoWIndow", u"<html><head/><body><p align=\"center\">Examination:</p></body></html>", None))

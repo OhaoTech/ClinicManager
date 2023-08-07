@@ -1,6 +1,5 @@
 # This Python file uses the following encoding: utf-8
-from PySide6 import QtCore
-from PySide6.QtCore import Qt, QDate, QTimer, QDateTime
+from PySide6.QtCore import Qt, QDate, QTimer, QDateTime, QCoreApplication, QModelIndex
 from PySide6 import QtWidgets
 from PySide6.QtGui import QShortcut, QKeySequence
 from PySide6.QtWidgets import QTreeWidgetItem, QMessageBox 
@@ -146,8 +145,8 @@ class PatientInfoWindow(QtWidgets.QMainWindow):
 		formatted_date_time = self.ui.realtime_dateTimeEdit.dateTime().toString("yyyy-MM-dd HH:mm:ss")
 		confirm_dialog = QMessageBox(self)
 		confirm_dialog.setIcon(QMessageBox.Warning)
-		confirm_dialog.setWindowTitle('Confirmation')
-		confirm_dialog.setText(f'Proceed with date and time: {formatted_date_time}?')
+		confirm_dialog.setWindowTitle(QCoreApplication.translate("PatientInfoWindow", u"Confirmation", None))
+		confirm_dialog.setText(QCoreApplication.translate("PatientInfoWindow", f"Proceed with date and time: {formatted_date_time}?", None))
 		confirm_dialog.setStandardButtons(QMessageBox.Yes | QMessageBox.Cancel)
 		confirm_dialog.setDefaultButton(QMessageBox.Cancel)
 
@@ -171,7 +170,7 @@ class PatientInfoWindow(QtWidgets.QMainWindow):
 		self.show_visits()
 
 
-	def on_item_doule_clicked(self, index: QtCore.QModelIndex):
+	def on_item_doule_clicked(self, index: QModelIndex):
 		item = self.tree_widget.itemFromIndex(index)
 		self.visit_id = item.text(0)
 		chief_complaint = item.text(2)
