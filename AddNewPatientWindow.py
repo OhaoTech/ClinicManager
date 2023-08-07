@@ -1,7 +1,7 @@
 # This Python file uses the following encoding: utf-8
 from PySide6.QtCore import QDateTime
 from PySide6 import QtWidgets, QtCore
-from PySide6.QtCore import Qt, QTimer
+from PySide6.QtCore import Qt, QTimer, QCoreApplication
 from PySide6.QtWidgets import  QLabel, QTextEdit, QMessageBox
 from PySide6.QtGui import  QKeySequence, QShortcut
 
@@ -11,7 +11,9 @@ from ui_addNewPatientWindow import Ui_AddNewPatientWindow
 import re
 
 from Database import Database
-
+from reportlab.lib.pagesizes import A4
+from reportlab.lib import colors
+from reportlab.platypus import SimpleDocTemplate, Table, TableStyle
 
 class AddNewPatientWindow(QtWidgets.QMainWindow):
     def __init__(self, parent, database = Database | None):
@@ -42,6 +44,9 @@ class AddNewPatientWindow(QtWidgets.QMainWindow):
         
         shortcut = QShortcut(QKeySequence(Qt.CTRL | Qt.Key_W), self)
         shortcut.activated.connect(self.close)
+        
+        # print to pdf
+        self.ui.print_pushButton.clicked.connect(self.print_to_pdf)
         
     def initStyle(self):
         self.ui.remark_textEdit.setPlaceholderText("None")
@@ -156,11 +161,57 @@ class AddNewPatientWindow(QtWidgets.QMainWindow):
 
 
         
+    @QtCore.Slot()
+    def print_to_pdf(self):
+        name = self.ui.name_textEdit.toPlainText()
+        gender = self.ui.gender_comboBox.currentText()
+        birthdate = self.ui.birth_dateEdit.date().toString('yyyy-MM-dd')
+        tel = self.ui.tel_textEdit.toPlainText()
+        address = self.ui.address_textEdit.toPlainText()
+        remark = self.ui.remark_textEdit.toPlainText()
+        allergic_history = self.ui.allergic_history_textEdit.toPlainText()
+        past_medical_history = self.ui.past_medical_history_textEdit.toPlainText()
+        visit_date = self.ui.add_dateTimeEdit.dateTime().toString("yyyy-MM-dd HH:mm:ss")
+        chief_complaint = self.ui.chief_complaint_textEdit.toPlainText()
+        present_illness = self.ui.history_of_the_present_illness_textEdit.toPlainText()
+        examination = self.ui.examinination_textEdit.toPlainText()
+        diagnosis = self.ui.diagnosis_textEdit.toPlainText()
+        remedy = self.ui.remedy_textEdit.toPlainText()
         
-        
+        pdf_filename = name + ".pdf"
+        doc = SimpleDocTemplate(pdf_filename, pagesize=A4)
     
-        
+        # Create a table with the data
+        data = [[QCoreApplication.translate("AddNewPatientWindow", u"Name", None), name],
+                [QCoreApplication.translate("AddNewPatientWindow", u"Gender", None), gender],
+                [QCoreApplication.translate("AddNewPatientWindow", u"Birthdate", None), birthdate],
+                [QCoreApplication.translate("AddNewPatientWindow", u"Telephone", None), tel],
+                [QCoreApplication.translate("AddNewPatientWindow", u"Address", None), address],
+                [QCoreApplication.translate("AddNewPatientWindow", u"Remark", None), remark],
+                [QCoreApplication.translate("AddNewPatientWindow", u"Allergic History", None), allergic_history],
+                [QCoreApplication.translate("AddNewPatientWindow", u"Past Medical History", None), past_medical_history],
+                [QCoreApplication.translate("AddNewPatientWindow", u"Visit Date", None), visit_date],
+                [QCoreApplication.translate("AddNewPatientWindow", u"Chief Complaint", None), chief_complaint],
+                [QCoreApplication.translate("AddNewPatientWindow", u"Present Illness", None), present_illness],
+                [QCoreApplication.translate("AddNewPatientWindow", u"Examination", None), examination],
+                [QCoreApplication.translate("AddNewPatientWindow", u"Diagnosis", None), diagnosis],
+                [QCoreApplication.translate("AddNewPatientWindow", u"Remedy", None), remedy]]
 
+        table = Table(data)
+        # Set the font for the table to the font that supports Chinese characters
+        table.setStyle(TableStyle([('BACKGROUND', (0, 0), (-1, 0), colors.grey),
+                                  ('TEXTCOLOR', (0, 0), (-1, 0), colors.whitesmoke),
+                                  ('ALIGN', (0, 0), (-1, -1), 'CENTER'),
+                                  ('FONTNAME', (0, 0), (-1, 0), 'Helvetica-Bold'),
+                                  ('BOTTOMPADDING', (0, 0), (-1, 0), 12),
+                                  ('BACKGROUND', (0, 1), (-1, -1), colors.beige),
+                                  ('GRID', (0, 0), (-1, -1), 1, colors.black)
+                                #   .('FONTNAME', (0, 0), (-1, -1), 'DejaVu Sans')
+                                  ]))  
+
+        # Build the PDF document
+        doc.build([table])
+        QMessageBox.information(self, QCoreApplication.translate("AddNewPatientWindow", u"Success!", None), pdf_filename + QCoreApplication.translate("AddNewPatientWindow", u" printed as PDF file", None))
 
 
 
