@@ -1,9 +1,10 @@
 # This Python file uses the following encoding: utf-8
 import sys
-
+from PySide6 import QtCore
 from PySide6.QtWidgets import QApplication, QMainWindow, QComboBox
 from PySide6.QtGui import QShortcut, QKeySequence
-from PySide6.QtCore import Qt, QCoreApplication, QTranslator
+from PySide6.QtCore import Qt, QCoreApplication, QTranslator, Signal
+from PyQt5.QtCore import pyqtSignal
 
 from SearchWindow import SearchWindow
 from AddNewPatientWindow import AddNewPatientWindow
@@ -23,7 +24,7 @@ class MainWindow(QMainWindow):
         super().__init__(parent)
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
-
+        
         # Button
         self.ui.searchButton.clicked.connect(self.showSearchWindow)
         self.ui.addNewPatientButton.clicked.connect(self.showAddNewPatientWindow)
@@ -46,14 +47,19 @@ class MainWindow(QMainWindow):
         self.ui.cn_radioButton.click()
         self.ui.cn_radioButton.clicked.connect(self.languageSelect)
         self.ui.en_radioButton.clicked.connect(self.languageSelect)
+        
 
     def showSearchWindow(self):
         search_window = SearchWindow(self, self.database, self.exportdatasheet)
         search_window.show()
+        self.ui.cn_radioButton.clicked.connect(search_window.reTranslate)
+        self.ui.en_radioButton.clicked.connect(search_window.reTranslate)
 
     def showAddNewPatientWindow(self):
         add_new_patient_window = AddNewPatientWindow(self, self.database)
         add_new_patient_window.show()
+        self.ui.cn_radioButton.clicked.connect(add_new_patient_window.reTranslate)
+        self.ui.en_radioButton.clicked.connect(add_new_patient_window.reTranslate)
 
     def quitProgram(self):
         QApplication.quit()
@@ -78,22 +84,23 @@ class MainWindow(QMainWindow):
 
     def languageSelect(self):
         if self.ui.cn_radioButton.isChecked():
-            QCoreApplication.installTranslator(self.translator)
-        elif self.ui.en_radioButton.isChecked():
-            QCoreApplication.removeTranslator(self.translator)
-
-    def languageSelect(self):
-        if self.ui.cn_radioButton.isChecked():
             self.translator.load("language.qm")
             QCoreApplication.installTranslator(self.translator)
             self.ui.retranslateUi(self)
             self.themeRetranslate()
             self.update()
+            
         elif self.ui.en_radioButton.isChecked():
             QCoreApplication.removeTranslator(self.translator)
             self.ui.retranslateUi(self)
             self.themeRetranslate()
             self.update()
+            
+    def languageRadioButtonConnect(self, target):
+        self.ui.cn_radioButton.clicked.connect(target)
+        self.ui.en_radioButton.clicked.connect(target)
+            
+        
             
 if __name__ == "__main__":
     app = QApplication(sys.argv)

@@ -1,6 +1,6 @@
 # This Python file uses the following encoding: utf-8
 from PySide6.QtCore import Qt, QDate, QTimer, QDateTime, QCoreApplication, QModelIndex
-from PySide6 import QtWidgets
+from PySide6 import QtWidgets, QtCore
 from PySide6.QtGui import QShortcut, QKeySequence
 from PySide6.QtWidgets import QTreeWidgetItem, QMessageBox 
 
@@ -200,5 +200,10 @@ class PatientInfoWindow(QtWidgets.QMainWindow):
 			date_items.append(item)
 		self.tree_widget.addTopLevelItems(date_items)
 
+	@QtCore.Slot()
+	def reTranslate(self):
+		self.ui.retranslateUi(self)
+		self.update()
+     
   
   

@@ -1,9 +1,9 @@
 # This Python file uses the following encoding: utf-8
 from PySide6 import QtCore
-from PySide6.QtCore import Qt, QRect, QCoreApplication
+from PySide6.QtCore import Qt, QRect, QCoreApplication, Signal
 from PySide6 import QtWidgets
 from PySide6.QtGui import QResizeEvent, QShortcut, QKeySequence, QMouseEvent
-from PySide6.QtWidgets import QTableWidgetItem, QMessageBox
+from PySide6.QtWidgets import QTableWidgetItem, QMessageBox, QApplication
 
 from ui_searchWindow import Ui_SearchWindow
 from PatientInfoWindow import PatientInfoWindow
@@ -16,27 +16,14 @@ class SearchWindow(QtWidgets.QMainWindow):
         self.ui = Ui_SearchWindow()
         self.ui.setupUi(self)
         self.database = database
+        self.parent = parent
         self.exportdatasheet = exportdatasheet
         
 
         self.table = self.ui.patient_tableWidget
 
-        # set header labels
-        labels = [
-            QCoreApplication.translate("SearchWindow", "ID"),
-            QCoreApplication.translate("SearchWindow", "Full Name"),
-            QCoreApplication.translate("SearchWindow", "Gender"),
-            QCoreApplication.translate("SearchWindow", "Birthdate"),
-            QCoreApplication.translate("SearchWindow", "Telephone"),
-            QCoreApplication.translate("SearchWindow", "Home Address"),
-            QCoreApplication.translate("SearchWindow", "Remark"),
-            QCoreApplication.translate("SearchWindow", "Allergic History"),
-            QCoreApplication.translate("SearchWindow", "Past Medical History")
-        ]
-        # labels = self.database.get_patients_schema()
-        self.table.setColumnCount(np.shape(labels)[0])
-        for i in range(len(labels)):
-            self.table.setHorizontalHeaderItem(i , QTableWidgetItem(labels[i]))
+
+        self.reTranslate_headers()
         # Allow manual resizing of the header sections
         horizontal_header = self.table.horizontalHeader()
         horizontal_header.setSectionResizeMode(QtWidgets.QHeaderView.Interactive)
@@ -79,6 +66,24 @@ class SearchWindow(QtWidgets.QMainWindow):
         shortcut.activated.connect(self.close)
         
         self.search_patients()
+        
+    def reTranslate_headers(self):
+        # set header labels
+        self.labels = [
+            QCoreApplication.translate("SearchWindow", "ID"),
+            QCoreApplication.translate("SearchWindow", "Full Name"),
+            QCoreApplication.translate("SearchWindow", "Gender"),
+            QCoreApplication.translate("SearchWindow", "Birthdate"),
+            QCoreApplication.translate("SearchWindow", "Telephone"),
+            QCoreApplication.translate("SearchWindow", "Home Address"),
+            QCoreApplication.translate("SearchWindow", "Remark"),
+            QCoreApplication.translate("SearchWindow", "Allergic History"),
+            QCoreApplication.translate("SearchWindow", "Past Medical History")
+        ]
+        self.table.setColumnCount(np.shape(self.labels)[0])
+        for i in range(np.shape(self.labels)[0]):
+            self.table.setHorizontalHeaderItem(i, QTableWidgetItem(self.labels[i]))
+            
 
     def resizeEvent(self, event: QResizeEvent) -> None:
         super().resizeEvent(event)
@@ -152,4 +157,11 @@ class SearchWindow(QtWidgets.QMainWindow):
     def showPatientInfoWindow(self, patient_id):
         patient_info_window = PatientInfoWindow(self, self.database, patient_id, self.exportdatasheet )
         patient_info_window.show()
+        self.parent.languageRadioButtonConnect(patient_info_window.reTranslate)
+        
+    @QtCore.Slot()
+    def reTranslate(self):
+        self.reTranslate_headers()
+        self.ui.retranslateUi(self)
+        self.update()
             

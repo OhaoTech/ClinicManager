@@ -1,6 +1,6 @@
 # This Python file uses the following encoding: utf-8
 from PySide6.QtCore import QDateTime
-from PySide6 import QtWidgets
+from PySide6 import QtWidgets, QtCore
 from PySide6.QtCore import Qt, QTimer
 from PySide6.QtWidgets import  QLabel, QTextEdit, QMessageBox
 from PySide6.QtGui import  QKeySequence, QShortcut
@@ -149,7 +149,10 @@ class AddNewPatientWindow(QtWidgets.QMainWindow):
         
         self.close()
         
-        
+    @QtCore.Slot()
+    def reTranslate(self):
+        self.ui.retranslateUi(self)
+        self.initStyle()
 
 
         
