@@ -5,13 +5,14 @@ Intro: this app is for super tiny scale single doctor's clinic PC.
 ### on Linux
 
 ```bash
-chmod +x configure.sh run.sh
-./configure.sh
+chmod +x install.sh  lang_pack_gen.sh  run.sh
+./install.sh
+./lang_pack_gen.sh
 ./run.sh
 ```
 
 ### on Windows
 
-double click `configure.bat` and `run.bat`
+double click `configure.bat` and `install.bat lang_pack_gen.sh`
 
 > under developing...
