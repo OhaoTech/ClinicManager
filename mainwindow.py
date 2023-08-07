@@ -14,8 +14,6 @@ from Database import Database
 #     pyside6-uic form.ui -o ui_form.py, or
 #     pyside2-uic form.ui -o ui_form.py
 from ui_form import Ui_MainWindow
-from ui_searchWindow import Ui_SearchWindow
-from ui_addNewPatientWindow import Ui_AddNewPatientWindow
 
 from Exportdatasheet import Exportdatasheet
 import qdarktheme
@@ -42,7 +40,7 @@ class MainWindow(QMainWindow):
         
 
     def showSearchWindow(self):
-        search_window = SearchWindow(self, self.database)
+        search_window = SearchWindow(self, self.database, self.exportdatasheet)
         search_window.show()
 
     def showAddNewPatientWindow(self):

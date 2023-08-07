@@ -7,16 +7,19 @@ from PySide6.QtWidgets import QTreeWidgetItem, QMessageBox
 
 from ui_PatientInfoWindow import Ui_PatientInfoWIndow
 from Database import Database
+from Exportdatasheet import Exportdatasheet
 import numpy as np
 class PatientInfoWindow(QtWidgets.QMainWindow):
     
-	def __init__(self, parent, database: Database, patient_id: int):
+	def __init__(self, parent, database: Database, patient_id: int, exportdatasheet: Exportdatasheet):
 		super().__init__(parent)
 		self.ui = Ui_PatientInfoWIndow()
 		self.ui.setupUi(self)
 		self.parent = parent
 		self.database = database
 		self.patient_id = patient_id
+		self.exportdatasheet = exportdatasheet
+
   
 		self.info_widgets=[self.ui.name_lineEdit, self.ui.gender_comboBox, self.ui.birthdate_dateEdit,
                          self.ui.tel_lineEdit, self.ui.address_lineEdit, self.ui.remark_lineEdit,
@@ -48,6 +51,7 @@ class PatientInfoWindow(QtWidgets.QMainWindow):
 		self.ui.add_record_pushButton.clicked.connect(self.add_medical_record)
 		self.ui.delete_record_pushButton.clicked.connect(self.delete_medical_record)
 		self.ui.delete_all_records_pushButton.clicked.connect(self.delete_all_medical_record)
+		self.ui.export_button.clicked.connect(self.exportdatasheet.export_one_patient_log_visit)
 		#close window
 		shortcut = QShortcut(QKeySequence(Qt.CTRL | Qt.Key_W), self)
 		shortcut.activated.connect(self.close)

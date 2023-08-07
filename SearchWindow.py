@@ -8,13 +8,16 @@ from PySide6.QtWidgets import QTableWidgetItem, QMessageBox
 from ui_searchWindow import Ui_SearchWindow
 from PatientInfoWindow import PatientInfoWindow
 from Database import Database
+from Exportdatasheet import Exportdatasheet
 import numpy as np
 class SearchWindow(QtWidgets.QMainWindow):
-    def __init__(self, parent, database: Database):
+    def __init__(self, parent, database: Database, exportdatasheet: Exportdatasheet):
         super().__init__(parent)
         self.ui = Ui_SearchWindow()
         self.ui.setupUi(self)
         self.database = database
+        self.exportdatasheet = exportdatasheet
+        
 
         self.table = self.ui.patient_tableWidget
 
@@ -43,6 +46,7 @@ class SearchWindow(QtWidgets.QMainWindow):
         self.table.setAlternatingRowColors(True)
         self.table.setSortingEnabled(True)
         self.table.horizontalHeader().setSortIndicatorShown(True)
+        self.table.setColumnHidden(0, True)
 
 
         self.ui.search_pushButton.clicked.connect(self.search_patients)
@@ -131,6 +135,6 @@ class SearchWindow(QtWidgets.QMainWindow):
         self.showPatientInfoWindow(patient_id)
         
     def showPatientInfoWindow(self, patient_id):
-        patient_info_window = PatientInfoWindow(self, self.database, patient_id)
+        patient_info_window = PatientInfoWindow(self, self.database, patient_id, self.exportdatasheet )
         patient_info_window.show()
             

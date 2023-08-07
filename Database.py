@@ -173,13 +173,13 @@ class Database:
         self.cursor.execute(query, (patient_id,))
         patient_info = self.cursor.fetchone()
         return patient_info
-    def get_patient_visits_and_logs(self, patient_id):
-        query = '''SELECT visits.visit_date, visits.chief_complaint, visits.present_illness,
-                           logs.examination_details, logs.diagnosis, logs.remedy
-                    FROM visits
-                    LEFT JOIN logs ON visits.id = logs.visit_id
-                    WHERE visits.patient_id = ?'''
-        self.cursor.execute(query, (patient_id,))
+    def get_one_patient_visits_and_logs(self, patient_id):
+        self.cursor.execute('''
+            SELECT v.visit_date, v.chief_complaint, v.present_illness, 
+                   l.examination_details, l.diagnosis, l.remedy
+            FROM visits AS v
+            INNER JOIN logs AS l ON v.id = l.visit_id
+        ''')
         patient_info = self.cursor.fetchall()
         return patient_info
     def __del__(self):
