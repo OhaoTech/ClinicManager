@@ -11,12 +11,12 @@
     <message>
         <location filename="ui_addNewPatientWindow.py" line="204"/>
         <source>TEL:</source>
-        <translation type="unfinished">电话：</translation>
+        <translation type="unfinished">电话号：</translation>
     </message>
     <message>
         <location filename="ui_addNewPatientWindow.py" line="205"/>
         <source>Birth Date:</source>
-        <translation type="unfinished">出生日期：</translation>
+        <translation type="unfinished">生日：</translation>
     </message>
     <message>
         <location filename="ui_addNewPatientWindow.py" line="206"/>
@@ -26,7 +26,7 @@
     <message>
         <location filename="ui_addNewPatientWindow.py" line="207"/>
         <source>yyyy/MM/dd</source>
-        <translation type="unfinished">年/月/日</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="ui_addNewPatientWindow.py" line="208"/>
@@ -73,67 +73,67 @@ li.checked::marker { content: &quot;\2612&quot;; }
     <message>
         <location filename="ui_addNewPatientWindow.py" line="223"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:18pt; font-weight:700;&quot;&gt;Patient Info&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:18pt; font-weight:700;&quot;&gt;病人信息&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="ui_addNewPatientWindow.py" line="224"/>
         <source>Add time:</source>
-        <translation type="unfinished">添加时间</translation>
+        <translation type="unfinished">添加时间：</translation>
     </message>
     <message>
         <location filename="ui_addNewPatientWindow.py" line="225"/>
         <source>yyyy/MM/dd HH:mm:ssu202f</source>
-        <translation type="unfinished">年/月/日  小时：分钟：秒</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="ui_addNewPatientWindow.py" line="227"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:18pt; font-weight:700;&quot;&gt;Medical History&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:18pt; font-weight:700;&quot;&gt;病史&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="ui_addNewPatientWindow.py" line="228"/>
         <source>Allergic History: </source>
-        <translation type="unfinished">过敏史</translation>
+        <translation type="unfinished">过敏史： </translation>
     </message>
     <message>
         <location filename="ui_addNewPatientWindow.py" line="229"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Past Medical &lt;/p&gt;&lt;p align=&quot;center&quot;&gt;History:&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;过往病史 &lt;/p&gt;&lt;p align=&quot;center&quot;&gt;History:&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="ui_addNewPatientWindow.py" line="231"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:18pt; font-weight:700;&quot;&gt;Outpatient Records&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:18pt; font-weight:700;&quot;&gt;出诊记录&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="ui_addNewPatientWindow.py" line="232"/>
         <source>Chief Complaint:</source>
-        <translation type="unfinished">主诉</translation>
+        <translation type="unfinished">主诉：</translation>
     </message>
     <message>
         <location filename="ui_addNewPatientWindow.py" line="233"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;History of the&lt;/p&gt;&lt;p align=&quot;center&quot;&gt; Present &lt;/p&gt;&lt;p align=&quot;center&quot;&gt;Illness:&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;/p&gt;&lt;p align=&quot;center&quot;&gt; 现史病 &lt;/p&gt;&lt;p align=&quot;center&quot;&gt;:&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="ui_addNewPatientWindow.py" line="234"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Examination:&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;检查:&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="ui_addNewPatientWindow.py" line="235"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Diagnosis:&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;诊断:&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="ui_addNewPatientWindow.py" line="236"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Remedy:&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;治疗方案:&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="ui_addNewPatientWindow.py" line="237"/>
         <source>OK</source>
-        <translation type="unfinished">确认</translation>
+        <translation type="unfinished">好</translation>
     </message>
     <message>
         <location filename="ui_addNewPatientWindow.py" line="238"/>
@@ -171,7 +171,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
     <message>
         <location filename="ui_form.py" line="81"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:22pt;&quot;&gt;Clinic Manager&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:22pt;&quot;&gt;诊所管理&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="ui_form.py" line="82"/>
@@ -181,22 +181,22 @@ li.checked::marker { content: &quot;\2612&quot;; }
     <message>
         <location filename="ui_form.py" line="83"/>
         <source>Add New Patient</source>
-        <translation type="unfinished">添加新患者</translation>
+        <translation type="unfinished">添加新病人</translation>
     </message>
     <message>
         <location filename="ui_form.py" line="84"/>
         <source>Export All Patients</source>
-        <translation type="unfinished">导出所有患者数据</translation>
+        <translation type="unfinished">导出所有患者信息</translation>
     </message>
     <message>
         <location filename="ui_form.py" line="85"/>
         <source>Theme</source>
-        <translation type="unfinished">背景主题</translation>
+        <translation type="unfinished">主题</translation>
     </message>
     <message>
         <location filename="ui_form.py" line="86"/>
         <source>auto</source>
-        <translation type="unfinished">自动</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="ui_form.py" line="87"/>
@@ -214,47 +214,47 @@ li.checked::marker { content: &quot;\2612&quot;; }
     <message>
         <location filename="ui_PatientInfoWindow.py" line="170"/>
         <source>PatientInfoWindow</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">患者信息</translation>
     </message>
     <message>
         <location filename="ui_PatientInfoWindow.py" line="172"/>
         <source>Name:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">姓名：</translation>
     </message>
     <message>
         <location filename="ui_PatientInfoWindow.py" line="173"/>
         <source>Gender:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">性别：</translation>
     </message>
     <message>
         <location filename="ui_PatientInfoWindow.py" line="175"/>
         <source>Male</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">男</translation>
     </message>
     <message>
         <location filename="ui_PatientInfoWindow.py" line="176"/>
         <source>Female</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">女</translation>
     </message>
     <message>
         <location filename="ui_PatientInfoWindow.py" line="178"/>
         <source>TEL:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">电话：</translation>
     </message>
     <message>
         <location filename="ui_PatientInfoWindow.py" line="179"/>
         <source>Remark:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">备注：</translation>
     </message>
     <message>
         <location filename="ui_PatientInfoWindow.py" line="180"/>
         <source>Home Address:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">家庭住址：</translation>
     </message>
     <message>
         <location filename="ui_PatientInfoWindow.py" line="181"/>
         <source>Edit Info</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">编辑信息</translation>
     </message>
     <message>
         <location filename="ui_PatientInfoWindow.py" line="182"/>
@@ -264,57 +264,57 @@ li.checked::marker { content: &quot;\2612&quot;; }
     <message>
         <location filename="ui_PatientInfoWindow.py" line="183"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Birthdate:&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;出生日期:&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="ui_PatientInfoWindow.py" line="185"/>
         <source>Allergic History:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">过敏史：</translation>
     </message>
     <message>
         <location filename="ui_PatientInfoWindow.py" line="186"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Past Medical &lt;/p&gt;&lt;p align=&quot;center&quot;&gt;History:&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;既往病史 &lt;/p&gt;&lt;p align=&quot;center&quot;&gt;:&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="ui_PatientInfoWindow.py" line="187"/>
         <source>Clear </source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">清除 </translation>
     </message>
     <message>
         <location filename="ui_PatientInfoWindow.py" line="188"/>
         <source>Delete Record</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">删除当前记录</translation>
     </message>
     <message>
         <location filename="ui_PatientInfoWindow.py" line="189"/>
         <source>Add Record</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">添加记录</translation>
     </message>
     <message>
         <location filename="ui_PatientInfoWindow.py" line="190"/>
         <source>Chief Complaint:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">主诉：</translation>
     </message>
     <message>
         <location filename="ui_PatientInfoWindow.py" line="191"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Diagnosis:&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;诊断:&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="ui_PatientInfoWindow.py" line="192"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;History of the&lt;/p&gt;&lt;p align=&quot;center&quot;&gt; Present &lt;/p&gt;&lt;p align=&quot;center&quot;&gt;Illness:&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;/p&gt;&lt;p align=&quot;center&quot;&gt; 现病史 &lt;/p&gt;&lt;p align=&quot;center&quot;&gt;:&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="ui_PatientInfoWindow.py" line="193"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Examination:&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;检查:&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="ui_PatientInfoWindow.py" line="194"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Remedy:&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;治疗方案:&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="ui_PatientInfoWindow.py" line="195"/>
@@ -336,22 +336,22 @@ li.checked::marker { content: &quot;\2612&quot;; }
     <message>
         <location filename="ui_PatientInfoWindow.py" line="204"/>
         <source>Realtime:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">实时：</translation>
     </message>
     <message>
         <location filename="ui_PatientInfoWindow.py" line="205"/>
         <source>Edit Record</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">编辑记录</translation>
     </message>
     <message>
         <location filename="ui_PatientInfoWindow.py" line="206"/>
         <source>Delete All Records</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">删除所有记录</translation>
     </message>
     <message>
         <location filename="ui_PatientInfoWindow.py" line="207"/>
         <source>Export</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">导出</translation>
     </message>
 </context>
 <context>
@@ -359,60 +359,52 @@ li.checked::marker { content: &quot;\2612&quot;; }
     <message>
         <location filename="ui_searchWindow.py" line="89"/>
         <source>SearchWindow</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">搜索</translation>
     </message>
     <message>
         <location filename="ui_searchWindow.py" line="91"/>
         <source>Search</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">搜索</translation>
     </message>
     <message>
         <location filename="ui_searchWindow.py" line="92"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:48pt; font-weight:700;&quot;&gt;Personal Info&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:48pt; font-weight:700;&quot;&gt;个人信息&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="ui_searchWindow.py" line="93"/>
         <source>Name:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">姓名：</translation>
     </message>
     <message>
         <location filename="ui_searchWindow.py" line="94"/>
         <source>TEL:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">电话：</translation>
     </message>
     <message>
         <location filename="ui_searchWindow.py" line="95"/>
         <source>Gender:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">性别：</translation>
     </message>
     <message>
         <location filename="ui_searchWindow.py" line="96"/>
         <source>(Select)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">（选择）</translation>
     </message>
     <message>
         <location filename="ui_searchWindow.py" line="97"/>
         <source>Male</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">男</translation>
     </message>
     <message>
         <location filename="ui_searchWindow.py" line="98"/>
         <source>Female</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">女</translation>
     </message>
     <message>
         <location filename="ui_searchWindow.py" line="100"/>
         <source>Delete Selected</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>main</name>
-    <message>
-        <location filename="mainwindow.py" line="62"/>
-        <source>auto</source>
-        <translation type="obsolete">自动</translation>
+        <translation type="unfinished">删除所选</translation>
     </message>
 </context>
 </TS>
