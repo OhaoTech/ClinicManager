@@ -3,7 +3,7 @@ import sys
 
 from PySide6.QtWidgets import QApplication, QMainWindow
 from PySide6.QtGui import QShortcut, QKeySequence
-from PySide6.QtCore import Qt 
+from PySide6.QtCore import Qt, QCoreApplication, QTranslator
 
 from SearchWindow import SearchWindow
 from AddNewPatientWindow import AddNewPatientWindow
@@ -59,6 +59,9 @@ class MainWindow(QMainWindow):
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
+    translator = QTranslator()
+    if translator.load("language.qm"):
+        QCoreApplication.installTranslator(translator)
     qdarktheme.setup_theme("auto")
     widget = MainWindow()
     widget.show()
