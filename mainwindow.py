@@ -16,7 +16,7 @@ from Database import Database
 #     pyside2-uic form.ui -o ui_form.py
 from ui_form import Ui_MainWindow
 
-from Exportdatasheet import Exportdatasheet
+from Exportdata import Exportdata
 import qdarktheme
 
 class MainWindow(QMainWindow):
@@ -32,7 +32,7 @@ class MainWindow(QMainWindow):
 
         # Database
         self.database = Database("clinic.db")
-        self.exportdatasheet = Exportdatasheet(self.database)
+        self.export_data = Exportdata(self.database)
         shortcut = QShortcut(QKeySequence(Qt.CTRL | Qt.Key_W), self)
         shortcut.activated.connect(self.quitProgram)
         
@@ -50,7 +50,7 @@ class MainWindow(QMainWindow):
         
 
     def showSearchWindow(self):
-        search_window = SearchWindow(self, self.database, self.exportdatasheet)
+        search_window = SearchWindow(self, self.database, self.export_data)
         search_window.show()
         self.ui.cn_radioButton.clicked.connect(search_window.reTranslate)
         self.ui.en_radioButton.clicked.connect(search_window.reTranslate)
@@ -65,7 +65,7 @@ class MainWindow(QMainWindow):
         QApplication.quit()
 
     def export_all_patients(self):
-        self.exportdatasheet.export_all_patients_info()
+        self.export_data.export_datasheet_all_patients_info()
         
     def themeSelect(self):
         if self.theme_comboBox.currentText() == QCoreApplication.translate("MainWindow", u"Auto", None):

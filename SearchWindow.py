@@ -8,16 +8,16 @@ from PySide6.QtWidgets import QTableWidgetItem, QMessageBox, QApplication
 from ui_searchWindow import Ui_SearchWindow
 from PatientInfoWindow import PatientInfoWindow
 from Database import Database
-from Exportdatasheet import Exportdatasheet
+from Exportdata import Exportdata
 import numpy as np
 class SearchWindow(QtWidgets.QMainWindow):
-    def __init__(self, parent, database: Database, exportdatasheet: Exportdatasheet):
+    def __init__(self, parent, database: Database, export_data: Exportdata):
         super().__init__(parent)
         self.ui = Ui_SearchWindow()
         self.ui.setupUi(self)
         self.database = database
         self.parent = parent
-        self.exportdatasheet = exportdatasheet
+        self.export_data = export_data
         
 
         self.table = self.ui.patient_tableWidget
@@ -155,7 +155,7 @@ class SearchWindow(QtWidgets.QMainWindow):
         self.showPatientInfoWindow(patient_id)
         
     def showPatientInfoWindow(self, patient_id):
-        patient_info_window = PatientInfoWindow(self, self.database, patient_id, self.exportdatasheet )
+        patient_info_window = PatientInfoWindow(self, self.database, patient_id, self.export_data )
         patient_info_window.show()
         self.parent.languageRadioButtonConnect(patient_info_window.reTranslate)
         
