@@ -11,9 +11,7 @@ from ui_addNewPatientWindow import Ui_AddNewPatientWindow
 import re
 
 from Database import Database
-from reportlab.lib.pagesizes import A4
-from reportlab.lib import colors
-from reportlab.platypus import SimpleDocTemplate, Table, TableStyle
+from Exportdata import Exportdata
 
 class AddNewPatientWindow(QtWidgets.QMainWindow):
     def __init__(self, parent, database = Database | None):
@@ -28,6 +26,7 @@ class AddNewPatientWindow(QtWidgets.QMainWindow):
         self.ui.ok_pushButton.clicked.connect(self.saveInfo)
         
         self.database = database
+        self.exportdata = Exportdata(database)
         
         #error label
         self.error_label = QLabel(self)
@@ -178,9 +177,6 @@ class AddNewPatientWindow(QtWidgets.QMainWindow):
         diagnosis = self.ui.diagnosis_textEdit.toPlainText()
         remedy = self.ui.remedy_textEdit.toPlainText()
         
-        pdf_filename = name + ".pdf"
-        doc = SimpleDocTemplate(pdf_filename, pagesize=A4)
-    
         # Create a table with the data
         data = [[QCoreApplication.translate("AddNewPatientWindow", u"Name", None), name],
                 [QCoreApplication.translate("AddNewPatientWindow", u"Gender", None), gender],
@@ -197,22 +193,9 @@ class AddNewPatientWindow(QtWidgets.QMainWindow):
                 [QCoreApplication.translate("AddNewPatientWindow", u"Diagnosis", None), diagnosis],
                 [QCoreApplication.translate("AddNewPatientWindow", u"Remedy", None), remedy]]
 
-        table = Table(data)
-        # Set the font for the table to the font that supports Chinese characters
-        table.setStyle(TableStyle([('BACKGROUND', (0, 0), (-1, 0), colors.grey),
-                                  ('TEXTCOLOR', (0, 0), (-1, 0), colors.whitesmoke),
-                                  ('ALIGN', (0, 0), (-1, -1), 'CENTER'),
-                                  ('FONTNAME', (0, 0), (-1, 0), 'Helvetica-Bold'),
-                                  ('BOTTOMPADDING', (0, 0), (-1, 0), 12),
-                                  ('BACKGROUND', (0, 1), (-1, -1), colors.beige),
-                                  ('GRID', (0, 0), (-1, -1), 1, colors.black)
-                                #   .('FONTNAME', (0, 0), (-1, -1), 'DejaVu Sans')
-                                  ]))  
-
-        # Build the PDF document
-        doc.build([table])
-        QMessageBox.information(self, QCoreApplication.translate("AddNewPatientWindow", u"Success!", None), pdf_filename + QCoreApplication.translate("AddNewPatientWindow", u" printed as PDF file", None))
-
+        self.exportdata.print_to_pdf(data, filename=name)
+        QMessageBox.information(self, QCoreApplication.translate("AddNewPatientWindow", u"Success!", None), name + QCoreApplication.translate("AddNewPatientWindow", u" printed as PDF file", None))
+        
 
 
 

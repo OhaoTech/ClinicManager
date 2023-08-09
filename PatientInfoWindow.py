@@ -4,20 +4,20 @@ from PySide6 import QtWidgets, QtCore
 from PySide6.QtGui import QShortcut, QKeySequence
 from PySide6.QtWidgets import QTreeWidgetItem, QMessageBox 
 
-from ui_PatientInfoWindow import Ui_PatientInfoWIndow
+from ui_PatientInfoWindow import Ui_PatientInfoWindow
 from Database import Database
-from Exportdatasheet import Exportdatasheet
+from Exportdata import Exportdata
 import numpy as np
 class PatientInfoWindow(QtWidgets.QMainWindow):
     
-	def __init__(self, parent, database: Database, patient_id: int, exportdatasheet: Exportdatasheet):
+	def __init__(self, parent, database: Database, patient_id: int, export_data: Exportdata):
 		super().__init__(parent)
-		self.ui = Ui_PatientInfoWIndow()
+		self.ui = Ui_PatientInfoWindow()
 		self.ui.setupUi(self)
 		self.parent = parent
 		self.database = database
 		self.patient_id = patient_id
-		self.exportdatasheet = exportdatasheet
+		self.export_data = export_data
 
   
 		self.info_widgets=[self.ui.name_lineEdit, self.ui.gender_comboBox, self.ui.birthdate_dateEdit,
@@ -29,6 +29,7 @@ class PatientInfoWindow(QtWidgets.QMainWindow):
 		#patient basic info
 		self.patient_table = database.get_one_patient_by_id(patient_id)
 		self.visit_table = database.get_visits_by_patient(patient_id)
+		self.visit_date = ""
   
 		self.ui.edit_mode_checkBox.stateChanged.connect(self.toggle_edit_info)
 		self.ui.edit_record_checkBox.stateChanged.connect(self.toggle_edit_record)
@@ -50,7 +51,8 @@ class PatientInfoWindow(QtWidgets.QMainWindow):
 		self.ui.add_record_pushButton.clicked.connect(self.add_medical_record)
 		self.ui.delete_record_pushButton.clicked.connect(self.delete_medical_record)
 		self.ui.delete_all_records_pushButton.clicked.connect(self.delete_all_medical_record)
-		self.ui.export_button.clicked.connect(self.exportdatasheet.export_one_patient_log_visit)
+		self.ui.export_to_excel_pushButton.clicked.connect(self.export_data.export_datasheet_one_patient_log_visit)
+		self.ui.expor_to_pdf_pushButton.clicked.connect(self.print_to_pdf)
 		#close window
 		shortcut = QShortcut(QKeySequence(Qt.CTRL | Qt.Key_W), self)
 		shortcut.activated.connect(self.close)
@@ -61,6 +63,7 @@ class PatientInfoWindow(QtWidgets.QMainWindow):
 		self.tree_widget.setColumnHidden(0, True)
 		self.tree_widget.setColumnHidden(2, True)
 		self.tree_widget.setColumnHidden(3, True)
+		self.tree_widget.itemClicked.connect(self.on_item_clicked)
 		self.tree_widget.doubleClicked.connect(self.on_item_doule_clicked)
 		self.show_visits() 
 
@@ -173,6 +176,7 @@ class PatientInfoWindow(QtWidgets.QMainWindow):
 	def on_item_doule_clicked(self, index: QModelIndex):
 		item = self.tree_widget.itemFromIndex(index)
 		self.visit_id = item.text(0)
+		self.visit_date = item.text(1)
 		chief_complaint = item.text(2)
 		present_illness = item.text(3)
   
@@ -184,7 +188,21 @@ class PatientInfoWindow(QtWidgets.QMainWindow):
 		self.ui.examinination_textEdit.setText(log_data[0][2])
 		self.ui.diagnosis_textEdit.setText(log_data[0][3])
 		self.ui.remedy_textEdit.setText(log_data[0][4])
-
+  
+	def on_item_clicked(self, item: QTreeWidgetItem, column: int):
+		self.visit_id = item.text(0)
+		self.visit_date = item.text(1)
+		chief_complaint = item.text(2)
+		present_illness = item.text(3)
+  
+		self.ui.chief_complaint_textEdit.setText(chief_complaint)
+		self.ui.history_of_the_present_illness_textEdit.setText(present_illness)
+  
+		log_data = self.database.get_logs_by_visit(self.visit_id)
+	
+		self.ui.examinination_textEdit.setText(log_data[0][2])
+		self.ui.diagnosis_textEdit.setText(log_data[0][3])
+		self.ui.remedy_textEdit.setText(log_data[0][4])	
 
 	def show_visits(self):
 		self.tree_widget.clear()
@@ -205,5 +223,40 @@ class PatientInfoWindow(QtWidgets.QMainWindow):
 		self.ui.retranslateUi(self)
 		self.update()
      
-  
+	@QtCore.Slot()
+	def print_to_pdf(self):
+		if self.visit_date.strip() == "":
+			QMessageBox.information(self, QCoreApplication.translate("PatientInfoWindow", u"Error!", None), QCoreApplication.translate("PatientInfoWindow", u"Please select a visit record", None))
+			return
+		name = self.ui.name_lineEdit.text()
+		gender = self.ui.gender_comboBox.currentText()
+		birthdate = self.ui.birthdate_dateEdit.date().toString('yyyy-MM-dd')
+		tel = self.ui.tel_lineEdit.text()
+		address = self.ui.address_lineEdit.text()
+		remark = self.ui.remark_lineEdit.text()
+		allergic_history = self.ui.allergic_history_textEdit.toPlainText()
+		past_medical_history = self.ui.past_medical_history_textEdit.toPlainText()
+		visit_date = self.visit_date
+		chief_complaint = self.ui.chief_complaint_textEdit.toPlainText()
+		present_illness = self.ui.history_of_the_present_illness_textEdit.toPlainText()
+		examination = self.ui.examinination_textEdit.toPlainText()
+		diagnosis = self.ui.diagnosis_textEdit.toPlainText()
+		remedy = self.ui.remedy_textEdit.toPlainText()
+		
+		data = [[QCoreApplication.translate("PatientInfoWindow", u"Name", None), name],
+				[QCoreApplication.translate("PatientInfoWindow", u"Gender", None), gender],
+				[QCoreApplication.translate("PatientInfoWindow", u"Birthdate", None), birthdate],
+				[QCoreApplication.translate("PatientInfoWindow", u"TEL", None), tel],
+				[QCoreApplication.translate("PatientInfoWindow", u"Address", None), address],
+				[QCoreApplication.translate("PatientInfoWindow", u"Remark", None), remark],	
+				[QCoreApplication.translate("PatientInfoWindow", u"Allergic History", None), allergic_history],
+				[QCoreApplication.translate("PatientInfoWindow", u"Past Medical History", None), past_medical_history],
+				[QCoreApplication.translate("PatientInfoWindow", u"Visit Date", None), visit_date],
+				[QCoreApplication.translate("PatientInfoWindow", u"Chief Complaint", None), chief_complaint],
+				[QCoreApplication.translate("PatientInfoWindow", u"History of the Present Illness", None), present_illness],
+				[QCoreApplication.translate("PatientInfoWindow", u"Examination", None), examination],
+				[QCoreApplication.translate("PatientInfoWindow", u"Diagnosis", None), diagnosis],
+				[QCoreApplication.translate("PatientInfoWindow", u"Remedy", None), remedy]]
+		self.export_data.print_to_pdf(data, filename=name)
+		QMessageBox.information(self, QCoreApplication.translate("PatientInfoWindow", u"Success!", None), name + QCoreApplication.translate("PatientInfoWindow", u" printed as PDF file", None))
   
