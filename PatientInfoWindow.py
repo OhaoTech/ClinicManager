@@ -65,6 +65,7 @@ class PatientInfoWindow(QtWidgets.QMainWindow):
 		self.tree_widget.setColumnHidden(3, True)
 		self.tree_widget.itemClicked.connect(self.on_item_clicked)
 		self.tree_widget.doubleClicked.connect(self.on_item_doule_clicked)
+		self.tree_widget.setHeaderLabels(["", QCoreApplication.translate("PatientInfoWindow", u"Visit Date", None), "", ""])
 		self.show_visits() 
 
 
@@ -221,6 +222,7 @@ class PatientInfoWindow(QtWidgets.QMainWindow):
 	@QtCore.Slot()
 	def reTranslate(self):
 		self.ui.retranslateUi(self)
+		self.tree_widget.setHeaderLabels(["", QCoreApplication.translate("PatientInfoWindow", u"Visit Date", None), "", ""])
 		self.update()
      
 	@QtCore.Slot()

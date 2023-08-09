@@ -487,92 +487,92 @@ li.checked::marker { content: &quot;\2612&quot;; }
 <context>
     <name>PatientInfoWindow</name>
     <message>
-        <location filename="PatientInfoWindow.py" line="151"/>
+        <location filename="PatientInfoWindow.py" line="152"/>
         <source>Confirmation</source>
         <translation>确认</translation>
     </message>
     <message>
-        <location filename="PatientInfoWindow.py" line="152"/>
+        <location filename="PatientInfoWindow.py" line="153"/>
         <source>Proceed with date and time: {formatted_date_time}?</source>
         <translation>于 {formatted_date_time} 继续吗？</translation>
     </message>
     <message>
-        <location filename="PatientInfoWindow.py" line="246"/>
+        <location filename="PatientInfoWindow.py" line="247"/>
         <source>Name</source>
         <translation>姓名</translation>
     </message>
     <message>
-        <location filename="PatientInfoWindow.py" line="247"/>
+        <location filename="PatientInfoWindow.py" line="248"/>
         <source>Gender</source>
         <translation>性别</translation>
     </message>
     <message>
-        <location filename="PatientInfoWindow.py" line="248"/>
+        <location filename="PatientInfoWindow.py" line="249"/>
         <source>Birthdate</source>
         <translation>出生日期</translation>
     </message>
     <message>
-        <location filename="PatientInfoWindow.py" line="249"/>
+        <location filename="PatientInfoWindow.py" line="250"/>
         <source>TEL</source>
         <translation>电话</translation>
     </message>
     <message>
-        <location filename="PatientInfoWindow.py" line="250"/>
+        <location filename="PatientInfoWindow.py" line="251"/>
         <source>Address</source>
         <translation>家庭地址</translation>
     </message>
     <message>
-        <location filename="PatientInfoWindow.py" line="251"/>
+        <location filename="PatientInfoWindow.py" line="252"/>
         <source>Remark</source>
         <translation>备注</translation>
     </message>
     <message>
-        <location filename="PatientInfoWindow.py" line="252"/>
+        <location filename="PatientInfoWindow.py" line="253"/>
         <source>Allergic History</source>
         <translation>过敏史</translation>
     </message>
     <message>
-        <location filename="PatientInfoWindow.py" line="253"/>
+        <location filename="PatientInfoWindow.py" line="254"/>
         <source>Past Medical History</source>
         <translation>既往病史</translation>
     </message>
     <message>
-        <location filename="PatientInfoWindow.py" line="254"/>
+        <location filename="PatientInfoWindow.py" line="255"/>
         <source>Visit Date</source>
-        <translation>问诊时间</translation>
+        <translation type="unfinished">问诊时间</translation>
     </message>
     <message>
-        <location filename="PatientInfoWindow.py" line="255"/>
+        <location filename="PatientInfoWindow.py" line="256"/>
         <source>Chief Complaint</source>
         <translation>主诉</translation>
     </message>
     <message>
-        <location filename="PatientInfoWindow.py" line="256"/>
+        <location filename="PatientInfoWindow.py" line="257"/>
         <source>History of the Present Illness</source>
         <translation>现病史</translation>
     </message>
     <message>
-        <location filename="PatientInfoWindow.py" line="257"/>
+        <location filename="PatientInfoWindow.py" line="258"/>
         <source>Examination</source>
         <translation>检查</translation>
     </message>
     <message>
-        <location filename="PatientInfoWindow.py" line="258"/>
+        <location filename="PatientInfoWindow.py" line="259"/>
         <source>Diagnosis</source>
         <translation>诊断</translation>
     </message>
     <message>
-        <location filename="PatientInfoWindow.py" line="259"/>
+        <location filename="PatientInfoWindow.py" line="260"/>
         <source>Remedy</source>
         <translation>治疗方案</translation>
     </message>
     <message>
-        <location filename="PatientInfoWindow.py" line="261"/>
+        <location filename="PatientInfoWindow.py" line="262"/>
         <source>Success!</source>
         <translation>成功！</translation>
     </message>
     <message>
-        <location filename="PatientInfoWindow.py" line="261"/>
+        <location filename="PatientInfoWindow.py" line="262"/>
         <source> printed as PDF file</source>
         <translation> 已打印为 PDF 文件</translation>
     </message>
@@ -731,12 +731,12 @@ li.checked::marker { content: &quot;\2612&quot;; }
         <translation>打印为PDF</translation>
     </message>
     <message>
-        <location filename="PatientInfoWindow.py" line="229"/>
+        <location filename="PatientInfoWindow.py" line="230"/>
         <source>Error!</source>
         <translation>错误！</translation>
     </message>
     <message>
-        <location filename="PatientInfoWindow.py" line="229"/>
+        <location filename="PatientInfoWindow.py" line="230"/>
         <source>Please select a visit record</source>
         <translation>请输选择一条问诊记录</translation>
     </message>
