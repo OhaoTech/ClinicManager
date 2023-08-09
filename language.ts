@@ -113,7 +113,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
     <message>
         <location filename="ui_addNewPatientWindow.py" line="233"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;History of the&lt;/p&gt;&lt;p align=&quot;center&quot;&gt; Present &lt;/p&gt;&lt;p align=&quot;center&quot;&gt;Illness:&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;/p&gt;&lt;p align=&quot;center&quot;&gt; 现病史： &lt;/p&gt;&lt;p align=&quot;center&quot;&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;/p&gt;&lt;p align=&quot;center&quot;&gt; 现病史： &lt;/p&gt;&lt;p align=&quot;center&quot;&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="ui_addNewPatientWindow.py" line="234"/>
@@ -146,107 +146,117 @@ li.checked::marker { content: &quot;\2612&quot;; }
         <translation>取消</translation>
     </message>
     <message>
-        <location filename="AddNewPatientWindow.py" line="185"/>
+        <location filename="AddNewPatientWindow.py" line="181"/>
         <source>Name</source>
-        <translation type="unfinished"></translation>
+        <translation>姓名</translation>
+    </message>
+    <message>
+        <location filename="AddNewPatientWindow.py" line="182"/>
+        <source>Gender</source>
+        <translation>性别</translation>
+    </message>
+    <message>
+        <location filename="AddNewPatientWindow.py" line="183"/>
+        <source>Birthdate</source>
+        <translation>出生日期</translation>
+    </message>
+    <message>
+        <location filename="AddNewPatientWindow.py" line="184"/>
+        <source>Telephone</source>
+        <translation>电话号码</translation>
+    </message>
+    <message>
+        <location filename="AddNewPatientWindow.py" line="185"/>
+        <source>Address</source>
+        <translation>家庭地址</translation>
     </message>
     <message>
         <location filename="AddNewPatientWindow.py" line="186"/>
-        <source>Gender</source>
-        <translation type="unfinished">性别</translation>
+        <source>Remark</source>
+        <translation>备注</translation>
     </message>
     <message>
         <location filename="AddNewPatientWindow.py" line="187"/>
-        <source>Birthdate</source>
-        <translation type="unfinished">出生日期</translation>
+        <source>Allergic History</source>
+        <translation>过敏史</translation>
     </message>
     <message>
         <location filename="AddNewPatientWindow.py" line="188"/>
-        <source>Telephone</source>
-        <translation type="unfinished">电话号码</translation>
+        <source>Past Medical History</source>
+        <translation>既往史</translation>
     </message>
     <message>
         <location filename="AddNewPatientWindow.py" line="189"/>
-        <source>Address</source>
-        <translation type="unfinished">家庭地址</translation>
+        <source>Visit Date</source>
+        <translation>看病日期</translation>
     </message>
     <message>
         <location filename="AddNewPatientWindow.py" line="190"/>
-        <source>Remark</source>
-        <translation type="unfinished">备注</translation>
+        <source>Chief Complaint</source>
+        <translation>主诉</translation>
     </message>
     <message>
         <location filename="AddNewPatientWindow.py" line="191"/>
-        <source>Allergic History</source>
-        <translation type="unfinished">过敏史</translation>
+        <source>Present Illness</source>
+        <translation>现病史</translation>
     </message>
     <message>
         <location filename="AddNewPatientWindow.py" line="192"/>
-        <source>Past Medical History</source>
-        <translation type="unfinished">既往史</translation>
+        <source>Examination</source>
+        <translation>检查</translation>
     </message>
     <message>
         <location filename="AddNewPatientWindow.py" line="193"/>
-        <source>Visit Date</source>
-        <translation type="unfinished">看病日期</translation>
+        <source>Diagnosis</source>
+        <translation>诊断</translation>
     </message>
     <message>
         <location filename="AddNewPatientWindow.py" line="194"/>
-        <source>Chief Complaint</source>
-        <translation type="unfinished">主诉</translation>
-    </message>
-    <message>
-        <location filename="AddNewPatientWindow.py" line="195"/>
-        <source>Present Illness</source>
-        <translation type="unfinished">现病史</translation>
-    </message>
-    <message>
-        <location filename="AddNewPatientWindow.py" line="196"/>
-        <source>Examination</source>
-        <translation type="unfinished">检查</translation>
+        <source>Remedy</source>
+        <translation>治疗方案</translation>
     </message>
     <message>
         <location filename="AddNewPatientWindow.py" line="197"/>
-        <source>Diagnosis</source>
-        <translation type="unfinished">诊断</translation>
-    </message>
-    <message>
-        <location filename="AddNewPatientWindow.py" line="198"/>
-        <source>Remedy</source>
-        <translation type="unfinished">治疗方案</translation>
-    </message>
-    <message>
-        <location filename="AddNewPatientWindow.py" line="214"/>
         <source>Success!</source>
-        <translation type="unfinished">成功！</translation>
+        <translation>成功！</translation>
     </message>
     <message>
-        <location filename="AddNewPatientWindow.py" line="214"/>
+        <location filename="AddNewPatientWindow.py" line="197"/>
         <source> printed as PDF file</source>
-        <translation type="unfinished"> 已打印为PDF文件</translation>
+        <translation> 已打印为PDF文件</translation>
     </message>
 </context>
 <context>
     <name>Exportdatasheet</name>
     <message>
-        <location filename="Exportdatasheet.py" line="11"/>
+        <location filename="Exportdata.py" line="16"/>
         <source>Save File</source>
         <translation>保存文件</translation>
     </message>
     <message>
-        <location filename="Exportdatasheet.py" line="11"/>
+        <location filename="Exportdata.py" line="16"/>
         <source>Files</source>
         <translation>文件</translation>
     </message>
     <message>
-        <location filename="Exportdatasheet.py" line="14"/>
+        <location filename="Exportdata.py" line="19"/>
         <source>Good!</source>
         <translation>👍真棒！</translation>
     </message>
     <message>
-        <location filename="Exportdatasheet.py" line="14"/>
+        <location filename="Exportdata.py" line="19"/>
         <source>exported successful!</source>
         <translation>成功导出！</translation>
+    </message>
+    <message>
+        <location filename="Exportdata.py" line="23"/>
+        <source>Error!</source>
+        <translation>错误！</translation>
+    </message>
+    <message>
+        <location filename="Exportdata.py" line="23"/>
+        <source>No data to export!</source>
+        <translation>没有数据可导出！</translation>
     </message>
 </context>
 <context>
@@ -319,95 +329,90 @@ li.checked::marker { content: &quot;\2612&quot;; }
     <message>
         <location filename="ui_form.py" line="86"/>
         <source>English</source>
-        <translation type="unfinished"></translation>
+        <translation>英语</translation>
     </message>
     <message>
         <location filename="ui_form.py" line="87"/>
         <source>u4e2du6587</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Simplified Chinese</translation>
     </message>
 </context>
 <context>
     <name>PatientInfoWIndow</name>
     <message>
-        <location filename="ui_PatientInfoWindow.py" line="170"/>
-        <source>PatientInfoWindow</source>
-        <translation>患者信息</translation>
-    </message>
-    <message>
-        <location filename="ui_PatientInfoWindow.py" line="172"/>
-        <source>Name:</source>
-        <translation>姓名：</translation>
-    </message>
-    <message>
         <location filename="ui_PatientInfoWindow.py" line="173"/>
-        <source>Gender:</source>
-        <translation>性别：</translation>
+        <source>PatientInfoWindow</source>
+        <translation type="obsolete">患者信息</translation>
     </message>
     <message>
         <location filename="ui_PatientInfoWindow.py" line="175"/>
-        <source>Male</source>
-        <translation>男</translation>
+        <source>Name:</source>
+        <translation type="obsolete">姓名：</translation>
     </message>
     <message>
         <location filename="ui_PatientInfoWindow.py" line="176"/>
-        <source>Female</source>
-        <translation>女</translation>
+        <source>Gender:</source>
+        <translation type="obsolete">性别：</translation>
     </message>
     <message>
         <location filename="ui_PatientInfoWindow.py" line="178"/>
-        <source>TEL:</source>
-        <translation>电话：</translation>
+        <source>Male</source>
+        <translation type="obsolete">男</translation>
     </message>
     <message>
         <location filename="ui_PatientInfoWindow.py" line="179"/>
-        <source>Remark:</source>
-        <translation>备注：</translation>
-    </message>
-    <message>
-        <location filename="ui_PatientInfoWindow.py" line="180"/>
-        <source>Home Address:</source>
-        <translation>家庭住址：</translation>
+        <source>Female</source>
+        <translation type="obsolete">女</translation>
     </message>
     <message>
         <location filename="ui_PatientInfoWindow.py" line="181"/>
-        <source>Edit Info</source>
-        <translation>编辑信息</translation>
+        <source>TEL:</source>
+        <translation type="obsolete">电话：</translation>
     </message>
     <message>
         <location filename="ui_PatientInfoWindow.py" line="182"/>
-        <source>yyyy/MM/dd</source>
-        <translation></translation>
+        <source>Remark:</source>
+        <translation type="obsolete">备注：</translation>
     </message>
     <message>
         <location filename="ui_PatientInfoWindow.py" line="183"/>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Birthdate:&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;出生日期:&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>Home Address:</source>
+        <translation type="obsolete">家庭住址：</translation>
     </message>
     <message>
-        <location filename="ui_PatientInfoWindow.py" line="185"/>
-        <source>Allergic History:</source>
-        <translation>过敏史：</translation>
+        <location filename="ui_PatientInfoWindow.py" line="184"/>
+        <source>Edit Info</source>
+        <translation type="obsolete">编辑信息</translation>
     </message>
     <message>
         <location filename="ui_PatientInfoWindow.py" line="186"/>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Past Medical &lt;/p&gt;&lt;p align=&quot;center&quot;&gt;History:&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;既往 &lt;/p&gt;&lt;p align=&quot;center&quot;&gt;病史:&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
-        <location filename="ui_PatientInfoWindow.py" line="187"/>
-        <source>Clear </source>
-        <translation>清除 </translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Birthdate:&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="obsolete">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;出生日期:&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="ui_PatientInfoWindow.py" line="188"/>
-        <source>Delete Record</source>
-        <translation>删除当前记录</translation>
+        <source>Allergic History:</source>
+        <translation type="obsolete">过敏史：</translation>
     </message>
     <message>
         <location filename="ui_PatientInfoWindow.py" line="189"/>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Past Medical &lt;/p&gt;&lt;p align=&quot;center&quot;&gt;History:&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="obsolete">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;既往 &lt;/p&gt;&lt;p align=&quot;center&quot;&gt;病史:&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+    <message>
+        <location filename="ui_PatientInfoWindow.py" line="190"/>
+        <source>Clear </source>
+        <translation type="obsolete">清除 </translation>
+    </message>
+    <message>
+        <location filename="ui_PatientInfoWindow.py" line="191"/>
+        <source>Delete Record</source>
+        <translation type="obsolete">删除当前记录</translation>
+    </message>
+    <message>
+        <location filename="ui_PatientInfoWindow.py" line="192"/>
         <source>Add Record</source>
-        <translation>添加记录</translation>
+        <translation type="obsolete">添加记录</translation>
     </message>
     <message>
         <location filename="ui_PatientInfoWindow.py" line="190"/>
@@ -415,27 +420,269 @@ li.checked::marker { content: &quot;\2612&quot;; }
         <translation type="obsolete">主诉：</translation>
     </message>
     <message>
+        <location filename="ui_PatientInfoWindow.py" line="194"/>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Diagnosis:&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="obsolete">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;诊断:&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+    <message>
+        <location filename="ui_PatientInfoWindow.py" line="195"/>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;History of the&lt;/p&gt;&lt;p align=&quot;center&quot;&gt; Present &lt;/p&gt;&lt;p align=&quot;center&quot;&gt;Illness:&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="obsolete">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;/p&gt;&lt;p align=&quot;center&quot;&gt; 现病史： &lt;/p&gt;&lt;p align=&quot;center&quot;&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+    <message>
+        <location filename="ui_PatientInfoWindow.py" line="196"/>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Examination:&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="obsolete">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;检查:&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+    <message>
+        <location filename="ui_PatientInfoWindow.py" line="197"/>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Remedy:&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="obsolete">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;治疗方案:&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+    <message>
+        <location filename="ui_PatientInfoWindow.py" line="198"/>
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+hr { height: 1px; border-width: 0; }
+li.unchecked::marker { content: &quot;\2610&quot;; }
+li.checked::marker { content: &quot;\2612&quot;; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Liberation Serif&apos;; font-size:11pt; font-weight:700; font-style:normal;&quot;&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Cantarell&apos;; font-size:22pt;&quot;&gt;Medical Records&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="obsolete">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+hr { height: 1px; border-width: 0; }
+li.unchecked::marker { content: &quot;\2610&quot;; }
+li.checked::marker { content: &quot;\2612&quot;; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Liberation Serif&apos;; font-size:11pt; font-weight:700; font-style:normal;&quot;&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Cantarell&apos;; font-size:22pt;&quot;&gt;病史&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+    <message>
+        <location filename="ui_PatientInfoWindow.py" line="207"/>
+        <source>Realtime:</source>
+        <translation type="obsolete">实时：</translation>
+    </message>
+    <message>
+        <location filename="ui_PatientInfoWindow.py" line="208"/>
+        <source>Edit Record</source>
+        <translation type="obsolete">编辑记录</translation>
+    </message>
+    <message>
+        <location filename="ui_PatientInfoWindow.py" line="209"/>
+        <source>Delete All Records</source>
+        <translation type="obsolete">删除所有记录</translation>
+    </message>
+    <message>
+        <location filename="ui_PatientInfoWindow.py" line="207"/>
+        <source>Export</source>
+        <translation type="obsolete">导出</translation>
+    </message>
+    <message>
+        <location filename="ui_PatientInfoWindow.py" line="193"/>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Chief Complaint:&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="obsolete">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;主诉:&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+</context>
+<context>
+    <name>PatientInfoWindow</name>
+    <message>
+        <location filename="PatientInfoWindow.py" line="151"/>
+        <source>Confirmation</source>
+        <translation>确认</translation>
+    </message>
+    <message>
+        <location filename="PatientInfoWindow.py" line="152"/>
+        <source>Proceed with date and time: {formatted_date_time}?</source>
+        <translation>于 {formatted_date_time} 继续吗？</translation>
+    </message>
+    <message>
+        <location filename="PatientInfoWindow.py" line="246"/>
+        <source>Name</source>
+        <translation>姓名</translation>
+    </message>
+    <message>
+        <location filename="PatientInfoWindow.py" line="247"/>
+        <source>Gender</source>
+        <translation>性别</translation>
+    </message>
+    <message>
+        <location filename="PatientInfoWindow.py" line="248"/>
+        <source>Birthdate</source>
+        <translation>出生日期</translation>
+    </message>
+    <message>
+        <location filename="PatientInfoWindow.py" line="249"/>
+        <source>TEL</source>
+        <translation>电话</translation>
+    </message>
+    <message>
+        <location filename="PatientInfoWindow.py" line="250"/>
+        <source>Address</source>
+        <translation>家庭地址</translation>
+    </message>
+    <message>
+        <location filename="PatientInfoWindow.py" line="251"/>
+        <source>Remark</source>
+        <translation>备注</translation>
+    </message>
+    <message>
+        <location filename="PatientInfoWindow.py" line="252"/>
+        <source>Allergic History</source>
+        <translation>过敏史</translation>
+    </message>
+    <message>
+        <location filename="PatientInfoWindow.py" line="253"/>
+        <source>Past Medical History</source>
+        <translation>既往病史</translation>
+    </message>
+    <message>
+        <location filename="PatientInfoWindow.py" line="254"/>
+        <source>Visit Date</source>
+        <translation>问诊时间</translation>
+    </message>
+    <message>
+        <location filename="PatientInfoWindow.py" line="255"/>
+        <source>Chief Complaint</source>
+        <translation>主诉</translation>
+    </message>
+    <message>
+        <location filename="PatientInfoWindow.py" line="256"/>
+        <source>History of the Present Illness</source>
+        <translation>现病史</translation>
+    </message>
+    <message>
+        <location filename="PatientInfoWindow.py" line="257"/>
+        <source>Examination</source>
+        <translation>检查</translation>
+    </message>
+    <message>
+        <location filename="PatientInfoWindow.py" line="258"/>
+        <source>Diagnosis</source>
+        <translation>诊断</translation>
+    </message>
+    <message>
+        <location filename="PatientInfoWindow.py" line="259"/>
+        <source>Remedy</source>
+        <translation>治疗方案</translation>
+    </message>
+    <message>
+        <location filename="PatientInfoWindow.py" line="261"/>
+        <source>Success!</source>
+        <translation>成功！</translation>
+    </message>
+    <message>
+        <location filename="PatientInfoWindow.py" line="261"/>
+        <source> printed as PDF file</source>
+        <translation> 已打印为 PDF 文件</translation>
+    </message>
+    <message>
+        <location filename="ui_PatientInfoWindow.py" line="173"/>
+        <source>PatientInfoWindow</source>
+        <translation>患者信息</translation>
+    </message>
+    <message>
+        <location filename="ui_PatientInfoWindow.py" line="175"/>
+        <source>Name:</source>
+        <translation>姓名：</translation>
+    </message>
+    <message>
+        <location filename="ui_PatientInfoWindow.py" line="176"/>
+        <source>Gender:</source>
+        <translation>性别：</translation>
+    </message>
+    <message>
+        <location filename="ui_PatientInfoWindow.py" line="178"/>
+        <source>Male</source>
+        <translation>男</translation>
+    </message>
+    <message>
+        <location filename="ui_PatientInfoWindow.py" line="179"/>
+        <source>Female</source>
+        <translation>女</translation>
+    </message>
+    <message>
+        <location filename="ui_PatientInfoWindow.py" line="181"/>
+        <source>TEL:</source>
+        <translation>电话：</translation>
+    </message>
+    <message>
+        <location filename="ui_PatientInfoWindow.py" line="182"/>
+        <source>Remark:</source>
+        <translation>备注：</translation>
+    </message>
+    <message>
+        <location filename="ui_PatientInfoWindow.py" line="183"/>
+        <source>Home Address:</source>
+        <translation>家庭住址：</translation>
+    </message>
+    <message>
+        <location filename="ui_PatientInfoWindow.py" line="184"/>
+        <source>Edit Info</source>
+        <translation>编辑信息</translation>
+    </message>
+    <message>
+        <location filename="ui_PatientInfoWindow.py" line="185"/>
+        <source>yyyy/MM/dd</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="ui_PatientInfoWindow.py" line="186"/>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Birthdate:&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;出生日期:&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+    <message>
+        <location filename="ui_PatientInfoWindow.py" line="188"/>
+        <source>Allergic History:</source>
+        <translation>过敏史：</translation>
+    </message>
+    <message>
+        <location filename="ui_PatientInfoWindow.py" line="189"/>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Past Medical &lt;/p&gt;&lt;p align=&quot;center&quot;&gt;History:&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt; 既往史&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+    <message>
+        <location filename="ui_PatientInfoWindow.py" line="190"/>
+        <source>Clear </source>
+        <translation>清除 </translation>
+    </message>
+    <message>
         <location filename="ui_PatientInfoWindow.py" line="191"/>
+        <source>Delete Record</source>
+        <translation>删除当前记录</translation>
+    </message>
+    <message>
+        <location filename="ui_PatientInfoWindow.py" line="192"/>
+        <source>Add Record</source>
+        <translation>添加记录</translation>
+    </message>
+    <message>
+        <location filename="ui_PatientInfoWindow.py" line="193"/>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Chief Complaint:&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;主诉:&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+    <message>
+        <location filename="ui_PatientInfoWindow.py" line="194"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Diagnosis:&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;诊断:&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="ui_PatientInfoWindow.py" line="192"/>
+        <location filename="ui_PatientInfoWindow.py" line="195"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;History of the&lt;/p&gt;&lt;p align=&quot;center&quot;&gt; Present &lt;/p&gt;&lt;p align=&quot;center&quot;&gt;Illness:&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;/p&gt;&lt;p align=&quot;center&quot;&gt; 现病史： &lt;/p&gt;&lt;p align=&quot;center&quot;&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="ui_PatientInfoWindow.py" line="193"/>
+        <location filename="ui_PatientInfoWindow.py" line="196"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Examination:&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;检查:&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="ui_PatientInfoWindow.py" line="194"/>
+        <location filename="ui_PatientInfoWindow.py" line="197"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Remedy:&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;治疗方案:&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="ui_PatientInfoWindow.py" line="195"/>
+        <location filename="ui_PatientInfoWindow.py" line="198"/>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
@@ -454,47 +701,44 @@ li.checked::marker { content: &quot;\2612&quot;; }
 &lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Cantarell&apos;; font-size:22pt;&quot;&gt;病史&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="ui_PatientInfoWindow.py" line="203"/>
+        <location filename="ui_PatientInfoWindow.py" line="206"/>
         <source>yyyy-MM-dd HH:mm:ss</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="ui_PatientInfoWindow.py" line="204"/>
+        <location filename="ui_PatientInfoWindow.py" line="207"/>
         <source>Realtime:</source>
-        <translation>实时：</translation>
+        <translation>当前时间：</translation>
     </message>
     <message>
-        <location filename="ui_PatientInfoWindow.py" line="205"/>
+        <location filename="ui_PatientInfoWindow.py" line="208"/>
         <source>Edit Record</source>
         <translation>编辑记录</translation>
     </message>
     <message>
-        <location filename="ui_PatientInfoWindow.py" line="206"/>
+        <location filename="ui_PatientInfoWindow.py" line="209"/>
         <source>Delete All Records</source>
         <translation>删除所有记录</translation>
     </message>
     <message>
-        <location filename="ui_PatientInfoWindow.py" line="207"/>
-        <source>Export</source>
-        <translation>导出</translation>
+        <location filename="ui_PatientInfoWindow.py" line="210"/>
+        <source>Export to Excel</source>
+        <translation>导出为Excel</translation>
     </message>
     <message>
-        <location filename="ui_PatientInfoWindow.py" line="190"/>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Chief Complaint:&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;主诉:&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-</context>
-<context>
-    <name>PatientInfoWindow</name>
-    <message>
-        <location filename="PatientInfoWindow.py" line="148"/>
-        <source>Confirmation</source>
-        <translation>确认</translation>
+        <location filename="ui_PatientInfoWindow.py" line="211"/>
+        <source>Export to PDF</source>
+        <translation>打印为PDF</translation>
     </message>
     <message>
-        <location filename="PatientInfoWindow.py" line="149"/>
-        <source>Proceed with date and time: {formatted_date_time}?</source>
-        <translation>于 {formatted_date_time} 继续吗？</translation>
+        <location filename="PatientInfoWindow.py" line="229"/>
+        <source>Error!</source>
+        <translation>错误！</translation>
+    </message>
+    <message>
+        <location filename="PatientInfoWindow.py" line="229"/>
+        <source>Please select a visit record</source>
+        <translation>请输选择一条问诊记录</translation>
     </message>
 </context>
 <context>
