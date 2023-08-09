@@ -21,12 +21,12 @@ from PySide6.QtWidgets import (QApplication, QCheckBox, QComboBox, QDateEdit,
     QTextBrowser, QTextEdit, QTreeWidget, QTreeWidgetItem,
     QWidget)
 
-class Ui_PatientInfoWIndow(object):
-    def setupUi(self, PatientInfoWIndow):
-        if not PatientInfoWIndow.objectName():
-            PatientInfoWIndow.setObjectName(u"PatientInfoWIndow")
-        PatientInfoWIndow.resize(967, 833)
-        self.up_groupBox = QGroupBox(PatientInfoWIndow)
+class Ui_PatientInfoWindow(object):
+    def setupUi(self, PatientInfoWindow):
+        if not PatientInfoWindow.objectName():
+            PatientInfoWindow.setObjectName(u"PatientInfoWindow")
+        PatientInfoWindow.resize(967, 833)
+        self.up_groupBox = QGroupBox(PatientInfoWindow)
         self.up_groupBox.setObjectName(u"up_groupBox")
         self.up_groupBox.setGeometry(QRect(0, 0, 951, 111))
         self.name_label = QLabel(self.up_groupBox)
@@ -70,7 +70,7 @@ class Ui_PatientInfoWIndow(object):
         self.birthdate_label = QLabel(self.up_groupBox)
         self.birthdate_label.setObjectName(u"birthdate_label")
         self.birthdate_label.setGeometry(QRect(580, 20, 66, 18))
-        self.down_groupBox = QGroupBox(PatientInfoWIndow)
+        self.down_groupBox = QGroupBox(PatientInfoWindow)
         self.down_groupBox.setObjectName(u"down_groupBox")
         self.down_groupBox.setGeometry(QRect(0, 111, 961, 711))
         self.treeWidget = QTreeWidget(self.down_groupBox)
@@ -78,7 +78,7 @@ class Ui_PatientInfoWIndow(object):
         __qtreewidgetitem.setText(0, u"Visit Date Time");
         self.treeWidget.setHeaderItem(__qtreewidgetitem)
         self.treeWidget.setObjectName(u"treeWidget")
-        self.treeWidget.setGeometry(QRect(0, 10, 241, 671))
+        self.treeWidget.setGeometry(QRect(0, 10, 241, 641))
         self.allergic_history_label = QLabel(self.down_groupBox)
         self.allergic_history_label.setObjectName(u"allergic_history_label")
         self.allergic_history_label.setGeometry(QRect(240, 10, 111, 21))
@@ -96,7 +96,7 @@ class Ui_PatientInfoWIndow(object):
         self.new_pushButton.setGeometry(QRect(709, 650, 103, 36))
         self.delete_record_pushButton = QPushButton(self.down_groupBox)
         self.delete_record_pushButton.setObjectName(u"delete_record_pushButton")
-        self.delete_record_pushButton.setGeometry(QRect(581, 650, 111, 36))
+        self.delete_record_pushButton.setGeometry(QRect(460, 650, 111, 36))
         self.add_record_pushButton = QPushButton(self.down_groupBox)
         self.add_record_pushButton.setObjectName(u"add_record_pushButton")
         self.add_record_pushButton.setGeometry(QRect(829, 650, 103, 36))
@@ -156,43 +156,46 @@ class Ui_PatientInfoWIndow(object):
         self.edit_record_checkBox.setGeometry(QRect(820, 250, 111, 24))
         self.delete_all_records_pushButton = QPushButton(self.down_groupBox)
         self.delete_all_records_pushButton.setObjectName(u"delete_all_records_pushButton")
-        self.delete_all_records_pushButton.setGeometry(QRect(360, 650, 151, 36))
-        self.export_button = QPushButton(self.down_groupBox)
-        self.export_button.setObjectName(u"export_button")
-        self.export_button.setGeometry(QRect(250, 650, 103, 36))
+        self.delete_all_records_pushButton.setGeometry(QRect(0, 660, 141, 36))
+        self.export_to_excel_pushButton = QPushButton(self.down_groupBox)
+        self.export_to_excel_pushButton.setObjectName(u"export_to_excel_pushButton")
+        self.export_to_excel_pushButton.setGeometry(QRect(150, 660, 121, 36))
+        self.expor_to_pdf_pushButton = QPushButton(self.down_groupBox)
+        self.expor_to_pdf_pushButton.setObjectName(u"expor_to_pdf_pushButton")
+        self.expor_to_pdf_pushButton.setGeometry(QRect(590, 650, 103, 36))
 
-        self.retranslateUi(PatientInfoWIndow)
+        self.retranslateUi(PatientInfoWindow)
 
-        QMetaObject.connectSlotsByName(PatientInfoWIndow)
+        QMetaObject.connectSlotsByName(PatientInfoWindow)
     # setupUi
 
-    def retranslateUi(self, PatientInfoWIndow):
-        PatientInfoWIndow.setWindowTitle(QCoreApplication.translate("PatientInfoWIndow", u"PatientInfoWindow", None))
+    def retranslateUi(self, PatientInfoWindow):
+        PatientInfoWindow.setWindowTitle(QCoreApplication.translate("PatientInfoWindow", u"PatientInfoWindow", None))
         self.up_groupBox.setTitle("")
-        self.name_label.setText(QCoreApplication.translate("PatientInfoWIndow", u"Name:", None))
-        self.gender_label.setText(QCoreApplication.translate("PatientInfoWIndow", u"Gender:", None))
+        self.name_label.setText(QCoreApplication.translate("PatientInfoWindow", u"Name:", None))
+        self.gender_label.setText(QCoreApplication.translate("PatientInfoWindow", u"Gender:", None))
         self.tel_lineEdit.setText("")
-        self.gender_comboBox.setItemText(0, QCoreApplication.translate("PatientInfoWIndow", u"Male", None))
-        self.gender_comboBox.setItemText(1, QCoreApplication.translate("PatientInfoWIndow", u"Female", None))
+        self.gender_comboBox.setItemText(0, QCoreApplication.translate("PatientInfoWindow", u"Male", None))
+        self.gender_comboBox.setItemText(1, QCoreApplication.translate("PatientInfoWindow", u"Female", None))
 
-        self.tel_label.setText(QCoreApplication.translate("PatientInfoWIndow", u"TEL:", None))
-        self.remark_label.setText(QCoreApplication.translate("PatientInfoWIndow", u"Remark:", None))
-        self.address_label.setText(QCoreApplication.translate("PatientInfoWIndow", u"Home Address:", None))
-        self.edit_mode_checkBox.setText(QCoreApplication.translate("PatientInfoWIndow", u"Edit Info", None))
-        self.birthdate_dateEdit.setDisplayFormat(QCoreApplication.translate("PatientInfoWIndow", u"yyyy/MM/dd", None))
-        self.birthdate_label.setText(QCoreApplication.translate("PatientInfoWIndow", u"<html><head/><body><p>Birthdate:</p></body></html>", None))
+        self.tel_label.setText(QCoreApplication.translate("PatientInfoWindow", u"TEL:", None))
+        self.remark_label.setText(QCoreApplication.translate("PatientInfoWindow", u"Remark:", None))
+        self.address_label.setText(QCoreApplication.translate("PatientInfoWindow", u"Home Address:", None))
+        self.edit_mode_checkBox.setText(QCoreApplication.translate("PatientInfoWindow", u"Edit Info", None))
+        self.birthdate_dateEdit.setDisplayFormat(QCoreApplication.translate("PatientInfoWindow", u"yyyy/MM/dd", None))
+        self.birthdate_label.setText(QCoreApplication.translate("PatientInfoWindow", u"<html><head/><body><p>Birthdate:</p></body></html>", None))
         self.down_groupBox.setTitle("")
-        self.allergic_history_label.setText(QCoreApplication.translate("PatientInfoWIndow", u"Allergic History:", None))
-        self.past_medical_history_label.setText(QCoreApplication.translate("PatientInfoWIndow", u"<html><head/><body><p align=\"center\">Past Medical </p><p align=\"center\">History:</p></body></html>", None))
-        self.new_pushButton.setText(QCoreApplication.translate("PatientInfoWIndow", u"Clear ", None))
-        self.delete_record_pushButton.setText(QCoreApplication.translate("PatientInfoWIndow", u"Delete Record", None))
-        self.add_record_pushButton.setText(QCoreApplication.translate("PatientInfoWIndow", u"Add Record", None))
-        self.chief_complaint_label.setText(QCoreApplication.translate("PatientInfoWIndow", u"<html><head/><body><p align=\"center\">Chief Complaint:</p></body></html>", None))
-        self.diagnosis_label.setText(QCoreApplication.translate("PatientInfoWIndow", u"<html><head/><body><p align=\"center\">Diagnosis:</p></body></html>", None))
-        self.history_of_the_present_illness_label.setText(QCoreApplication.translate("PatientInfoWIndow", u"<html><head/><body><p align=\"center\">History of the</p><p align=\"center\"> Present </p><p align=\"center\">Illness:</p></body></html>", None))
-        self.examinination_label.setText(QCoreApplication.translate("PatientInfoWIndow", u"<html><head/><body><p align=\"center\">Examination:</p></body></html>", None))
-        self.remedy_label.setText(QCoreApplication.translate("PatientInfoWIndow", u"<html><head/><body><p align=\"center\">Remedy:</p></body></html>", None))
-        self.textBrowser.setHtml(QCoreApplication.translate("PatientInfoWIndow", u"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+        self.allergic_history_label.setText(QCoreApplication.translate("PatientInfoWindow", u"Allergic History:", None))
+        self.past_medical_history_label.setText(QCoreApplication.translate("PatientInfoWindow", u"<html><head/><body><p align=\"center\">Past Medical </p><p align=\"center\">History:</p></body></html>", None))
+        self.new_pushButton.setText(QCoreApplication.translate("PatientInfoWindow", u"Clear ", None))
+        self.delete_record_pushButton.setText(QCoreApplication.translate("PatientInfoWindow", u"Delete Record", None))
+        self.add_record_pushButton.setText(QCoreApplication.translate("PatientInfoWindow", u"Add Record", None))
+        self.chief_complaint_label.setText(QCoreApplication.translate("PatientInfoWindow", u"<html><head/><body><p align=\"center\">Chief Complaint:</p></body></html>", None))
+        self.diagnosis_label.setText(QCoreApplication.translate("PatientInfoWindow", u"<html><head/><body><p align=\"center\">Diagnosis:</p></body></html>", None))
+        self.history_of_the_present_illness_label.setText(QCoreApplication.translate("PatientInfoWindow", u"<html><head/><body><p align=\"center\">History of the</p><p align=\"center\"> Present </p><p align=\"center\">Illness:</p></body></html>", None))
+        self.examinination_label.setText(QCoreApplication.translate("PatientInfoWindow", u"<html><head/><body><p align=\"center\">Examination:</p></body></html>", None))
+        self.remedy_label.setText(QCoreApplication.translate("PatientInfoWindow", u"<html><head/><body><p align=\"center\">Remedy:</p></body></html>", None))
+        self.textBrowser.setHtml(QCoreApplication.translate("PatientInfoWindow", u"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "hr { height: 1px; border-width: 0; }\n"
@@ -200,10 +203,11 @@ class Ui_PatientInfoWIndow(object):
 "li.checked::marker { content: \"\\2612\"; }\n"
 "</style></head><body style=\" font-family:'Liberation Serif'; font-size:11pt; font-weight:700; font-style:normal;\">\n"
 "<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'Cantarell'; font-size:22pt;\">Medical Records</span></p></body></html>", None))
-        self.realtime_dateTimeEdit.setDisplayFormat(QCoreApplication.translate("PatientInfoWIndow", u"yyyy-MM-dd HH:mm:ss", None))
-        self.realtime_label.setText(QCoreApplication.translate("PatientInfoWIndow", u"Realtime:", None))
-        self.edit_record_checkBox.setText(QCoreApplication.translate("PatientInfoWIndow", u"Edit Record", None))
-        self.delete_all_records_pushButton.setText(QCoreApplication.translate("PatientInfoWIndow", u"Delete All Records", None))
-        self.export_button.setText(QCoreApplication.translate("PatientInfoWIndow", u"Export", None))
+        self.realtime_dateTimeEdit.setDisplayFormat(QCoreApplication.translate("PatientInfoWindow", u"yyyy-MM-dd HH:mm:ss", None))
+        self.realtime_label.setText(QCoreApplication.translate("PatientInfoWindow", u"Realtime:", None))
+        self.edit_record_checkBox.setText(QCoreApplication.translate("PatientInfoWindow", u"Edit Record", None))
+        self.delete_all_records_pushButton.setText(QCoreApplication.translate("PatientInfoWindow", u"Delete All Records", None))
+        self.export_to_excel_pushButton.setText(QCoreApplication.translate("PatientInfoWindow", u"Export to Excel", None))
+        self.expor_to_pdf_pushButton.setText(QCoreApplication.translate("PatientInfoWindow", u"Export to PDF", None))
     # retranslateUi
 

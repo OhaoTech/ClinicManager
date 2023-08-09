@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>PatientInfoWIndow</class>
- <widget class="QWidget" name="PatientInfoWIndow">
+ <class>PatientInfoWindow</class>
+ <widget class="QWidget" name="PatientInfoWindow">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -211,7 +211,7 @@
       <x>0</x>
       <y>10</y>
       <width>241</width>
-      <height>671</height>
+      <height>641</height>
      </rect>
     </property>
     <column>
@@ -282,7 +282,7 @@
    <widget class="QPushButton" name="delete_record_pushButton">
     <property name="geometry">
      <rect>
-      <x>581</x>
+      <x>460</x>
       <y>650</y>
       <width>111</width>
       <height>36</height>
@@ -516,9 +516,9 @@ li.checked::marker { content: &quot;\2612&quot;; }
    <widget class="QPushButton" name="delete_all_records_pushButton">
     <property name="geometry">
      <rect>
-      <x>360</x>
-      <y>650</y>
-      <width>151</width>
+      <x>0</x>
+      <y>660</y>
+      <width>141</width>
       <height>36</height>
      </rect>
     </property>
@@ -526,17 +526,30 @@ li.checked::marker { content: &quot;\2612&quot;; }
      <string>Delete All Records</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="export_button">
+   <widget class="QPushButton" name="export_to_excel_pushButton">
     <property name="geometry">
      <rect>
-      <x>250</x>
+      <x>150</x>
+      <y>660</y>
+      <width>121</width>
+      <height>36</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Export to Excel</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="expor_to_pdf_pushButton">
+    <property name="geometry">
+     <rect>
+      <x>590</x>
       <y>650</y>
       <width>103</width>
       <height>36</height>
      </rect>
     </property>
     <property name="text">
-     <string>Export</string>
+     <string>Export to PDF</string>
     </property>
    </widget>
   </widget>
