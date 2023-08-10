@@ -33,22 +33,28 @@ class Exportdata():
         self.choose_file_directory(df)
         
     def print_to_pdf(self,data: list[list[str]], filename: str):
-        pdf_filename = filename + ".pdf"
-        doc = SimpleDocTemplate(pdf_filename, pagesize=A4)
-        pdfmetrics.registerFont(TTFont("SimSun", "SimSun.ttf"))
-    
-        table = Table(data)
-        # Set the font for the table to the font that supports Chinese characters
-        table.setStyle(TableStyle([('BACKGROUND', (0, 0), (-1, 0), colors.grey),
-                                  ('TEXTCOLOR', (0, 0), (-1, 0), colors.whitesmoke),
-                                  ('ALIGN', (0, 0), (-1, -1), 'CENTER'),
-                                  ('FONTNAME', (0, 0), (-1, 0), 'Helvetica-Bold'),
-                                  ('BOTTOMPADDING', (0, 0), (-1, 0), 12),
-                                  ('BACKGROUND', (0, 1), (-1, -1), colors.beige),
-                                  ('GRID', (0, 0), (-1, -1), 1, colors.black),
-                                  ('FONTNAME', (0, 0), (-1, -1), 'SimSun')
-                                  ]))  
+        options = QFileDialog.Options()
+        options |= QFileDialog.DontUseNativeDialog
+        pdf_filename, _= QFileDialog.getSaveFileName(None, QCoreApplication.translate("Exportdatasheet", u"Save File", None), "","PDF" + QCoreApplication.translate("Exportdatasheet", u"Files", None) + "(*.pdf)", options=options)
+        if(pdf_filename):
+            pdf_filename = pdf_filename + ".pdf"
+            doc = SimpleDocTemplate(pdf_filename, pagesize=A4)
+            pdfmetrics.registerFont(TTFont("SimSun", "SimSun.ttc"))
 
-        # Build the PDF document
-        doc.build([table])
+            table = Table(data)
+            # Set the font for the table to the font that supports Chinese characters
+            table.setStyle(TableStyle([('BACKGROUND', (0, 0), (-1, 0), colors.grey),
+                                      ('TEXTCOLOR', (0, 0), (-1, 0), colors.whitesmoke),
+                                      ('ALIGN', (0, 0), (-1, -1), 'CENTER'),
+                                      ('FONTNAME', (0, 0), (-1, 0), 'Helvetica-Bold'),
+                                      ('BOTTOMPADDING', (0, 0), (-1, 0), 12),
+                                      ('BACKGROUND', (0, 1), (-1, -1), colors.beige),
+                                      ('GRID', (0, 0), (-1, -1), 1, colors.black),
+                                      ('FONTNAME', (0, 0), (-1, -1), 'SimSun')
+                                      ]))
+
+            # Build the PDF document
+            doc.build([table])
+            QMessageBox.information(None, QCoreApplication.translate("Exportdatasheet", u"Good!", None), pdf_filename + ".pdf"+QCoreApplication.translate("Exportdatasheet", u"exported successful!", None))
+
 

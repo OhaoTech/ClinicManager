@@ -9,6 +9,6 @@
         "Database.py",
         "PatientInfoWindow.py",
         "PatientInfoWindow.ui",
-        "Exportdatasheet.py"
+        "Exportdata.py"
     ]
 }
