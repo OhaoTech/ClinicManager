@@ -227,36 +227,144 @@ li.checked::marker { content: &quot;\2612&quot;; }
     </message>
 </context>
 <context>
-    <name>Exportdatasheet</name>
+    <name>Exportdata</name>
     <message>
-        <location filename="Exportdata.py" line="16"/>
+        <location filename="Exportdata.py" line="55"/>
         <source>Save File</source>
         <translation>保存文件</translation>
     </message>
     <message>
-        <location filename="Exportdata.py" line="16"/>
+        <location filename="Exportdata.py" line="55"/>
         <source>Files</source>
         <translation>文件</translation>
     </message>
     <message>
-        <location filename="Exportdata.py" line="19"/>
+        <location filename="Exportdata.py" line="20"/>
         <source>Good!</source>
         <translation>👍真棒！</translation>
     </message>
     <message>
-        <location filename="Exportdata.py" line="19"/>
+        <location filename="Exportdata.py" line="20"/>
         <source>exported successful!</source>
         <translation>成功导出！</translation>
     </message>
     <message>
-        <location filename="Exportdata.py" line="23"/>
+        <location filename="Exportdata.py" line="24"/>
         <source>Error!</source>
         <translation>错误！</translation>
     </message>
     <message>
-        <location filename="Exportdata.py" line="23"/>
+        <location filename="Exportdata.py" line="24"/>
         <source>No data to export!</source>
         <translation>没有数据可导出！</translation>
+    </message>
+    <message>
+        <location filename="Exportdata.py" line="26"/>
+        <source>No.</source>
+        <translation>序号.</translation>
+    </message>
+    <message>
+        <location filename="Exportdata.py" line="27"/>
+        <source>Name</source>
+        <translation>姓名</translation>
+    </message>
+    <message>
+        <location filename="Exportdata.py" line="28"/>
+        <source>Gender</source>
+        <translation>性别</translation>
+    </message>
+    <message>
+        <location filename="Exportdata.py" line="29"/>
+        <source>Birthdate</source>
+        <translation>出生日期</translation>
+    </message>
+    <message>
+        <location filename="Exportdata.py" line="30"/>
+        <source>TEL</source>
+        <translation>电话</translation>
+    </message>
+    <message>
+        <location filename="Exportdata.py" line="31"/>
+        <source>Home Address</source>
+        <translation>家庭住址</translation>
+    </message>
+    <message>
+        <location filename="Exportdata.py" line="32"/>
+        <source>Remark</source>
+        <translation>备注</translation>
+    </message>
+    <message>
+        <location filename="Exportdata.py" line="33"/>
+        <source>Allergic History</source>
+        <translation>过敏史</translation>
+    </message>
+    <message>
+        <location filename="Exportdata.py" line="34"/>
+        <source>Past Medical History</source>
+        <translation>既往史</translation>
+    </message>
+    <message>
+        <location filename="Exportdata.py" line="42"/>
+        <source>Visit Date</source>
+        <translation>问诊日期</translation>
+    </message>
+    <message>
+        <location filename="Exportdata.py" line="43"/>
+        <source>Chief Complaint</source>
+        <translation>主诉</translation>
+    </message>
+    <message>
+        <location filename="Exportdata.py" line="44"/>
+        <source>Present Illness</source>
+        <translation>现病史</translation>
+    </message>
+    <message>
+        <location filename="Exportdata.py" line="45"/>
+        <source>Examination Details</source>
+        <translation type="unfinished">检查细节</translation>
+    </message>
+    <message>
+        <location filename="Exportdata.py" line="46"/>
+        <source>Diagnosis</source>
+        <translation>诊断</translation>
+    </message>
+    <message>
+        <location filename="Exportdata.py" line="47"/>
+        <source>Remedy</source>
+        <translation type="unfinished">治疗方案</translation>
+    </message>
+</context>
+<context>
+    <name>Exportdatasheet</name>
+    <message>
+        <location filename="Exportdata.py" line="38"/>
+        <source>Save File</source>
+        <translation type="obsolete">保存文件</translation>
+    </message>
+    <message>
+        <location filename="Exportdata.py" line="38"/>
+        <source>Files</source>
+        <translation type="obsolete">文件</translation>
+    </message>
+    <message>
+        <location filename="Exportdata.py" line="58"/>
+        <source>Good!</source>
+        <translation type="obsolete">👍真棒！</translation>
+    </message>
+    <message>
+        <location filename="Exportdata.py" line="58"/>
+        <source>exported successful!</source>
+        <translation type="obsolete">成功导出！</translation>
+    </message>
+    <message>
+        <location filename="Exportdata.py" line="23"/>
+        <source>Error!</source>
+        <translation type="obsolete">错误！</translation>
+    </message>
+    <message>
+        <location filename="Exportdata.py" line="23"/>
+        <source>No data to export!</source>
+        <translation type="obsolete">没有数据可导出！</translation>
     </message>
 </context>
 <context>
@@ -455,8 +563,8 @@ p, li { white-space: pre-wrap; }
 hr { height: 1px; border-width: 0; }
 li.unchecked::marker { content: &quot;\2610&quot;; }
 li.checked::marker { content: &quot;\2612&quot;; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Liberation Serif&apos;; font-size:11pt; font-weight:700; font-style:normal;&quot;&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Cantarell&apos;; font-size:22pt;&quot;&gt;病史&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Liberation Serif'; font-size:11pt; font-weight:700; font-style:normal;&quot;&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Cantarell'; font-size:22pt;&quot;&gt;病史&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="ui_PatientInfoWindow.py" line="207"/>
@@ -497,82 +605,82 @@ li.checked::marker { content: &quot;\2612&quot;; }
         <translation>于 {formatted_date_time} 继续吗？</translation>
     </message>
     <message>
-        <location filename="PatientInfoWindow.py" line="247"/>
+        <location filename="PatientInfoWindow.py" line="248"/>
         <source>Name</source>
         <translation>姓名</translation>
     </message>
     <message>
-        <location filename="PatientInfoWindow.py" line="248"/>
+        <location filename="PatientInfoWindow.py" line="249"/>
         <source>Gender</source>
         <translation>性别</translation>
     </message>
     <message>
-        <location filename="PatientInfoWindow.py" line="249"/>
+        <location filename="PatientInfoWindow.py" line="250"/>
         <source>Birthdate</source>
         <translation>出生日期</translation>
     </message>
     <message>
-        <location filename="PatientInfoWindow.py" line="250"/>
+        <location filename="PatientInfoWindow.py" line="251"/>
         <source>TEL</source>
         <translation>电话</translation>
     </message>
     <message>
-        <location filename="PatientInfoWindow.py" line="251"/>
+        <location filename="PatientInfoWindow.py" line="252"/>
         <source>Address</source>
         <translation>家庭地址</translation>
     </message>
     <message>
-        <location filename="PatientInfoWindow.py" line="252"/>
+        <location filename="PatientInfoWindow.py" line="253"/>
         <source>Remark</source>
         <translation>备注</translation>
     </message>
     <message>
-        <location filename="PatientInfoWindow.py" line="253"/>
+        <location filename="PatientInfoWindow.py" line="254"/>
         <source>Allergic History</source>
         <translation>过敏史</translation>
     </message>
     <message>
-        <location filename="PatientInfoWindow.py" line="254"/>
+        <location filename="PatientInfoWindow.py" line="255"/>
         <source>Past Medical History</source>
         <translation>既往病史</translation>
     </message>
     <message>
-        <location filename="PatientInfoWindow.py" line="255"/>
+        <location filename="PatientInfoWindow.py" line="256"/>
         <source>Visit Date</source>
         <translation type="unfinished">问诊时间</translation>
     </message>
     <message>
-        <location filename="PatientInfoWindow.py" line="256"/>
+        <location filename="PatientInfoWindow.py" line="257"/>
         <source>Chief Complaint</source>
         <translation>主诉</translation>
     </message>
     <message>
-        <location filename="PatientInfoWindow.py" line="257"/>
+        <location filename="PatientInfoWindow.py" line="258"/>
         <source>History of the Present Illness</source>
         <translation>现病史</translation>
     </message>
     <message>
-        <location filename="PatientInfoWindow.py" line="258"/>
+        <location filename="PatientInfoWindow.py" line="259"/>
         <source>Examination</source>
         <translation>检查</translation>
     </message>
     <message>
-        <location filename="PatientInfoWindow.py" line="259"/>
+        <location filename="PatientInfoWindow.py" line="260"/>
         <source>Diagnosis</source>
         <translation>诊断</translation>
     </message>
     <message>
-        <location filename="PatientInfoWindow.py" line="260"/>
+        <location filename="PatientInfoWindow.py" line="261"/>
         <source>Remedy</source>
         <translation>治疗方案</translation>
     </message>
     <message>
-        <location filename="PatientInfoWindow.py" line="262"/>
+        <location filename="PatientInfoWindow.py" line="263"/>
         <source>Success!</source>
         <translation>成功！</translation>
     </message>
     <message>
-        <location filename="PatientInfoWindow.py" line="262"/>
+        <location filename="PatientInfoWindow.py" line="263"/>
         <source> printed as PDF file</source>
         <translation> 已打印为 PDF 文件</translation>
     </message>
@@ -697,8 +805,8 @@ p, li { white-space: pre-wrap; }
 hr { height: 1px; border-width: 0; }
 li.unchecked::marker { content: &quot;\2610&quot;; }
 li.checked::marker { content: &quot;\2612&quot;; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Liberation Serif&apos;; font-size:11pt; font-weight:700; font-style:normal;&quot;&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Cantarell&apos;; font-size:22pt;&quot;&gt;病史&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Liberation Serif'; font-size:11pt; font-weight:700; font-style:normal;&quot;&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Cantarell'; font-size:22pt;&quot;&gt;病史&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="ui_PatientInfoWindow.py" line="206"/>
@@ -731,12 +839,12 @@ li.checked::marker { content: &quot;\2612&quot;; }
         <translation>打印为PDF</translation>
     </message>
     <message>
-        <location filename="PatientInfoWindow.py" line="230"/>
+        <location filename="PatientInfoWindow.py" line="231"/>
         <source>Error!</source>
         <translation>错误！</translation>
     </message>
     <message>
-        <location filename="PatientInfoWindow.py" line="230"/>
+        <location filename="PatientInfoWindow.py" line="231"/>
         <source>Please select a visit record</source>
         <translation>请输选择一条问诊记录</translation>
     </message>
