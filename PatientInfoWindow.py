@@ -259,6 +259,6 @@ class PatientInfoWindow(QtWidgets.QMainWindow):
 				[QCoreApplication.translate("PatientInfoWindow", u"Examination", None), examination],
 				[QCoreApplication.translate("PatientInfoWindow", u"Diagnosis", None), diagnosis],
 				[QCoreApplication.translate("PatientInfoWindow", u"Remedy", None), remedy]]
-		self.export_data.print_to_pdf(data, filename=name)
-		QMessageBox.information(self, QCoreApplication.translate("PatientInfoWindow", u"Success!", None), name + QCoreApplication.translate("PatientInfoWindow", u" printed as PDF file", None))
+		if	self.export_data.print_to_pdf(data, filename=name):
+			QMessageBox.information(self, QCoreApplication.translate("PatientInfoWindow", u"Success!", None), name + QCoreApplication.translate("PatientInfoWindow", u" printed as PDF file", None))
   
