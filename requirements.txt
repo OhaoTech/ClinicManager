@@ -1,5 +1,5 @@
 PyQt5
-PySide6
+PySide2
 numpy
 pandas
 pyqtdarktheme

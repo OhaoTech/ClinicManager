@@ -1,6 +1,6 @@
 from Database import Database
-from PySide6.QtWidgets import QFileDialog, QMessageBox
-from PySide6.QtCore import QCoreApplication
+from PySide2.QtWidgets import QFileDialog, QMessageBox
+from PySide2.QtCore import QCoreApplication
 import pandas as pd
 from reportlab.lib.pagesizes import A4
 from reportlab.lib import colors
@@ -49,7 +49,7 @@ class Exportdata():
         df = pd.DataFrame(data,columns=labels)
         self.choose_file_directory(df)
         
-    def print_to_pdf(self,data: list[list[str]], filename: str):
+    def print_to_pdf(self,data , filename: str):
         options = QFileDialog.Options()
         options |= QFileDialog.DontUseNativeDialog
         pdf_filename, _= QFileDialog.getSaveFileName(None, QCoreApplication.translate("Exportdata", u"Save File", None), "","PDF" + QCoreApplication.translate("Exportdata", u"Files", None) + "(*.pdf)", options=options)

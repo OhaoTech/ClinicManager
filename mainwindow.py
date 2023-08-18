@@ -1,9 +1,9 @@
 # This Python file uses the following encoding: utf-8
 import sys
-from PySide6 import QtCore
-from PySide6.QtWidgets import QApplication, QMainWindow, QComboBox
-from PySide6.QtGui import QShortcut, QKeySequence
-from PySide6.QtCore import Qt, QCoreApplication, QTranslator, Signal
+from PySide2 import QtCore
+from PySide2.QtWidgets import QApplication, QMainWindow, QComboBox
+from PySide2.QtGui import  QKeySequence, QShortcutEvent, QKeyEvent
+from PySide2.QtCore import Qt, QCoreApplication, QTranslator, Signal
 from PyQt5.QtCore import pyqtSignal
 
 from SearchWindow import SearchWindow
@@ -33,8 +33,6 @@ class MainWindow(QMainWindow):
         # Database
         self.database = Database("clinic.db")
         self.export_data = Exportdata(self.database)
-        shortcut = QShortcut(QKeySequence(Qt.CTRL | Qt.Key_W), self)
-        shortcut.activated.connect(self.quitProgram)
         
         #theme
         self.theme_comboBox = QComboBox(self)
@@ -47,6 +45,13 @@ class MainWindow(QMainWindow):
         self.ui.cn_radioButton.click()
         self.ui.cn_radioButton.clicked.connect(self.languageSelect)
         self.ui.en_radioButton.clicked.connect(self.languageSelect)
+
+        
+    def keyPressEvent(self, event: QKeyEvent) -> None:
+        if isinstance(event, QShortcutEvent) and event.key() == QKeySequence(Qt.CTRL | Qt.Key_W):
+            self.close()
+        super().keyPressEvent(event)
+
         
 
     def showSearchWindow(self):
@@ -109,4 +114,4 @@ if __name__ == "__main__":
     widget = MainWindow()
     widget.languageSelect()
     widget.show()
-    sys.exit(app.exec())
+    sys.exit(app.exec_())

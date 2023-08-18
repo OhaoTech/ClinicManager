@@ -1,9 +1,9 @@
 # This Python file uses the following encoding: utf-8
-from PySide6.QtCore import QDateTime
-from PySide6 import QtWidgets, QtCore
-from PySide6.QtCore import Qt, QTimer, QCoreApplication
-from PySide6.QtWidgets import  QLabel, QTextEdit, QMessageBox
-from PySide6.QtGui import  QKeySequence, QShortcut
+from PySide2.QtCore import QDateTime
+from PySide2 import QtWidgets, QtCore
+from PySide2.QtCore import Qt, QTimer, QCoreApplication
+from PySide2.QtWidgets import  QLabel, QTextEdit, QMessageBox
+from PySide2.QtGui import  QKeySequence, QShortcutEvent, QKeyEvent
 
 
 from ui_addNewPatientWindow import Ui_AddNewPatientWindow
@@ -14,7 +14,7 @@ from Database import Database
 from Exportdata import Exportdata
 
 class AddNewPatientWindow(QtWidgets.QMainWindow):
-    def __init__(self, parent, database = Database | None):
+    def __init__(self, parent, database : Database):
         super().__init__(parent)
 
         self.ui = Ui_AddNewPatientWindow()
@@ -41,9 +41,6 @@ class AddNewPatientWindow(QtWidgets.QMainWindow):
         self.timer.timeout.connect(self.update_date_time)
         self.timer.start(1000)
         
-        shortcut = QShortcut(QKeySequence(Qt.CTRL | Qt.Key_W), self)
-        shortcut.activated.connect(self.close)
-        
         # print to pdf
         self.ui.print_pushButton.clicked.connect(self.print_to_pdf)
         
@@ -57,8 +54,13 @@ class AddNewPatientWindow(QtWidgets.QMainWindow):
         self.ui.diagnosis_textEdit.setPlaceholderText("None")
         self.ui.remedy_textEdit.setPlaceholderText("None")
         
+    def keyPressEvent(self, event: QKeyEvent) -> None:
+        if isinstance(event, QShortcutEvent) and event.key() == QKeySequence(Qt.CTRL | Qt.Key_W):
+            self.close()
+        super().keyPressEvent(event)
 
-        
+
+
     def closeWindow(self):
         self.close()
         

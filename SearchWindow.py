@@ -1,9 +1,9 @@
 # This Python file uses the following encoding: utf-8
-from PySide6 import QtCore
-from PySide6.QtCore import Qt, QRect, QCoreApplication, Signal
-from PySide6 import QtWidgets
-from PySide6.QtGui import QResizeEvent, QShortcut, QKeySequence, QMouseEvent
-from PySide6.QtWidgets import QTableWidgetItem, QMessageBox, QApplication
+from PySide2 import QtCore
+from PySide2.QtCore import Qt, QRect, QCoreApplication, Signal
+from PySide2 import QtWidgets
+from PySide2.QtGui import QResizeEvent, QShortcutEvent, QKeySequence, QMouseEvent
+from PySide2.QtWidgets import QTableWidgetItem, QMessageBox, QApplication
 
 from ui_searchWindow import Ui_SearchWindow
 from PatientInfoWindow import PatientInfoWindow
@@ -62,9 +62,6 @@ class SearchWindow(QtWidgets.QMainWindow):
         
         self.setLayout(layout)
     
-        shortcut = QShortcut(QKeySequence(Qt.CTRL | Qt.Key_W), self)
-        shortcut.activated.connect(self.close)
-        
         self.search_patients()
         
     def reTranslate_headers(self):

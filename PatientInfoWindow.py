@@ -1,8 +1,8 @@
 # This Python file uses the following encoding: utf-8
-from PySide6.QtCore import Qt, QDate, QTimer, QDateTime, QCoreApplication, QModelIndex
-from PySide6 import QtWidgets, QtCore
-from PySide6.QtGui import QShortcut, QKeySequence
-from PySide6.QtWidgets import QTreeWidgetItem, QMessageBox 
+from PySide2.QtCore import Qt, QDate, QTimer, QDateTime, QCoreApplication, QModelIndex
+from PySide2 import QtWidgets, QtCore
+from PySide2.QtGui import  QKeySequence, QShortcutEvent, QKeyEvent
+from PySide2.QtWidgets import QTreeWidgetItem, QMessageBox 
 
 from ui_PatientInfoWindow import Ui_PatientInfoWindow
 from Database import Database
@@ -53,9 +53,6 @@ class PatientInfoWindow(QtWidgets.QMainWindow):
 		self.ui.delete_all_records_pushButton.clicked.connect(self.delete_all_medical_record)
 		self.ui.export_to_excel_pushButton.clicked.connect(self.export_data.export_datasheet_one_patient_log_visit)
 		self.ui.expor_to_pdf_pushButton.clicked.connect(self.print_to_pdf)
-		#close window
-		shortcut = QShortcut(QKeySequence(Qt.CTRL | Qt.Key_W), self)
-		shortcut.activated.connect(self.close)
 
 		#tree widget configurations
 		self.tree_widget.setVerticalScrollBarPolicy(Qt.ScrollBarAlwaysOn)		
@@ -68,6 +65,12 @@ class PatientInfoWindow(QtWidgets.QMainWindow):
 		self.tree_widget.setHeaderLabels(["", QCoreApplication.translate("PatientInfoWindow", u"Visit Date", None), "", ""])
 		self.show_visits() 
 
+
+
+	def keyPressEvent(self, event: QKeyEvent) -> None:
+		if isinstance(event, QShortcutEvent) and event.key() == QKeySequence(Qt.CTRL | Qt.Key_W):
+			self.close()
+		super().keyPressEvent(event)
 
 
 	def toggle_edit_info(self):
