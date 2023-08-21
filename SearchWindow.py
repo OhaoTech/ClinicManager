@@ -18,8 +18,6 @@ class SearchWindow(QtWidgets.QMainWindow):
         self.database = database
         self.parent = parent
         self.export_data = export_data
-        
-
         self.table = self.ui.patient_tableWidget
 
 
@@ -63,7 +61,7 @@ class SearchWindow(QtWidgets.QMainWindow):
         self.setLayout(layout)
     
         self.search_patients()
-        
+        self.adjust_all_fonts_scale()
     def reTranslate_headers(self):
         # set header labels
         self.labels = [
@@ -152,13 +150,17 @@ class SearchWindow(QtWidgets.QMainWindow):
         self.showPatientInfoWindow(patient_id)
         
     def showPatientInfoWindow(self, patient_id):
-        patient_info_window = PatientInfoWindow(self, self.database, patient_id, self.export_data )
+        patient_info_window = PatientInfoWindow(self, self.database, patient_id, self.export_data)
         patient_info_window.show()
         self.parent.languageRadioButtonConnect(patient_info_window.reTranslate)
-        
+    def adjust_all_fonts_scale(self):
+        self.ui.personal_info_label.adjustSize()
+
     @QtCore.Slot()
     def reTranslate(self):
         self.reTranslate_headers()
         self.ui.retranslateUi(self)
         self.update()
+
+
             

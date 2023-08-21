@@ -24,7 +24,6 @@ class MainWindow(QMainWindow):
         super().__init__(parent)
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
-        
         # Button
         self.ui.searchButton.clicked.connect(self.showSearchWindow)
         self.ui.addNewPatientButton.clicked.connect(self.showAddNewPatientWindow)
@@ -110,7 +109,10 @@ class MainWindow(QMainWindow):
 if __name__ == "__main__":
     app = QApplication(sys.argv)
     qdarktheme.setup_theme("auto")
-
+    app.setAttribute(Qt.AA_EnableHighDpiScaling, True)  # Enable high-DPI scaling
+    font = QApplication.font()  # Get the default font
+    font.setPointSizeF(font.pointSizeF() * app.devicePixelRatio())  # Adjust font size based on DPI
+    app.setFont(font)  # Set the adjusted font
     widget = MainWindow()
     widget.languageSelect()
     widget.show()

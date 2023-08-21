@@ -23,7 +23,7 @@
      <x>10</x>
      <y>10</y>
      <width>971</width>
-     <height>161</height>
+     <height>171</height>
     </rect>
    </property>
    <property name="title">
@@ -33,7 +33,7 @@
     <property name="geometry">
      <rect>
       <x>710</x>
-      <y>100</y>
+      <y>130</y>
       <width>91</width>
       <height>36</height>
      </rect>
@@ -46,7 +46,7 @@
     <property name="geometry">
      <rect>
       <x>440</x>
-      <y>100</y>
+      <y>130</y>
       <width>251</width>
       <height>41</height>
      </rect>
@@ -61,18 +61,32 @@
       <x>300</x>
       <y>10</y>
       <width>431</width>
-      <height>71</height>
+      <height>111</height>
      </rect>
     </property>
+    <property name="font">
+     <font>
+      <pointsize>6</pointsize>
+     </font>
+    </property>
     <property name="text">
-     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:48pt; font-weight:700;&quot;&gt;Personal Info&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:24pt; font-weight:700;&quot;&gt;Personal Info&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="wordWrap">
+     <bool>true</bool>
+    </property>
+    <property name="indent">
+     <number>0</number>
+    </property>
+    <property name="textInteractionFlags">
+     <set>Qt::TextBrowserInteraction</set>
     </property>
    </widget>
    <widget class="QPlainTextEdit" name="name_plainTextEdit">
     <property name="geometry">
      <rect>
       <x>70</x>
-      <y>100</y>
+      <y>130</y>
       <width>131</width>
       <height>31</height>
      </rect>
@@ -85,7 +99,7 @@
     <property name="geometry">
      <rect>
       <x>20</x>
-      <y>100</y>
+      <y>130</y>
       <width>66</width>
       <height>18</height>
      </rect>
@@ -98,8 +112,8 @@
     <property name="geometry">
      <rect>
       <x>400</x>
-      <y>100</y>
-      <width>66</width>
+      <y>130</y>
+      <width>31</width>
       <height>18</height>
      </rect>
     </property>
@@ -111,8 +125,8 @@
     <property name="geometry">
      <rect>
       <x>220</x>
-      <y>100</y>
-      <width>66</width>
+      <y>130</y>
+      <width>51</width>
       <height>18</height>
      </rect>
     </property>
@@ -124,7 +138,7 @@
     <property name="geometry">
      <rect>
       <x>280</x>
-      <y>100</y>
+      <y>130</y>
       <width>111</width>
       <height>36</height>
      </rect>
@@ -149,7 +163,7 @@
     <property name="geometry">
      <rect>
       <x>820</x>
-      <y>100</y>
+      <y>130</y>
       <width>131</width>
       <height>36</height>
      </rect>
@@ -172,7 +186,7 @@
    <property name="geometry">
     <rect>
      <x>10</x>
-     <y>180</y>
+     <y>190</y>
      <width>991</width>
      <height>731</height>
     </rect>
