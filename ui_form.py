@@ -17,7 +17,7 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(614, 903)
+        MainWindow.resize(614, 797)
         icon = QIcon()
         iconThemeName = u"start-here"
         if QIcon.hasThemeIcon(iconThemeName):
@@ -53,13 +53,13 @@ class Ui_MainWindow(object):
         self.exportAllPatientsButton.setFont(font)
         self.theme_label = QLabel(self.centralwidget)
         self.theme_label.setObjectName(u"theme_label")
-        self.theme_label.setGeometry(QRect(450, 870, 66, 18))
+        self.theme_label.setGeometry(QRect(450, 770, 66, 18))
         self.en_radioButton = QRadioButton(self.centralwidget)
         self.en_radioButton.setObjectName(u"en_radioButton")
-        self.en_radioButton.setGeometry(QRect(10, 870, 114, 24))
+        self.en_radioButton.setGeometry(QRect(10, 770, 114, 24))
         self.cn_radioButton = QRadioButton(self.centralwidget)
         self.cn_radioButton.setObjectName(u"cn_radioButton")
-        self.cn_radioButton.setGeometry(QRect(10, 840, 114, 24))
+        self.cn_radioButton.setGeometry(QRect(10, 740, 114, 24))
         MainWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(MainWindow)

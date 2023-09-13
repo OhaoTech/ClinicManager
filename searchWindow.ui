@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1023</width>
-    <height>928</height>
+    <width>1011</width>
+    <height>701</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -20,10 +20,10 @@
   <widget class="QGroupBox" name="groupBox">
    <property name="geometry">
     <rect>
-     <x>10</x>
-     <y>10</y>
+     <x>30</x>
+     <y>30</y>
      <width>971</width>
-     <height>171</height>
+     <height>141</height>
     </rect>
    </property>
    <property name="title">
@@ -32,8 +32,8 @@
    <widget class="QPushButton" name="search_pushButton">
     <property name="geometry">
      <rect>
-      <x>710</x>
-      <y>130</y>
+      <x>730</x>
+      <y>90</y>
       <width>91</width>
       <height>36</height>
      </rect>
@@ -45,8 +45,8 @@
    <widget class="QPlainTextEdit" name="tel_plainTextEdit">
     <property name="geometry">
      <rect>
-      <x>440</x>
-      <y>130</y>
+      <x>460</x>
+      <y>90</y>
       <width>251</width>
       <height>41</height>
      </rect>
@@ -56,21 +56,43 @@
     </property>
    </widget>
    <widget class="QLabel" name="personal_info_label">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
     <property name="geometry">
      <rect>
       <x>300</x>
       <y>10</y>
-      <width>431</width>
-      <height>111</height>
+      <width>241</width>
+      <height>71</height>
      </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>241</width>
+      <height>71</height>
+     </size>
     </property>
     <property name="font">
      <font>
       <pointsize>6</pointsize>
+      <bold>false</bold>
      </font>
     </property>
+    <property name="focusPolicy">
+     <enum>Qt::NoFocus</enum>
+    </property>
+    <property name="layoutDirection">
+     <enum>Qt::LeftToRight</enum>
+    </property>
+    <property name="autoFillBackground">
+     <bool>true</bool>
+    </property>
     <property name="text">
-     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:24pt; font-weight:700;&quot;&gt;Personal Info&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:24pt; font-weight:700;&quot;&gt;Personal Info&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
     </property>
     <property name="wordWrap">
      <bool>true</bool>
@@ -86,9 +108,9 @@
     <property name="geometry">
      <rect>
       <x>70</x>
-      <y>130</y>
+      <y>90</y>
       <width>131</width>
-      <height>31</height>
+      <height>41</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -98,10 +120,10 @@
    <widget class="QLabel" name="name_label">
     <property name="geometry">
      <rect>
-      <x>20</x>
-      <y>130</y>
-      <width>66</width>
-      <height>18</height>
+      <x>0</x>
+      <y>90</y>
+      <width>71</width>
+      <height>41</height>
      </rect>
     </property>
     <property name="text">
@@ -111,10 +133,10 @@
    <widget class="QLabel" name="tel_label">
     <property name="geometry">
      <rect>
-      <x>400</x>
-      <y>130</y>
-      <width>31</width>
-      <height>18</height>
+      <x>410</x>
+      <y>90</y>
+      <width>51</width>
+      <height>41</height>
      </rect>
     </property>
     <property name="text">
@@ -124,10 +146,10 @@
    <widget class="QLabel" name="gender_label">
     <property name="geometry">
      <rect>
-      <x>220</x>
-      <y>130</y>
+      <x>230</x>
+      <y>90</y>
       <width>51</width>
-      <height>18</height>
+      <height>41</height>
      </rect>
     </property>
     <property name="text">
@@ -138,9 +160,9 @@
     <property name="geometry">
      <rect>
       <x>280</x>
-      <y>130</y>
+      <y>90</y>
       <width>111</width>
-      <height>36</height>
+      <height>41</height>
      </rect>
     </property>
     <item>
@@ -162,8 +184,8 @@
    <widget class="QPushButton" name="delete_selected_pushButton">
     <property name="geometry">
      <rect>
-      <x>820</x>
-      <y>130</y>
+      <x>840</x>
+      <y>90</y>
       <width>131</width>
       <height>36</height>
      </rect>
@@ -185,11 +207,14 @@
   <widget class="QTableWidget" name="patient_tableWidget">
    <property name="geometry">
     <rect>
-     <x>10</x>
-     <y>190</y>
-     <width>991</width>
-     <height>731</height>
+     <x>0</x>
+     <y>160</y>
+     <width>1001</width>
+     <height>511</height>
     </rect>
+   </property>
+   <property name="dragEnabled">
+    <bool>false</bool>
    </property>
   </widget>
  </widget>

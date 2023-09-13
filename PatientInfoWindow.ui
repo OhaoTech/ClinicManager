@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>967</width>
-    <height>833</height>
+    <height>811</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -28,10 +28,10 @@
    <widget class="QLabel" name="name_label">
     <property name="geometry">
      <rect>
-      <x>10</x>
+      <x>20</x>
       <y>20</y>
-      <width>66</width>
-      <height>18</height>
+      <width>51</width>
+      <height>31</height>
      </rect>
     </property>
     <property name="text">
@@ -41,10 +41,10 @@
    <widget class="QLineEdit" name="name_lineEdit">
     <property name="geometry">
      <rect>
-      <x>60</x>
+      <x>70</x>
       <y>10</y>
       <width>113</width>
-      <height>36</height>
+      <height>41</height>
      </rect>
     </property>
    </widget>
@@ -54,7 +54,7 @@
       <x>190</x>
       <y>20</y>
       <width>66</width>
-      <height>18</height>
+      <height>31</height>
      </rect>
     </property>
     <property name="text">
@@ -64,10 +64,10 @@
    <widget class="QLineEdit" name="tel_lineEdit">
     <property name="geometry">
      <rect>
-      <x>420</x>
+      <x>460</x>
       <y>10</y>
       <width>151</width>
-      <height>36</height>
+      <height>41</height>
      </rect>
     </property>
     <property name="text">
@@ -80,7 +80,7 @@
       <x>250</x>
       <y>10</y>
       <width>125</width>
-      <height>36</height>
+      <height>41</height>
      </rect>
     </property>
     <item>
@@ -97,10 +97,10 @@
    <widget class="QLabel" name="tel_label">
     <property name="geometry">
      <rect>
-      <x>380</x>
+      <x>400</x>
       <y>20</y>
-      <width>66</width>
-      <height>18</height>
+      <width>61</width>
+      <height>31</height>
      </rect>
     </property>
     <property name="text">
@@ -111,7 +111,7 @@
     <property name="geometry">
      <rect>
       <x>610</x>
-      <y>60</y>
+      <y>70</y>
       <width>201</width>
       <height>36</height>
      </rect>
@@ -122,8 +122,8 @@
      <rect>
       <x>550</x>
       <y>70</y>
-      <width>66</width>
-      <height>18</height>
+      <width>61</width>
+      <height>31</height>
      </rect>
     </property>
     <property name="text">
@@ -134,7 +134,7 @@
     <property name="geometry">
      <rect>
       <x>120</x>
-      <y>60</y>
+      <y>70</y>
       <width>411</width>
       <height>36</height>
      </rect>
@@ -146,7 +146,7 @@
       <x>10</x>
       <y>70</y>
       <width>111</width>
-      <height>18</height>
+      <height>31</height>
      </rect>
     </property>
     <property name="text">
@@ -157,7 +157,7 @@
     <property name="geometry">
      <rect>
       <x>820</x>
-      <y>70</y>
+      <y>80</y>
       <width>97</width>
       <height>24</height>
      </rect>
@@ -169,7 +169,7 @@
    <widget class="QDateEdit" name="birthdate_dateEdit">
     <property name="geometry">
      <rect>
-      <x>650</x>
+      <x>700</x>
       <y>10</y>
       <width>201</width>
       <height>42</height>
@@ -182,10 +182,10 @@
    <widget class="QLabel" name="birthdate_label">
     <property name="geometry">
      <rect>
-      <x>580</x>
+      <x>620</x>
       <y>20</y>
-      <width>66</width>
-      <height>18</height>
+      <width>81</width>
+      <height>31</height>
      </rect>
     </property>
     <property name="text">
@@ -199,7 +199,7 @@
      <x>0</x>
      <y>111</y>
      <width>961</width>
-     <height>711</height>
+     <height>701</height>
     </rect>
    </property>
    <property name="title">
@@ -226,11 +226,11 @@
       <x>240</x>
       <y>10</y>
       <width>111</width>
-      <height>21</height>
+      <height>61</height>
      </rect>
     </property>
     <property name="text">
-     <string>Allergic History:</string>
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Allergic &lt;/p&gt;&lt;p align=&quot;center&quot;&gt;History:&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
    </widget>
    <widget class="QTextEdit" name="allergic_history_textEdit">
@@ -269,8 +269,8 @@
    <widget class="QPushButton" name="new_pushButton">
     <property name="geometry">
      <rect>
-      <x>709</x>
-      <y>650</y>
+      <x>710</x>
+      <y>660</y>
       <width>103</width>
       <height>36</height>
      </rect>
@@ -282,8 +282,8 @@
    <widget class="QPushButton" name="delete_record_pushButton">
     <property name="geometry">
      <rect>
-      <x>460</x>
-      <y>650</y>
+      <x>461</x>
+      <y>660</y>
       <width>111</width>
       <height>36</height>
      </rect>
@@ -295,8 +295,8 @@
    <widget class="QPushButton" name="add_record_pushButton">
     <property name="geometry">
      <rect>
-      <x>829</x>
-      <y>650</y>
+      <x>830</x>
+      <y>660</y>
       <width>103</width>
       <height>36</height>
      </rect>
@@ -308,10 +308,10 @@
    <widget class="QLabel" name="chief_complaint_label">
     <property name="geometry">
      <rect>
-      <x>239</x>
+      <x>250</x>
       <y>280</y>
       <width>111</width>
-      <height>21</height>
+      <height>51</height>
      </rect>
     </property>
     <property name="text">
@@ -347,10 +347,10 @@
    <widget class="QLabel" name="diagnosis_label">
     <property name="geometry">
      <rect>
-      <x>239</x>
+      <x>250</x>
       <y>500</y>
       <width>111</width>
-      <height>21</height>
+      <height>41</height>
      </rect>
     </property>
     <property name="text">
@@ -360,7 +360,7 @@
    <widget class="QLabel" name="history_of_the_present_illness_label">
     <property name="geometry">
      <rect>
-      <x>239</x>
+      <x>250</x>
       <y>340</y>
       <width>111</width>
       <height>81</height>
@@ -412,10 +412,10 @@
    <widget class="QLabel" name="examinination_label">
     <property name="geometry">
      <rect>
-      <x>239</x>
+      <x>250</x>
       <y>440</y>
       <width>111</width>
-      <height>21</height>
+      <height>51</height>
      </rect>
     </property>
     <property name="text">
@@ -425,11 +425,14 @@
    <widget class="QLabel" name="remedy_label">
     <property name="geometry">
      <rect>
-      <x>239</x>
+      <x>250</x>
       <y>550</y>
       <width>111</width>
-      <height>21</height>
+      <height>81</height>
      </rect>
+    </property>
+    <property name="layoutDirection">
+     <enum>Qt::LeftToRight</enum>
     </property>
     <property name="text">
      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Remedy:&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
@@ -438,10 +441,10 @@
    <widget class="QTextBrowser" name="textBrowser">
     <property name="geometry">
      <rect>
-      <x>249</x>
-      <y>200</y>
+      <x>240</x>
+      <y>220</y>
       <width>251</width>
-      <height>61</height>
+      <height>51</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -507,7 +510,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
     <property name="geometry">
      <rect>
       <x>820</x>
-      <y>250</y>
+      <y>240</y>
       <width>111</width>
       <height>24</height>
      </rect>
@@ -545,8 +548,8 @@ li.checked::marker { content: &quot;\2612&quot;; }
    <widget class="QPushButton" name="expor_to_pdf_pushButton">
     <property name="geometry">
      <rect>
-      <x>590</x>
-      <y>650</y>
+      <x>591</x>
+      <y>660</y>
       <width>103</width>
       <height>36</height>
      </rect>

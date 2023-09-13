@@ -36,7 +36,7 @@ class MainWindow(QMainWindow):
         #theme
         self.theme_comboBox = QComboBox(self)
         self.theme_comboBox.addItems([QCoreApplication.translate("MainWindow", u"Auto", None), QCoreApplication.translate("MainWindow", u"Light", None), QCoreApplication.translate("MainWindow", u"Dark", None)])
-        self.theme_comboBox.setGeometry(500, 860, 101, 36)
+        self.theme_comboBox.setGeometry(500, 760, 101, 36)
         self.theme_comboBox.currentIndexChanged.connect(self.themeSelect)
         
         # language

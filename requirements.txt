@@ -4,5 +4,6 @@ numpy
 pandas
 pyqtdarktheme
 reportlab
+openpyxl
 
 
