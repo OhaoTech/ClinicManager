@@ -36,11 +36,13 @@ class MainWindow(QMainWindow):
         shortcut = QShortcut(QKeySequence(Qt.CTRL | Qt.Key_W), self)
         shortcut.activated.connect(self.quitProgram)
         
-        #theme
+        # theme
         self.theme_comboBox = QComboBox(self)
-        self.theme_comboBox.addItems([QCoreApplication.translate("MainWindow", u"Auto", None), QCoreApplication.translate("MainWindow", u"Light", None), QCoreApplication.translate("MainWindow", u"Dark", None)])
-        self.theme_comboBox.setGeometry(500, 860, 101, 36)
+        self.theme_comboBox.addItems([QCoreApplication.translate("MainWindow", u"Auto", None), 
+                                      QCoreApplication.translate("MainWindow", u"Light", None), 
+                                      QCoreApplication.translate("MainWindow", u"Dark", None)])
         self.theme_comboBox.currentIndexChanged.connect(self.themeSelect)
+        self.ui.themeLayout.addWidget(self.theme_comboBox)  # 将组合框添加到主题布局中
         
         # language
         self.translator = QTranslator()
