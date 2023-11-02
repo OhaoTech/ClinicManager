@@ -3,7 +3,7 @@
 ################################################################################
 ## Form generated from reading UI file 'searchWindow.ui'
 ##
-## Created by: Qt User Interface Compiler version 6.5.2
+## Created by: Qt User Interface Compiler version 6.6.0
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
@@ -15,88 +15,116 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QFont, QFontDatabase, QGradient, QIcon,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
-from PySide6.QtWidgets import (QApplication, QComboBox, QGroupBox, QHeaderView,
+from PySide6.QtWidgets import (QApplication, QComboBox, QHBoxLayout, QHeaderView,
     QLabel, QPlainTextEdit, QPushButton, QSizePolicy,
-    QTableWidget, QTableWidgetItem, QWidget)
+    QTableWidget, QTableWidgetItem, QVBoxLayout, QWidget)
 
 class Ui_SearchWindow(object):
     def setupUi(self, SearchWindow):
         if not SearchWindow.objectName():
             SearchWindow.setObjectName(u"SearchWindow")
-        SearchWindow.resize(1023, 928)
-        icon = QIcon()
-        iconThemeName = u"phone"
-        if QIcon.hasThemeIcon(iconThemeName):
-            icon = QIcon.fromTheme(iconThemeName)
-        else:
-            icon.addFile(u".", QSize(), QIcon.Normal, QIcon.Off)
-
+        SearchWindow.resize(946, 833)
+        icon = QIcon(QIcon.fromTheme(u"phone"))
         SearchWindow.setWindowIcon(icon)
-        self.groupBox = QGroupBox(SearchWindow)
-        self.groupBox.setObjectName(u"groupBox")
-        self.groupBox.setGeometry(QRect(10, 10, 971, 161))
-        self.search_pushButton = QPushButton(self.groupBox)
-        self.search_pushButton.setObjectName(u"search_pushButton")
-        self.search_pushButton.setGeometry(QRect(710, 100, 91, 36))
-        self.tel_plainTextEdit = QPlainTextEdit(self.groupBox)
-        self.tel_plainTextEdit.setObjectName(u"tel_plainTextEdit")
-        self.tel_plainTextEdit.setGeometry(QRect(440, 100, 251, 41))
-        self.tel_plainTextEdit.setStyleSheet(u"")
-        self.personal_info_label = QLabel(self.groupBox)
+
+        self.centralwidget = QWidget(SearchWindow)
+        self.centralwidget.setObjectName(u"centralwidget")
+
+        self.verticalLayout_3 = QVBoxLayout(self.centralwidget)
+        self.verticalLayout_3.setSpacing(0)
+        self.verticalLayout_3.setObjectName(u"verticalLayout_3")
+        self.verticalLayout_3.setContentsMargins(0, 0, 0, 0)
+
+        self.verticalLayout_2 = QVBoxLayout()
+        self.verticalLayout_2.setObjectName(u"verticalLayout_2")
+        self.personal_info_label = QLabel(self.centralwidget)
         self.personal_info_label.setObjectName(u"personal_info_label")
-        self.personal_info_label.setGeometry(QRect(300, 10, 431, 71))
-        self.name_plainTextEdit = QPlainTextEdit(self.groupBox)
-        self.name_plainTextEdit.setObjectName(u"name_plainTextEdit")
-        self.name_plainTextEdit.setGeometry(QRect(70, 100, 131, 31))
-        self.name_plainTextEdit.setStyleSheet(u"")
-        self.name_label = QLabel(self.groupBox)
-        self.name_label.setObjectName(u"name_label")
-        self.name_label.setGeometry(QRect(20, 100, 66, 18))
-        self.tel_label = QLabel(self.groupBox)
-        self.tel_label.setObjectName(u"tel_label")
-        self.tel_label.setGeometry(QRect(400, 100, 66, 18))
-        self.gender_label = QLabel(self.groupBox)
-        self.gender_label.setObjectName(u"gender_label")
-        self.gender_label.setGeometry(QRect(220, 100, 66, 18))
-        self.gender_comboBox = QComboBox(self.groupBox)
-        self.gender_comboBox.addItem("")
-        self.gender_comboBox.addItem("")
-        self.gender_comboBox.addItem("")
-        self.gender_comboBox.setObjectName(u"gender_comboBox")
-        self.gender_comboBox.setGeometry(QRect(280, 100, 111, 36))
-        self.delete_selected_pushButton = QPushButton(self.groupBox)
-        self.delete_selected_pushButton.setObjectName(u"delete_selected_pushButton")
-        self.delete_selected_pushButton.setGeometry(QRect(820, 100, 131, 36))
-        self.tel_label.raise_()
-        self.gender_label.raise_()
-        self.name_label.raise_()
-        self.search_pushButton.raise_()
-        self.tel_plainTextEdit.raise_()
-        self.personal_info_label.raise_()
-        self.name_plainTextEdit.raise_()
-        self.gender_comboBox.raise_()
-        self.delete_selected_pushButton.raise_()
-        self.patient_tableWidget = QTableWidget(SearchWindow)
+        self.verticalLayout_2.addWidget(self.personal_info_label)
+        self.verticalLayout_3.addLayout(self.verticalLayout_2)
+
+        self.horizontalLayout_3 = QHBoxLayout()
+        self.horizontalLayout_3.setObjectName(u"horizontalLayout_3")
+        self.name_label_3 = QLabel(self.centralwidget)
+        self.name_label_3.setObjectName(u"name_label_3")
+        self.horizontalLayout_3.addWidget(self.name_label_3)
+
+        self.name_plainTextEdit_3 = QPlainTextEdit(self.centralwidget)
+        self.name_plainTextEdit_3.setObjectName(u"name_plainTextEdit_3")
+        self.name_plainTextEdit_3.setStyleSheet(u"")
+        sizePolicy = QSizePolicy(QSizePolicy.Expanding, QSizePolicy.Fixed)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.name_plainTextEdit_3.sizePolicy().hasHeightForWidth())
+        self.name_plainTextEdit_3.setSizePolicy(sizePolicy)
+        self.name_plainTextEdit_3.setMaximumHeight(self.name_label_3.height() + 2)
+        self.horizontalLayout_3.addWidget(self.name_plainTextEdit_3)
+        
+        sizePolicy = QSizePolicy(QSizePolicy.Expanding, QSizePolicy.Fixed)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.name_plainTextEdit_3.sizePolicy().hasHeightForWidth())
+        self.name_plainTextEdit_3.setSizePolicy(sizePolicy)
+        self.name_plainTextEdit_3.setMaximumHeight(self.name_label_3.height() + 2)
+
+
+        self.gender_label_3 = QLabel(self.centralwidget)
+        self.gender_label_3.setObjectName(u"gender_label_3")
+        self.horizontalLayout_3.addWidget(self.gender_label_3)
+
+        self.gender_comboBox_3 = QComboBox(self.centralwidget)
+        self.gender_comboBox_3.addItem("")
+        self.gender_comboBox_3.addItem("")
+        self.gender_comboBox_3.addItem("")
+        self.gender_comboBox_3.setObjectName(u"gender_comboBox_3")
+        self.horizontalLayout_3.addWidget(self.gender_comboBox_3)
+
+        self.tel_label_3 = QLabel(self.centralwidget)
+        self.tel_label_3.setObjectName(u"tel_label_3")
+        self.horizontalLayout_3.addWidget(self.tel_label_3)
+
+        self.tel_plainTextEdit_3 = QPlainTextEdit(self.centralwidget)
+        self.tel_plainTextEdit_3.setObjectName(u"tel_plainTextEdit_3")
+        sizePolicy = QSizePolicy(QSizePolicy.Expanding, QSizePolicy.Minimum)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.tel_plainTextEdit_3.sizePolicy().hasHeightForWidth())
+        self.tel_plainTextEdit_3.setSizePolicy(sizePolicy)
+        self.tel_plainTextEdit_3.setMaximumHeight(self.tel_label_3.height() + 2)
+        self.horizontalLayout_3.addWidget(self.tel_plainTextEdit_3)
+
+        self.search_pushButton_3 = QPushButton(self.centralwidget)
+        self.search_pushButton_3.setObjectName(u"search_pushButton_3")
+        self.horizontalLayout_3.addWidget(self.search_pushButton_3)
+
+        self.delete_selected_pushButton_3 = QPushButton(self.centralwidget)
+        self.delete_selected_pushButton_3.setObjectName(u"delete_selected_pushButton_3")
+        self.horizontalLayout_3.addWidget(self.delete_selected_pushButton_3)
+
+        self.verticalLayout_3.addLayout(self.horizontalLayout_3)
+
+        self.patient_tableWidget = QTableWidget(self.centralwidget)
         self.patient_tableWidget.setObjectName(u"patient_tableWidget")
-        self.patient_tableWidget.setGeometry(QRect(10, 180, 991, 731))
+        self.verticalLayout_3.addWidget(self.patient_tableWidget)
+
+        SearchWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(SearchWindow)
-
         QMetaObject.connectSlotsByName(SearchWindow)
+
     # setupUi
 
     def retranslateUi(self, SearchWindow):
         SearchWindow.setWindowTitle(QCoreApplication.translate("SearchWindow", u"SearchWindow", None))
-        self.groupBox.setTitle("")
-        self.search_pushButton.setText(QCoreApplication.translate("SearchWindow", u"Search", None))
-        self.personal_info_label.setText(QCoreApplication.translate("SearchWindow", u"<html><head/><body><p><span style=\" font-size:48pt; font-weight:700;\">Personal Info</span></p></body></html>", None))
-        self.name_label.setText(QCoreApplication.translate("SearchWindow", u"Name:", None))
-        self.tel_label.setText(QCoreApplication.translate("SearchWindow", u"TEL:", None))
-        self.gender_label.setText(QCoreApplication.translate("SearchWindow", u"Gender:", None))
-        self.gender_comboBox.setItemText(0, QCoreApplication.translate("SearchWindow", u"(Select)", None))
-        self.gender_comboBox.setItemText(1, QCoreApplication.translate("SearchWindow", u"Male", None))
-        self.gender_comboBox.setItemText(2, QCoreApplication.translate("SearchWindow", u"Female", None))
+        self.personal_info_label.setText(QCoreApplication.translate("SearchWindow", u"Personal Info", None))
+        self.personal_info_label.setStyleSheet("font-size: 48pt; font-weight: bold; qproperty-alignment: 'AlignCenter';");
+        self.name_label_3.setText(QCoreApplication.translate("SearchWindow", u"Name:", None))
+        self.gender_label_3.setText(QCoreApplication.translate("SearchWindow", u"Gender:", None))
+        self.gender_comboBox_3.setItemText(0, QCoreApplication.translate("SearchWindow", u"(Select)", None))
+        self.gender_comboBox_3.setItemText(1, QCoreApplication.translate("SearchWindow", u"Male", None))
+        self.gender_comboBox_3.setItemText(2, QCoreApplication.translate("SearchWindow", u"Female", None))
 
-        self.delete_selected_pushButton.setText(QCoreApplication.translate("SearchWindow", u"Delete Selected", None))
+        self.tel_label_3.setText(QCoreApplication.translate("SearchWindow", u"TEL:", None))
+        self.search_pushButton_3.setText(QCoreApplication.translate("SearchWindow", u"Search", None))
+        self.delete_selected_pushButton_3.setText(QCoreApplication.translate("SearchWindow", u"Delete Selected", None))
     # retranslateUi
 

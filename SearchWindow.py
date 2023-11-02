@@ -47,20 +47,11 @@ class SearchWindow(QtWidgets.QMainWindow):
         self.table.setColumnHidden(0, True)
 
 
-        self.ui.search_pushButton.clicked.connect(self.search_patients)
-        self.ui.delete_selected_pushButton.clicked.connect(self.delete_selected_patient)
+        self.ui.search_pushButton_3.clicked.connect(self.search_patients)
+        self.ui.delete_selected_pushButton_3.clicked.connect(self.delete_selected_patient)
         self.table.itemDoubleClicked.connect(self.on_item_doule_clicked)
-        layout = QtWidgets.QVBoxLayout()
-        layout.addWidget(self.ui.personal_info_label)
-        layout.addWidget(self.ui.gender_label)
-        layout.addWidget(self.ui.gender_comboBox)
-        layout.addWidget(self.ui.tel_label)
-        layout.addWidget(self.ui.tel_plainTextEdit)
-        layout.addWidget(self.ui.search_pushButton)
-        layout.addWidget(self.ui.groupBox)
-        layout.addWidget(self.table)
-        
-        self.setLayout(layout)
+
+
     
         shortcut = QShortcut(QKeySequence(Qt.CTRL | Qt.Key_W), self)
         shortcut.activated.connect(self.close)
@@ -96,16 +87,15 @@ class SearchWindow(QtWidgets.QMainWindow):
         self.table.setGeometry(QRect(XY.x(), XY.y(), width, height))
         self.table.resizeColumnsToContents()
         self.table.resizeRowsToContents()
-        self.ui.groupBox.setGeometry(0, 0, width , height)
 
     def mousePressEvent(self, event: QMouseEvent):
         self.search_patients()        
 
 
     def search_patients(self):
-        name = self.ui.name_plainTextEdit.toPlainText()
-        tel = self.ui.tel_plainTextEdit.toPlainText()
-        gender = self.ui.gender_comboBox.currentText()
+        name = self.ui.name_plainTextEdit_3.toPlainText()  # Corrected from name_plainTextEdit
+        tel = self.ui.tel_plainTextEdit_3.toPlainText()  # Corrected from tel_plainTextEdit
+        gender = self.ui.gender_comboBox_3.currentText()  # Corrected from gender_comboBox
         if gender == QCoreApplication.translate("SearchWindow", u"(Select)", None):
             gender = ""
         elif gender == QCoreApplication.translate("SearchWindow", u"Male", None):
