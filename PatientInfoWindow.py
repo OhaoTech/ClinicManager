@@ -84,7 +84,9 @@ class PatientInfoWindow(QtWidgets.QMainWindow):
 
 		super(PatientInfoWindow, self).resizeEvent(event)
 
-
+	def closeEvent(self, event):
+		super(PatientInfoWindow, self).closeEvent(event)
+		self.parent.search_patients()
 
 	def toggle_edit_info(self):
 		enabled = self.ui.edit_mode_checkBox.isChecked()

@@ -27,8 +27,8 @@ class SearchWindow(QtWidgets.QMainWindow):
         # Allow manual resizing of the header sections
         horizontal_header = self.table.horizontalHeader()
         horizontal_header.setSectionResizeMode(QtWidgets.QHeaderView.Interactive)
-        horizontal_header.setSectionsMovable(True)
-        horizontal_header.setDragEnabled(True)
+        horizontal_header.setSectionResizeMode(self.table.columnCount()-1, QtWidgets.QHeaderView.Stretch)
+
         
         vertical_header = self.table.verticalHeader()
         vertical_header.setSectionResizeMode(QtWidgets.QHeaderView.Interactive)
@@ -45,6 +45,7 @@ class SearchWindow(QtWidgets.QMainWindow):
         self.table.setSortingEnabled(True)
         self.table.horizontalHeader().setSortIndicatorShown(True)
         self.table.setColumnHidden(0, True)
+
 
 
         self.ui.search_pushButton_3.clicked.connect(self.search_patients)
@@ -93,6 +94,7 @@ class SearchWindow(QtWidgets.QMainWindow):
 
 
     def search_patients(self):
+        
         name = self.ui.name_plainTextEdit_3.toPlainText()  # Corrected from name_plainTextEdit
         tel = self.ui.tel_plainTextEdit_3.toPlainText()  # Corrected from tel_plainTextEdit
         gender = self.ui.gender_comboBox_3.currentText()  # Corrected from gender_comboBox
@@ -112,8 +114,10 @@ class SearchWindow(QtWidgets.QMainWindow):
             self.table.insertRow(row)
             for col, value in enumerate(data):
                 self.table.setItem(row, col, QTableWidgetItem(str(value)))
-        self.table.resizeColumnsToContents()
-        self.table.resizeRowsToContents()
+        
+        self.table.horizontalHeader().setSectionResizeMode(QtWidgets.QHeaderView.Interactive)
+        self.table.horizontalHeader().setSectionResizeMode(self.table.columnCount()-1, QtWidgets.QHeaderView.Stretch)
+        
         
     def delete_selected_patient(self):
         if not self.show_confirmation_dialog():
