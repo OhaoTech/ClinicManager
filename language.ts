@@ -26,7 +26,7 @@
     <message>
         <location filename="AddNewPatientWindow.py" line="112"/>
         <source>Proceed with date and time: </source>
-        <translation type="unfinished">继续进行日期和时间： </translation>
+        <translation type="unfinished">确定于当下时间继续吗： </translation>
     </message>
     <message>
         <location filename="AddNewPatientWindow.py" line="141"/>

@@ -1,9 +1,8 @@
 # This Python file uses the following encoding: utf-8
 import sys
 from PySide6 import QtCore
-from PySide6.QtWidgets import QApplication, QMainWindow, QComboBox
-from PySide6.QtWidgets import QSlider, QLabel, QWidget
-from PySide6.QtGui import QShortcut, QKeySequence
+from PySide6.QtWidgets import QApplication, QMainWindow, QComboBox,  QSizePolicy, QSlider, QLabel, QWidget
+from PySide6.QtGui import QShortcut, QKeySequence, QFontDatabase, QFont
 from PySide6.QtCore import Qt, QCoreApplication, QTranslator
 
 from SearchWindow import SearchWindow
@@ -47,14 +46,18 @@ class MainWindow(QMainWindow):
         self.ui.cn_radioButton.clicked.connect(self.languageSelect)
         self.ui.en_radioButton.clicked.connect(self.languageSelect)
         
-        self.fontSizeLabel = QLabel(QCoreApplication.translate("MainWindow", u"Font Size", None), self)
+        
+        self.fontSizeLabel = QLabel(QCoreApplication.translate("MainWindow", u"Aa", None), self)
         self.fontSizeSlider = QSlider(Qt.Horizontal, self)
-        self.fontSizeSlider.setMinimum(8)  # Minimum font size
-        self.fontSizeSlider.setMaximum(24)  # Maximum font size
-        self.fontSizeSlider.setValue(12)  # Default font size
+        self.fontSizeSlider.setMinimum(12)  # Minimum font size
+        self.fontSizeSlider.setMaximum(36)  # Maximum font size
+        self.fontSizeSlider.setValue(16)  # Default font size
         self.fontSizeSlider.valueChanged.connect(self.adjustFontSize)
         self.ui.themeLayout.addWidget(self.fontSizeLabel)
         self.ui.themeLayout.addWidget(self.fontSizeSlider)
+        sizePolicy = QSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed)
+        self.fontSizeSlider.setSizePolicy(sizePolicy)
+        self.fontSizeSlider.setFixedWidth(200)
 
         
 
@@ -121,15 +124,34 @@ class MainWindow(QMainWindow):
         """Slot to adjust the font size based on the slider value."""
         value = self.fontSizeSlider.value()
         font = QApplication.font()
+        button_font = QApplication.font()
         font.setPointSize(value)
-        QApplication.setFont(font)
-        self.updateWidgetFonts(self, font)  # Add this line
-            
+        button_font_size = value + 16
+        button_font.setPointSize(button_font_size)
+        self.ui.searchButton.setFont(button_font)
+        self.ui.addNewPatientButton.setFont(button_font)
+        self.ui.exportAllPatientsButton.setFont(button_font)
         
+        QApplication.setFont(font)
+        self.ui.themeLayout.update()
+        self.updateWidgetFonts(self, font)          
+
+    def updateWidgetFonts(self, parent, font):
+        for child in parent.children():
+            if isinstance(child, QWidget) and child not in [self.ui.searchButton, self.ui.addNewPatientButton, self.ui.exportAllPatientsButton, self.ui.logo_label]:
+                child.setFont(font)
+                self.updateWidgetFonts(child, font)  
             
 if __name__ == "__main__":
     app = QApplication(sys.argv)
     qdarktheme.setup_theme("auto")
+
+    fontId = QFontDatabase.addApplicationFont("Simsun-Bold.ttf")
+    if fontId != -1:  # 确认字体已经被加载
+        fontFamilies = QFontDatabase.applicationFontFamilies(fontId)
+        if fontFamilies:  # 设置字体给整个应用程序
+            simsunFont = QFont(fontFamilies[0])
+            app.setFont(simsunFont)
 
     widget = MainWindow()
     widget.languageSelect()

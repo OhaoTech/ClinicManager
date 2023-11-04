@@ -1,5 +1,5 @@
-from PySide6.QtCore import (QCoreApplication, QMetaObject)
-from PySide6.QtGui import (QAction, QFont, QIcon)
+from PySide6.QtCore import (QCoreApplication, QMetaObject, Qt)
+from PySide6.QtGui import (QAction, QFont, QIcon, QFontDatabase)
 from PySide6.QtWidgets import (QLabel, QLayout, QPushButton, QRadioButton, QSizePolicy, QVBoxLayout, QHBoxLayout, QWidget)
 
 class Ui_MainWindow(object):
@@ -28,6 +28,16 @@ class Ui_MainWindow(object):
         self.verticalLayout_2.setObjectName(u"verticalLayout_2")
         self.logo_label = QLabel(self.centralwidget)
         self.logo_label.setObjectName(u"logo_label")
+        self.logo_label.setAlignment(Qt.AlignCenter)
+
+        fontKAITI = QFontDatabase.addApplicationFont("KAITI.ttf")
+        if fontKAITI != -1:  
+            fontFamilies = QFontDatabase.applicationFontFamilies(fontKAITI)
+            if fontFamilies:
+                specialFont = QFont(fontFamilies[0])
+                specialFont.setPointSize(48)
+                self.logo_label.setFont(specialFont)
+        
 
         self.verticalLayout_2.addWidget(self.logo_label)
 
@@ -94,6 +104,7 @@ class Ui_MainWindow(object):
         MainWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(MainWindow)
+        
         QMetaObject.connectSlotsByName(MainWindow)
 
     # setupUi
@@ -103,7 +114,7 @@ class Ui_MainWindow(object):
         self.actionImport.setText(QCoreApplication.translate("MainWindow", u"Import...", None))
         self.actionExport.setText(QCoreApplication.translate("MainWindow", u"Export...", None))
         self.actionExit.setText(QCoreApplication.translate("MainWindow", u"Exit", None))
-        self.logo_label.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"center\"><span style=\" font-size:22pt;\">Clinic Manager</span></p></body></html>", None))
+        self.logo_label.setText(QCoreApplication.translate("MainWindow", u"Clinic Manager", None))
         self.searchButton.setText(QCoreApplication.translate("MainWindow", u"Search", None))
         self.addNewPatientButton.setText(QCoreApplication.translate("MainWindow", u"Add New Patient", None))
         self.exportAllPatientsButton.setText(QCoreApplication.translate("MainWindow", u"Export All Patients", None))
