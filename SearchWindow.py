@@ -1,9 +1,8 @@
-# This Python file uses the following encoding: utf-8
 from PySide6 import QtCore
-from PySide6.QtCore import Qt, QRect, QCoreApplication, Signal
+from PySide6.QtCore import Qt, QRect, QCoreApplication
 from PySide6 import QtWidgets
 from PySide6.QtGui import QResizeEvent, QShortcut, QKeySequence, QMouseEvent
-from PySide6.QtWidgets import QTableWidgetItem, QMessageBox, QApplication
+from PySide6.QtWidgets import QTableWidgetItem, QMessageBox
 
 from ui_searchWindow import Ui_SearchWindow
 from PatientInfoWindow import PatientInfoWindow
@@ -95,9 +94,9 @@ class SearchWindow(QtWidgets.QMainWindow):
 
     def search_patients(self):
         
-        name = self.ui.name_plainTextEdit_3.toPlainText()  # Corrected from name_plainTextEdit
-        tel = self.ui.tel_plainTextEdit_3.toPlainText()  # Corrected from tel_plainTextEdit
-        gender = self.ui.gender_comboBox_3.currentText()  # Corrected from gender_comboBox
+        name = self.ui.name_plainTextEdit_3.toPlainText() 
+        tel = self.ui.tel_plainTextEdit_3.toPlainText()  
+        gender = self.ui.gender_comboBox_3.currentText() 
         if gender == QCoreApplication.translate("SearchWindow", u"(Select)", None):
             gender = ""
         elif gender == QCoreApplication.translate("SearchWindow", u"Male", None):

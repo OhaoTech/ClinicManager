@@ -1,24 +1,6 @@
-# -*- coding: utf-8 -*-
-
-################################################################################
-## Form generated from reading UI file 'form.ui'
-##
-## Created by: Qt User Interface Compiler version 6.6.0
-##
-## WARNING! All changes made in this file will be lost when recompiling UI file!
-################################################################################
-
-from PySide6.QtCore import (QCoreApplication, QDate, QDateTime, QLocale,
-    QMetaObject, QObject, QPoint, QRect,
-    QSize, QTime, QUrl, Qt)
-from PySide6.QtGui import (QAction, QBrush, QColor, QConicalGradient,
-    QCursor, QFont, QFontDatabase, QGradient,
-    QIcon, QImage, QKeySequence, QLinearGradient,
-    QPainter, QPalette, QPixmap, QRadialGradient,
-    QTransform)
-from PySide6.QtWidgets import (QApplication, QLabel, QLayout, QMainWindow,
-    QPushButton, QRadioButton, QSizePolicy, QVBoxLayout, QHBoxLayout, QComboBox,
-    QWidget)
+from PySide6.QtCore import (QCoreApplication, QMetaObject)
+from PySide6.QtGui import (QAction, QFont, QIcon)
+from PySide6.QtWidgets import (QLabel, QLayout, QPushButton, QRadioButton, QSizePolicy, QVBoxLayout, QHBoxLayout, QWidget)
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -36,13 +18,12 @@ class Ui_MainWindow(object):
         
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
-        self.verticalLayout = QVBoxLayout(self.centralwidget)  # 直接在centralwidget上创建布局
+        self.verticalLayout = QVBoxLayout(self.centralwidget)  
         self.verticalLayout.setObjectName(u"verticalLayout")
         self.verticalLayout.setSizeConstraint(QLayout.SetMinimumSize)
         self.verticalLayout.setContentsMargins(0, 0, 0, 0)
         self.verticalLayout.setSpacing(0)
         
-
         self.verticalLayout_2 = QVBoxLayout()
         self.verticalLayout_2.setObjectName(u"verticalLayout_2")
         self.logo_label = QLabel(self.centralwidget)
@@ -94,7 +75,6 @@ class Ui_MainWindow(object):
         self.en_radioButton.setObjectName(u"en_radioButton")
         self.languageLayout.addWidget(self.en_radioButton)
         
-        # 创建一个新的水平布局用于存放主题标签和组合框
         self.themeLayout = QHBoxLayout()
         self.themeLayout.setObjectName(u"themeLayout")
         
@@ -102,15 +82,13 @@ class Ui_MainWindow(object):
         self.theme_label.setObjectName(u"theme_label")
         self.themeLayout.addWidget(self.theme_label)
         
-        # 创建一个新的水平布局来组合语言和主题布局
         self.bottomLayout = QHBoxLayout()
         self.bottomLayout.setObjectName(u"bottomLayout")
         
         self.bottomLayout.addLayout(self.languageLayout)
-        self.bottomLayout.addStretch()  # 添加弹性空间以确保布局分布
+        self.bottomLayout.addStretch() 
         self.bottomLayout.addLayout(self.themeLayout)
         
-        # 在主垂直布局中添加这个新的水平布局
         self.verticalLayout.addLayout(self.bottomLayout)
 
         MainWindow.setCentralWidget(self.centralwidget)

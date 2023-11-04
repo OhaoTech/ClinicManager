@@ -1,10 +1,8 @@
-# This Python file uses the following encoding: utf-8
 from PySide6.QtCore import QDateTime, QRect
 from PySide6 import QtWidgets, QtCore
 from PySide6.QtCore import Qt, QTimer, QCoreApplication
 from PySide6.QtWidgets import  QLabel, QTextEdit, QMessageBox
 from PySide6.QtGui import  QKeySequence, QShortcut
-
 
 from ui_addNewPatientWindow import Ui_AddNewPatientWindow
 
@@ -206,8 +204,9 @@ class AddNewPatientWindow(QtWidgets.QMainWindow):
                 [QCoreApplication.translate("AddNewPatientWindow", u"Diagnosis", None), diagnosis],
                 [QCoreApplication.translate("AddNewPatientWindow", u"Remedy", None), remedy]]
 
-        self.exportdata.print_to_pdf(data, filename=name)
-        QMessageBox.information(self, QCoreApplication.translate("AddNewPatientWindow", u"Success!", None), name + QCoreApplication.translate("AddNewPatientWindow", u" printed as PDF file", None))
+        if self.exportdata.print_to_pdf(data, filename=name):
+            QMessageBox.information(self, QCoreApplication.translate("PatientInfoWindow", u"Success!", None), name + QCoreApplication.translate("PatientInfoWindow", u" printed as PDF file", None))
+
         
 
 

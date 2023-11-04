@@ -1,4 +1,3 @@
-# This Python file uses the following encoding: utf-8
 from PySide6.QtCore import Qt, QDate, QTimer, QDateTime, QCoreApplication, QModelIndex, QRect
 from PySide6 import QtWidgets, QtCore
 from PySide6.QtGui import QShortcut, QKeySequence
@@ -7,7 +6,6 @@ from PySide6.QtWidgets import QTreeWidgetItem, QMessageBox
 from ui_PatientInfoWindow import Ui_PatientInfoWindow
 from Database import Database
 from Exportdata import Exportdata
-import numpy as np
 class PatientInfoWindow(QtWidgets.QMainWindow):
     
 	def __init__(self, parent, database: Database, patient_id: int, export_data: Exportdata):
@@ -69,15 +67,12 @@ class PatientInfoWindow(QtWidgets.QMainWindow):
 		self.show_visits() 
 	
 	def resizeEvent(self, event):
-		# 获取当前窗口的大小
 		current_width = self.width()
 		current_height = self.height()
 
-		# 计算宽度和高度的比例
 		width_ratio = current_width / 1072.0
 		height_ratio = current_height / 1100.0
 
-		# 设置self.verticalLayoutWidget_2的新大小和位置
 		new_width = int(1051 * width_ratio)
 		new_height = int(1081 * height_ratio)
 		self.ui.verticalLayoutWidget_5.setGeometry(QRect(10 * width_ratio, 10 * height_ratio, new_width, new_height))
