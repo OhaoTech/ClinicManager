@@ -2,18 +2,15 @@
 import sys
 from PySide6 import QtCore
 from PySide6.QtWidgets import QApplication, QMainWindow, QComboBox
+from PySide6.QtWidgets import QSlider, QLabel, QWidget
 from PySide6.QtGui import QShortcut, QKeySequence
-from PySide6.QtCore import Qt, QCoreApplication, QTranslator, Signal
-from PyQt5.QtCore import pyqtSignal
+from PySide6.QtCore import Qt, QCoreApplication, QTranslator
 
 from SearchWindow import SearchWindow
 from AddNewPatientWindow import AddNewPatientWindow
 
 from Database import Database
-# Important:
-# You need to run the following command to generate the ui_form.py file
-#     pyside6-uic form.ui -o ui_form.py, or
-#     pyside2-uic form.ui -o ui_form.py
+
 from ui_form import Ui_MainWindow
 
 from Exportdata import Exportdata
@@ -49,6 +46,16 @@ class MainWindow(QMainWindow):
         self.ui.cn_radioButton.click()
         self.ui.cn_radioButton.clicked.connect(self.languageSelect)
         self.ui.en_radioButton.clicked.connect(self.languageSelect)
+        
+        self.fontSizeLabel = QLabel(QCoreApplication.translate("MainWindow", u"Font Size", None), self)
+        self.fontSizeSlider = QSlider(Qt.Horizontal, self)
+        self.fontSizeSlider.setMinimum(8)  # Minimum font size
+        self.fontSizeSlider.setMaximum(24)  # Maximum font size
+        self.fontSizeSlider.setValue(12)  # Default font size
+        self.fontSizeSlider.valueChanged.connect(self.adjustFontSize)
+        self.ui.themeLayout.addWidget(self.fontSizeLabel)
+        self.ui.themeLayout.addWidget(self.fontSizeSlider)
+
         
 
     def showSearchWindow(self):
@@ -101,6 +108,22 @@ class MainWindow(QMainWindow):
     def languageRadioButtonConnect(self, target):
         self.ui.cn_radioButton.clicked.connect(target)
         self.ui.en_radioButton.clicked.connect(target)
+        
+    def updateWidgetFonts(self, widget, font):
+        """Recursively update the font of the widget and its children."""
+        if isinstance(widget, QWidget):  # Check if it's a widget
+            widget.setFont(font)
+        for child in widget.children():
+            self.updateWidgetFonts(child, font)
+
+
+    def adjustFontSize(self):
+        """Slot to adjust the font size based on the slider value."""
+        value = self.fontSizeSlider.value()
+        font = QApplication.font()
+        font.setPointSize(value)
+        QApplication.setFont(font)
+        self.updateWidgetFonts(self, font)  # Add this line
             
         
             
