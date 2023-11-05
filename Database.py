@@ -160,7 +160,7 @@ class Database:
         self.cursor.execute("DELETE FROM logs WHERE visit_id = ?", (visit_id,))
         self.conn.commit()
         
-    def get_all_patient_info_by_id(self, patient_id):
+    def get_one_patient_info_by_id(self, patient_id):
         # Query to fetch patient information by patient_id
         query = '''SELECT patients.full_name, patients.gender, patients.birthdate, patients.telephone,
                            visits.visit_date, visits.chief_complaint, visits.present_illness,

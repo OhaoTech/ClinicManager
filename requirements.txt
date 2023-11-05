@@ -1,6 +1,5 @@
 PyQt5
 PySide6
-numpy
 pandas
 pyqtdarktheme
 reportlab

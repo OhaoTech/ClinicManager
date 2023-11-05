@@ -1,20 +1,19 @@
-import math
 from Database import Database
 from PySide6.QtWidgets import QFileDialog, QMessageBox
 from PySide6.QtCore import QCoreApplication
-import pandas as pd
+from pandas.core.frame import DataFrame
 from reportlab.lib.pagesizes import A4
 from reportlab.lib import colors
 from reportlab.platypus import SimpleDocTemplate, Table, TableStyle, Paragraph
 from reportlab.pdfbase import pdfmetrics
 from reportlab.pdfbase.ttfonts import TTFont
-import os
+from os.path import isfile
 from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
 
 class Exportdata():
     def __init__(self, database: Database):
         self.database = database
-    def choose_file_directory(self,df:pd.DataFrame):
+    def choose_file_directory(self,df:DataFrame):
         options = QFileDialog.Options()
         options |= QFileDialog.DontUseNativeDialog
         filename_without_extension, _ = QFileDialog.getSaveFileName(None, QCoreApplication.translate("Exportdata", u"Save File", None), "","Excel" + QCoreApplication.translate("Exportdata", u"Files", None) + "(*.xlsx)", options=options)
@@ -36,7 +35,7 @@ class Exportdata():
                   QCoreApplication.translate("Exportdata", u"Allergic History", None),
                   QCoreApplication.translate("Exportdata", u"Past Medical History", None)
                 ]
-        df = pd.DataFrame(data,columns=labels)
+        df = DataFrame(data,columns=labels)
         df = df.iloc[1:]
         self.choose_file_directory(df)
         
@@ -49,7 +48,7 @@ class Exportdata():
                   QCoreApplication.translate("Exportdata", u"Diagnosis", None),
                   QCoreApplication.translate("Exportdata", u"Remedy", None),
                   ]
-        df = pd.DataFrame(data,columns=labels)
+        df = DataFrame(data,columns=labels)
         self.choose_file_directory(df)
         
     def print_to_pdf(self, data: list[list[str]], filename: str):
@@ -58,11 +57,11 @@ class Exportdata():
         pdf_filename, _ = QFileDialog.getSaveFileName(None, QCoreApplication.translate("Exportdata", u"Save File", None), "", "PDF" + QCoreApplication.translate("Exportdata", u"Files", None) + "(*.pdf)", options=options)
         if pdf_filename:
             # Register font
-            if os.path.isfile("SimSun.ttf"):
+            if isfile("SimSun.ttf"):
                 pdfmetrics.registerFont(TTFont("SimSun", "SimSun.ttf"))
-            if os.path.isfile("SimSun-Bold.ttf"):
+            if isfile("SimSun-Bold.ttf"):
                 pdfmetrics.registerFont(TTFont("SimSun-Bold", "SimSun-Bold.ttf"))
-            if os.path.isfile("KAITI.ttf"):
+            if isfile("KAITI.ttf"):
                 pdfmetrics.registerFont(TTFont("KAITI", "KAITI.ttf"))
 
             # Define the style for the title of the document

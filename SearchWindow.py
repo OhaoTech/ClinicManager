@@ -8,7 +8,6 @@ from ui_searchWindow import Ui_SearchWindow
 from PatientInfoWindow import PatientInfoWindow
 from Database import Database
 from Exportdata import Exportdata
-import numpy as np
 class SearchWindow(QtWidgets.QMainWindow):
     def __init__(self, parent, database: Database, export_data: Exportdata):
         super().__init__(parent)
@@ -71,9 +70,10 @@ class SearchWindow(QtWidgets.QMainWindow):
             QCoreApplication.translate("SearchWindow", "Allergic History"),
             QCoreApplication.translate("SearchWindow", "Past Medical History")
         ]
-        self.table.setColumnCount(np.shape(self.labels)[0])
-        for i in range(np.shape(self.labels)[0]):
-            self.table.setHorizontalHeaderItem(i, QTableWidgetItem(self.labels[i]))
+        self.table.setColumnCount(len(self.labels))
+        for i, label in enumerate(self.labels):
+            self.table.setHorizontalHeaderItem(i, QTableWidgetItem(label))
+
             
 
     def resizeEvent(self, event: QResizeEvent) -> None:
